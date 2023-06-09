@@ -27,13 +27,13 @@ public class confirmServlet extends HttpServlet {
 		String answer = request.getParameter("ANSWER");
 
 		if(question.equals("1")) {
-			question="しつもん1";
+			question="飼っていたペットの名前は？";
 		}
 		if(question.equals("2")) {
-			question="しつもん2";
+			question="通っていた小学校の名前は？";
 		}
 		if(question.equals("3")) {
-			question="しつもん3";
+			question="母親の旧姓は？";
 		}
 
 		request.setAttribute("check_id", id);

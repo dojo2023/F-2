@@ -7,6 +7,6 @@
 </head>
 <body>
    <h1>登録完了</h1>
-   <a href="/f2project/LoginServlet">ログイン画面へ</a>
+   <a href="${result.backTo}">ログイン画面へ</a>
 </body>
 </html>

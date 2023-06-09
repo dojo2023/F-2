@@ -29,9 +29,9 @@
         <td>
           <label>秘密の質問<br>
           <select name="QUESTION">
-          	<option value="1">しつもん１</option>
-          	<option value="2">しつもん２</option>
-          	<option value="3">しつもん３</option>
+          	<option value="1">飼っていたペットの名前は？</option>
+          	<option value="2">通っていた小学校の名前は？</option>
+          	<option value="3">母親の旧姓は？</option>
           </select>
           </label>
         </td>

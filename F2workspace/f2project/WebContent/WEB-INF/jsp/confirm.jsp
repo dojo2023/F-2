@@ -11,7 +11,7 @@
       <tr>
         <td>
           <label>ID<br>
-          <input type="textbox" value="${check_id}" readonly>
+          <input type="textbox" value="${check_id}" name="ID" readonly>
           </label>
         </td>
       </tr>
@@ -19,7 +19,7 @@
       <tr>
         <td>
           <label>パスワード<br>
-          <input type="textbox" value="${check_pw}" readonly>
+          <input type="textbox" value="${check_pw}" name="PW" readonly>
           </label>
         </td>
       </tr>
@@ -35,7 +35,7 @@
       <tr>
         <td>
           <label>回答<br>
-          <input type="textbox" value="${check_answer}" readonly>
+          <input type="textbox" value="${check_answer}" name="ANSWER" readonly>
           </label>
         </td>
       </tr>
