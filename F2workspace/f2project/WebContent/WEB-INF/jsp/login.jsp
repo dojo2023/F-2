@@ -12,7 +12,7 @@
       <tr>
         <td>
           <label>ユーザーID<br>
-          <input type="text" name="ID">
+          <input type="text" name="ID" required>
           </label>
         </td>
       </tr>
@@ -20,7 +20,7 @@
       <tr>
         <td>
           <label>パスワード<br>
-          <input type="password" name="PW">
+          <input type="password" name="PW" required>
           </label>
         </td>
       </tr>
