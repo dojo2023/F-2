@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.IdpwDAO;
+import dao.PWresetDAO;
 import model.Idpw;
 
 /**
@@ -27,7 +27,7 @@ public class resetServlet extends HttpServlet {
 			request.setCharacterEncoding("UTF-8");
 			String id = request.getParameter("ID");
 
-			IdpwDAO iDao = new IdpwDAO();
+			PWresetDAO iDao = new PWresetDAO();
 			if (iDao.IdExist(new Idpw(id, "", ""))) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reset.jsp");
 				dispatcher.forward(request, response);
