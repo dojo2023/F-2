@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-290502943.index
-636571384.index
-3650411012.index
-1433150243.index
-2485878017.index
-451718414.index
