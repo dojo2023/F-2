@@ -14,7 +14,7 @@
       <tr>
         <td>
           <label>ID<br>
-          <input type="text" name="ID">
+          <input type="text" name="ID" required>
           </label>
         </td>
       </tr>

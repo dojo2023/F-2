@@ -23,19 +23,16 @@ public class resetServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("next") != null)  {
+		if(request.getParameter("next") != null) {
 			request.setCharacterEncoding("UTF-8");
 			String id = request.getParameter("ID");
 
 			PWresetDAO iDao = new PWresetDAO();
 			if (iDao.IdExist(new Idpw(id, "", ""))) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reset.jsp");
+				request.setAttribute("check_id", id);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/question.jsp");
 				dispatcher.forward(request, response);
 			}
-
-			request.setAttribute("check_id", id);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/question.jsp");
-			dispatcher.forward(request, response);
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reset.jsp");
 		dispatcher.forward(request, response);

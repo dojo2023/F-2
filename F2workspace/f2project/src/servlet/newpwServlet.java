@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.PWresetDAO;
+import model.Idpw;
+import model.Result;
+
 /**
  * Servlet implementation class newpwServlet
  */
@@ -20,6 +24,14 @@ public class newpwServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String pw = request.getParameter("PW");
+
+		PWresetDAO idao = new PWresetDAO();
+		if (idao.PWupdate(new Idpw("",pw,""))) {
+			request.setAttribute("result",
+			new Result("", "", "/f2project/LoginServlet"));
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/completion.jsp");
 		dispatcher.forward(request, response);
 	}

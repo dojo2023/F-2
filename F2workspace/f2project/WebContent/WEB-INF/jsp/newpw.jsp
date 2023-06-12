@@ -9,20 +9,20 @@
 <body>
 <h2>新しいパスワードを入力してください</h2>
 
-<form method="POST" action="/f2project/newpwServlet">
+<form id="reset_form" method="POST" action="/f2project/newpwServlet">
 
   <table>
       <tr>
         <td>
           <label>新しいパスワードを入力<br>
-          <input type="text" name="PW">
+          <input type="text" name="PW" required>
           </label>
         </td>
       </tr>
       <tr>
         <td>
           <label>新しいパスワードを入力(確認用)<br>
-          <input type="text" name="PW2">
+          <input type="text" name="PW2" required>
           </label>
         </td>
       </tr>
@@ -33,5 +33,17 @@
       </tr>
     </table>
   </form>
+<script>
+'use strict';
+
+document.getElementById('reset_form').onsubmit = function(event) {
+	const PW = document.getElementById('reset_form').PW.value;
+	const PW2 = document.getElementById('reset_form').PW2.value;
+	if(PW != PW2){
+	    alert('パスワードが一致しません。');
+	    event.preventDefault();
+	}
+}
+</script>
 </body>
 </html>
