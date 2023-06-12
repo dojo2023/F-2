@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.IdpwDAO;
+import model.Idpw;
+
 /**
  * Servlet implementation class resetServlet
  */
@@ -23,6 +26,12 @@ public class resetServlet extends HttpServlet {
 		if(request.getParameter("next") != null)  {
 			request.setCharacterEncoding("UTF-8");
 			String id = request.getParameter("ID");
+
+			IdpwDAO iDao = new IdpwDAO();
+			if (iDao.IdExist(new Idpw(id, "", ""))) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reset.jsp");
+				dispatcher.forward(request, response);
+			}
 
 			request.setAttribute("check_id", id);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/question.jsp");
