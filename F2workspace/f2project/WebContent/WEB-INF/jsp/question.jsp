@@ -7,7 +7,7 @@
 </head>
 <body>
    <h2>PWリセット</h2>
-   <form method="POST">
+   <form method="POST" action="/f2project/questionServlet">
     <table>
       <tr>
 	    <td>
@@ -31,12 +31,14 @@
 
 
       <tr>
-        <td colspan="2">
-          <input type="submit" name="next" value="次へ" formaction="/f2project/questionServlet">
-          <input type="submit" name="back" value="戻る" formaction="/f2project/resetServlet">
+        <td>
+          <input type="submit" name="next" value="次へ">
         <td>
       </tr>
     </table>
+    </form>
+    <form method="POST" action="/f2project/resetServlet">
+    <input type="submit" name="back" value="戻る">
     </form>
 </body>
 </html>
