@@ -1,0 +1,87 @@
+
+.header {
+	position: relative;
+	width: 390px;
+	height: 50px;
+	top: 0%;
+	left:0%;
+	z-index: 9999;
+	background-color: #d3d3d3;
+}
+
+.main{
+	position: absolute;
+	width: 390px;
+	height: 844px;
+	background-color: #f0fff0;
+}
+
+.centertable{
+	display: flex;
+	justify-content: center;
+	table-layout:fixed;
+}
+
+.table{
+	table-layout:fixed;
+
+
+}
+
+#pest-01 {
+	display: none;
+}
+
+
+
+
+/*ベース*/
+.toggle {
+	display: none;
+}
+.Label {		/*タイトル*/
+	padding: 1em;
+	display: block;
+	color: #fff;
+	background:#019ac6;
+}
+.Label::before{		/*タイトル横の矢印*/
+	content:"";
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	top:calc( 50% - 3px );
+	right: 20px;
+	transform: rotate(135deg);
+}
+.Label,
+.content {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	transition: all 0.3s;
+}
+.content {		/*本文*/
+	height: 0;
+	margin-bottom:10px;
+	padding:0 20px;
+	overflow: hidden;
+}
+.toggle:checked + .Label + .content {	/*開閉時*/
+	height: auto;
+	padding:20px ;
+	transition: all .3s;
+}
+.toggle:checked + .Label::before {
+	transform: rotate(-45deg) !important;
+}
+
+
+/* title.jsp */
+.titlelist {
+	background-color:#fff8dc;
+	border-spacing: 50px 10px;
+}
