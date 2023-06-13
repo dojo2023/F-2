@@ -4,7 +4,6 @@ import java.io.Serializable;
 public class Login implements Serializable {
 	private String id;	// ID
 	private String pw;	// PW
-	private String answer;
 
 	public Login(String id, String pw) {
 		this.id = id;
@@ -14,7 +13,6 @@ public class Login implements Serializable {
 	public Login() {
 		this.id = "";
 		this.pw = "";
-		this.answer = "";
 	}
 
 	public String getId() {
@@ -31,13 +29,5 @@ public class Login implements Serializable {
 
 	public void setPw(String pw) {
 		this.pw = pw;
-	}
-
-	public String getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(String answer) {
-		this.answer = answer;
 	}
 }

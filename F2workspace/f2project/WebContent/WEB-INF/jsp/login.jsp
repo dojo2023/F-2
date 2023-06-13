@@ -7,7 +7,7 @@
 </head>
 <body>
    <h2>ログイン</h2>
-   <form method="POST" action="/f2project/loginServlet">
+   <form method="POST" action="/f2project/LoginServlet">
     <table>
       <tr>
         <td>

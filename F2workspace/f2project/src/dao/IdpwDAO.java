@@ -7,25 +7,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Idpw;
-import model.Login;
 
 public class IdpwDAO {
-	public boolean isLoginOK(Login idpw) {
+	public boolean isLoginOK(String id,String pw) {
 		Connection conn = null;
-		boolean loginResult = false;
+		boolean result = false;
 
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/meisi-DB", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			// SELECT文を準備する
 			String sql = "select count(*) from USER where ID = ? and PW = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, idpw.getId());
-			pStmt.setString(2,idpw.getPw());
+			pStmt.setString(1, id);
+			pStmt.setString(2, pw);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -33,16 +32,16 @@ public class IdpwDAO {
 			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
 			rs.next();
 			if (rs.getInt("count(*)") == 1) {
-				loginResult = true;
+				result = true;
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			loginResult = false;
+			result = false;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			loginResult = false;
+			result = false;
 		}
 		finally {
 			// データベースを切断
@@ -52,14 +51,16 @@ public class IdpwDAO {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					loginResult = false;
+					result = false;
 				}
 			}
 		}
 
 		// 結果を返す
-		return loginResult;
+		return result;
 	}
+
+
 
 	public boolean insert(Idpw card) {
 		Connection conn = null;
@@ -70,7 +71,7 @@ public class IdpwDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2DB", "f2", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			// SQL文を準備する
 			String sql = "insert into USER values (?, ?, ?)";
