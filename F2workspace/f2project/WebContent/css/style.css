@@ -81,7 +81,28 @@
 
 
 /* title.jsp */
-.titlelist {
-	background-color:#fff8dc;
-	border-spacing: 50px 10px;
+#titlelist {
+	list-style:none;
+	width: 85%;
+	padding-left:10px;
+	border-collapse: separate;
+	border-spacing:10px 10px;
+}
+
+#titlelist td{
+	background-color: white;
+	border: 1px solid #000000;
+}
+
+/* usage.jsp */
+.usage-item {
+    display: flex;
+    padding: 20px 8px;
+}
+.usage-photo {
+    margin-right: 16px;
+    flex: 1 1 auto;
+}
+.usage-text {
+    flex: 0 0 336px;
 }
