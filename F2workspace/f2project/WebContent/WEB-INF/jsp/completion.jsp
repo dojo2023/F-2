@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!doctype html>
-<html>
+<html class="completion_back-color">
 <head>
 <meta charset="UTF-8">
 <title></title>
@@ -11,7 +11,7 @@
 <table>
   <tr>
     <td>
-	  <input id="regist_text" type="text" value="登録が完了いたしました" readonly>
+	  <input id="completion_text" type="text" value="登録が完了いたしました" readonly style="margin: 50px 0 20px -30px">
 	</td>
   </tr>
 

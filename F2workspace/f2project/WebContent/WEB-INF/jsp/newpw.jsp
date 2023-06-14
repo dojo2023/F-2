@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!DOCTYPE html>
-<html>
+<html class="reset_back-color">
 <head>
 <meta charset="UTF-8">
 <title></title>
@@ -19,21 +19,21 @@
 
       <tr>
         <td>
-          <label>新しいパスワードを入力<br>
+          <label>&nbsp;&nbsp;新しいパスワードを入力<br>
           <input id="pw" class="reset_label" type="password" value="${check_pw}" name="PW" placeholder="例）f2password" maxlength="20" required>
           </label>
         </td>
       </tr>
       <tr>
         <td>
-          <label>新しいパスワードを<br>入力(確認用)<br>
+          <label>&nbsp;&nbsp;パスワードの確認入力<br>
           <input id="pw" class="reset_label" type="password" name="PW2" maxlength="20" required>
           </label>
         </td>
       </tr>
       <tr>
         <td>
-          <input id="submit" type="submit" name="regist" value="登録" style="margin-left: 25%">
+          <input id="newpw_regist" type="submit" name="regist" value="登録" style="margin: 30px 0 0 50px">
         </td>
       </tr>
     </table>

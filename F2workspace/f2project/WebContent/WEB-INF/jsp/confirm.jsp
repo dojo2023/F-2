@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!doctype html>
-<html>
+<html class="regist_back-color">
 <head>
 <meta charset="UTF-8">
 <title></title>
 </head>
 <body>
-   <form method="POST" action="/f2project/completionServlet">
+   <form id="regist_form" method="POST" action="/f2project/completionServlet">
     <table>
       <tr>
         <td>
@@ -17,7 +17,7 @@
 
       <tr>
         <td>
-          <label>ID<br>
+          <label>&nbsp;&nbsp;ID<br>
           <input id="id" class="regist_label" type="text" value="${check_id}" name="ID" readonly>
           </label>
         </td>
@@ -25,7 +25,7 @@
 
       <tr>
         <td>
-          <label>PW<br>
+          <label>&nbsp;&nbsp;PW<br>
           <input id="pw" class="regist_label" type="text" value="${check_pw}" name="PW" readonly>
           </label>
         </td>
@@ -33,7 +33,7 @@
 
       <tr>
         <td>
-          <label>秘密の質問<br>
+          <label>&nbsp;&nbsp;秘密の質問<br>
           <input id="q" class="regist_label" type="text" value="${check_question}" readonly>
           </label>
         </td>
@@ -41,7 +41,7 @@
 
       <tr>
         <td>
-          <label>回答<br>
+          <label>&nbsp;&nbsp;回答<br>
           <input id="ans" class="regist_label" type="text" value="${check_answer}" name="ANSWER" readonly>
           </label>
         </td>

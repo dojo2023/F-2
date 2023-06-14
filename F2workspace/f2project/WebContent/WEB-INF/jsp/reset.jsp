@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!doctype html>
-<html>
+<html class="reset_back-color">
 <head>
 <meta charset="UTF-8">
 <title></title>
 </head>
 <body>
 <!-- <h2>PWリセット</h2> -->
-<form method="POST" action="/f2project/resetServlet">
+<form id="reset_form" method="POST" action="/f2project/resetServlet">
 
   <table>
       <tr>
@@ -19,7 +19,7 @@
 
       <tr>
         <td>
-          <label>ID<br>
+          <label>&nbsp;&nbsp;ID<br>
           <input id="id" class="reset_label" type="text" name="ID" placeholder="例）f2project" maxlength="20" required>
           </label>
         </td>
