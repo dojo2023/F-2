@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!doctype html>
 <html id="back_img">
 <div id="back_rgba">
@@ -7,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 </head>
 <body>
 <h1>
