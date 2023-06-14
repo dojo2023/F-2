@@ -4,11 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <meta name="viewport" content="width=device-width">
 <title>memoly</title>
 </head>
 <body>
+<div class="openbtn2">
+		<span></span><span></span><span></span>
+	</div>
+	<nav id="g-nav2">
+		<div id="g-nav-list2">
+			<ul>
+				<li><a href="MapServlet_test">マップ</a></li>
+				<li><a href="ListServlet">リスト</a></li>
+				<li><a href="#">称号</a></li>
+				<li><a href="#">ストーリー</a></li>
+				<li><a href="#">使い方</a></li>
+			</ul>
+		</div>
+	</nav>
 <div class = "header">
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
@@ -26,4 +41,25 @@
 
 </div>
 </body>
+<script>
+  $(".openbtn1").click(function () {//ボタンがクリックされたら
+  $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+  $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+//$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+//    $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
+//    $("#g-nav1").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+//});
+
+  $(".openbtn2").click(function () {//ボタンがクリックされたら
+  $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+  $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+  $("#g-nav2 a").click(function () {//ナビゲーションのリンクがクリックされたら
+  $(".openbtn2").removeClass('active');//ボタンの activeクラスを除去し
+  $("#g-nav2").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
+</script>
 </html>
