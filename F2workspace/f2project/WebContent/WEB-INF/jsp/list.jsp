@@ -13,24 +13,25 @@
 </head>
 <body>
 <div class = "header">
-
+	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
 
 <div class = "main">
-<div class="centertable">
-<table border="1" width="85%">
+<div class="tabletitle">
+<table id="titlelist2">
 <c:forEach var="e" items="${cardList}" >
 	<tr>
-		<td><input type="text" name="GENRE" value="${e.genre}"></td>
-		<td><input type="text" name="NAME" value="${e.name}"></td>
+		<td><img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"></td>
+		<th><span>${e.name}</span></th>
+		<td><img src="img/destinationicon.png" alt="アイコン" width="18px" height="24px"></td>
 	</tr>
-	<div class="pest-${count}">
+	<!-- <div class="pest-${count}">
 	    <span class="genre1">${e.genre}</span>
 	    <span class="name1">${e.name}</span>
 	    <span class="date1">${e.date}</span>
 	    <span class="address1">${e.address}</span>
 	    <span class="remarks1">${e.remarks}</span>
-	</div>
+	</div>  -->
 </c:forEach>
 </table>
 </div>
