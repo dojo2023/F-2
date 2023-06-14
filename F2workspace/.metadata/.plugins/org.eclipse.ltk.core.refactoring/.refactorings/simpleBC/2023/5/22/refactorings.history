@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from プロジェクト &apos;simpleBC&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;simpleBC&apos;&#x0D;&#x0A;- オリジナル要素: &apos;servlet.Discrimination.java&apos;" description="要素を削除" element1="/src&lt;servlet{Discrimination.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1685411955212" subPackages="false" version="1.0"/>
-</session>
