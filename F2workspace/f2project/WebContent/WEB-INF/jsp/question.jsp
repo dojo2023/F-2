@@ -43,9 +43,9 @@
         <td>
       </tr>
     </table>
-    <form method="POST" action="/f2project/resetServlet">
-    <input id="back" type="submit" name="back" value="戻る" style="margin-top: -28.5px">
     </form>
+    <form method="POST" action="/f2project/resetServlet">
+    <input id="back" type="submit" name="back" value="戻る" style="margin-top: -34px">
     </form>
 </body>
 </html>

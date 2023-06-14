@@ -10,13 +10,15 @@
 <h1>
 <img src="/f2project/img/back-img.png">
 </h1>
+<div id="circle"></div>
+<div class="back_design">
 <!-- <h2>ログイン</h2> -->
-   <form method="POST" action="/f2project/LoginServlet">
+   <form id="login_form" method="POST" action="/f2project/LoginServlet">
     <table>
       <tr>
         <td>
           <label>ID<br>
-          <input id="id" type="text" name="ID" maxlength="20" required>
+          <input id="id" class="login_label" type="text" name="ID" placeholder="例）f2project" maxlength="20" required>
           </label>
         </td>
       </tr>
@@ -24,7 +26,7 @@
       <tr>
         <td>
           <label>PW<br>
-          <input id="pw" type="password" name="PW" maxlength="20" required>
+          <input id="pw" class="login_label" type="password" name="PW" placeholder="例）f2password" maxlength="20" required>
           </label>
         </td>
       </tr>
@@ -43,5 +45,6 @@
     <form method="POST" action="/f2project/resetServlet">
     <input id="new_pw" type="submit" name="user_regist" value="パスワード忘れた方はこちら">
     </form>
+    </div>
 </body>
 </html>

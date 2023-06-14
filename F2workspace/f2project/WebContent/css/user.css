@@ -13,22 +13,44 @@ body {
 	margin-left: 25%;
 }
 #login_body {
-	background-image: url(/f2project/img/back-img2.png);
+	background-image: url(/f2project/img/back-img3.png);
 	background-repeat: no-repeat;
 }
 
-
-.regist_label, .reset_label {
-	margin-bottom: 20px;
+label {
+  display: block;
+  background: #808080;
+  border-radius: 5px;
+  font-weight: bold;
+  text-indent: 1%;
+  margin-top: 10px;
+  padding-top: 5px;
 }
 
 h1 {
+	position: fixed;
+	z-index: 100;
 	width: 189px;
 	height: 241px;
-	text-align: center;
-	margin-top: 50px;
+	top: 20px;
+}
+#circle {
+	position: fixed;
+	z-index: 50;
+	top: 20px;
+	background: white;
+	opacity: 0.3;
+    border-radius: 50%;
+    width: 249px;
+    height: 281px;
+    color: #fff;
+    font-size: 52px;
+    margin-left: -30px;
 }
 
+#login_form {
+	margin-top: 320px;
+}
 #regist_text, #reset_text {
 	width: 200px;
 	height: 100px;
@@ -40,6 +62,7 @@ h1 {
 
 #login, #reset, #check, #submit, #back {
 	width: 90px;
+	margin: 10px 0 -10px 0;
 }
 #reset, #back {
 	margin-left: 15px;
@@ -51,3 +74,8 @@ h1 {
 #go_login {
 	margin: 100px 0 0 40px;
 }
+/*
+input[type="text"] {
+	width: 5px;
+}
+*/

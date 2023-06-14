@@ -26,7 +26,7 @@
       </tr>
       <tr>
         <td>
-          <label>新しいパスワードを入力(確認用)<br>
+          <label>新しいパスワードを<br>入力(確認用)<br>
           <input id="pw" class="reset_label" type="password" name="PW2" maxlength="20" required>
           </label>
         </td>
