@@ -15,7 +15,7 @@ public class PWresetDAO {
 		boolean id_check = false;
 		try {
 			Class.forName("org.h2.Driver");
-			conn = DriverManager.getConnection("jdbc:h2:C:/dojo6/F2workspace/data/F2DB", "f2", "");
+			conn = DriverManager.getConnection("jdbc:h2:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			String sql = "select count(*) from USER where ID = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
