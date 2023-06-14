@@ -412,3 +412,11 @@ Wrong user name or password [28000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 21 more
+2023-06-14 13:17:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SPOT" が見つかりません
+Table "SPOT" not found; SQL statement:
+select * from SPOT WHERE DATE LIKE ? AND GENRE LIKE ? AND NAME LIKE ? AND ADDRESS LIKE ? AND REMARKS LIKE ? [42102-199]
+2023-06-14 13:19:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SPOT" が見つかりません
+Table "SPOT" not found; SQL statement:
+select * from SPOT WHERE DATE LIKE ? AND GENRE LIKE ? AND NAME LIKE ? AND ADDRESS LIKE ? AND REMARKS LIKE ? [42102-199]
