@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+   <h2>ログイン</h2>
+   <form method="POST" action="/f2project/confirmServlet">
+    <table>
+      <tr>
+        <td>
+          <label>ID<br>
+          <input type="text" name="ID">
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label>パスワード<br>
+          <input type="password" name="PW">
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label>秘密の質問<br>
+          <select name="question">
+          	<option>しつもん１</option>
+          	<option>しつもん２</option>
+          	<option>しつもん３</option>
+          </select>
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label>回答<br>
+          <input type="text" name="ANSWER">
+          </label>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="regist" value="確認画面へ">
+          <input type="reset" name="reset" value="リセット">
+        <td>
+      </tr>
+    </table>
+    </form>
+</body>
+</html>

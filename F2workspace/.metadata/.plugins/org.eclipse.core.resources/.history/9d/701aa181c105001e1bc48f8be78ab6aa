@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+   <form method="POST" action="/f2project/LoginServlet">
+   <h1>登録完了</h1>
+   <input type="submit" value="ログイン画面へ">
+    </form>
+</body>
+</html>
