@@ -19,11 +19,11 @@
 	<nav id="g-nav2">
 		<div id="g-nav-list2">
 			<ul>
-				<li><a href="MapServlet_test">マップ</a></li>
-				<li><a href="ListServlet">リスト</a></li>
-				<li><a href="#">称号</a></li>
-				<li><a href="#">ストーリー</a></li>
-				<li><a href="#">使い方</a></li>
+				<li><a href="MapServlet">マップ</a></li>
+				<li><a href="listServlet">リスト</a></li>
+				<li><a href="titleServlet">称号</a></li>
+				<li><a href="storyServlet">ストーリー</a></li>
+				<li><a href="usageServlet">使い方</a></li>
 			</ul>
 		</div>
 	</nav>
