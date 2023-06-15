@@ -6,6 +6,7 @@
 			<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 			<link rel="stylesheet" href="css/style.css">
 			<meta name="viewport" content="width=device-width">
+			<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 			<title>
 				memoly
 			</title>
@@ -16,7 +17,25 @@
 		</div>
 			<nav id="g-nav1">
 				<div id="g-nav-list1">
-					<p>スポット登録画面</p>
+					<p>スポット名</p>
+					<input type="text" name="Spot_name">
+					<p>ジャンル</p>
+					<input type="radio" name="genre" value="1"><img src="img/memoryicon.png" alt="メモリーアイコン" width="24px" height="24px">
+					<input type="radio" name="genre" value="2"><img src="img/foodicon.png" alt="フードアイコン" width="24px" height="24px">
+					<input type="radio" name="genre" value="3"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="24px" height="24px">
+					<input type="radio" name="genre" value="4"><img src="img/othericon.png" alt="その他アイコン" width="24px" height="24px">
+				<p>画像</p>
+				<div>
+    				<div>
+      					<input type="file" name="test">
+    				</div>
+    				<div>
+      					<input type="submit" value="送信する">
+    				</div>
+				<p>備考</p>
+				<textarea name="Spot_remarks"></textarea >
+				</div>
+				<p><input type="button" value="登録" ></p>
 				</div>
 			</nav>
 		<div class="openbtn2">
@@ -39,7 +58,13 @@
 			2sjp" width="390" height="844" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer
 			-when-downgrade"></iframe>
 			</div>
-			<input class="buttontest" type="button" value="ボタン">
+			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
+
+
+			<div class = "search_container">
+			<input type="text" size="25" placeholder="キーワード検索">
+ 			<input type="submit" value="&#xf002">
+ 			</div>
 		<!--</div>-->
 		</body>
 		<script>
