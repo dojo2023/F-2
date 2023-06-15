@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 </head>
 <body>
-<!-- <h2>PWリセット</h2> -->
 <form id="reset_form" method="POST" action="/f2project/resetServlet">
 
   <table>

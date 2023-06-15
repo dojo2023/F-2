@@ -1,10 +1,15 @@
 @charset "UTF-8";
+
 html {
 	overflow: hidden;
 	border: solid;
-	height: 844px;
 	width: 390px;
 	margin: 0 auto;
+}
+
+body {
+	text-align: center;
+	margin-left: 25%;
 }
 #back_img, #back_rgba {
 	z-index: -1;
@@ -13,6 +18,9 @@ html {
 	left: 445px;
 	width: 390px;
 	height: 844px;
+}
+#login_body {
+	background-image: url(/f2project/img/back-img3.png);
 }
 #back_img {
 	background-image: url(/f2project/img/back-img2.png);
@@ -31,30 +39,44 @@ html {
 	background: rgba(0, 0, 128, 0.3);
 }
 
+label {
+  display: block;
+  background: #808080;
+  border-radius: 5px;
+  font-weight: bold;
+  text-indent: 1%;
+  margin-top: 10px;
+  padding-top: 5px;
+}
 body {
 	text-align: center;
 	margin-left: 16%;
 }
 
 h1 {
-	position: fixed;
 	z-index: 100;
 	width: 189px;
 	height: 241px;
+	top: 20px;
 	top: 30px;
 }
 /*
 #circle {
 	position: fixed;
 	z-index: 50;
+	top: 20px;
+	background: white;
 	top: 10px;
 	background: XXX;
 	opacity: 0.3;
     border-radius: 50%;
+    width: 249px;
+    height: 281px;
     width: 220px;
     height: 220px;
     color: #fff;
     font-size: 52px;
+    margin-left: -30px;
     margin-left: -15px;
 }
 */
@@ -73,8 +95,13 @@ h2 {
 	margin: 290px -10px 0 -40px;
 	padding: 35px 10px 5px 10px;
 }
+
 #login_form {
+	margin-top: 320px;
 	margin-left: -2.5px;
+}
+#regist_text, #reset_text {
+	width: 200px;
 }
 #regist_form, #reset_form {
 	margin: 0 -10px 0 -30px;
@@ -112,6 +139,9 @@ label {
 	height: 100px;
 	margin: 50px 0 20px 0;
 }
+#id, #pw, #q, #ans {
+	width: 200px;
+}
 .regist_text, .confirm_text{
 	text-align: left;
 	border: solid 3px #000;
@@ -125,17 +155,24 @@ label {
 	width: 250px;
 }
 #q {
-	width: 250px;
+	width: 264px;
 }
 
 #login, #reset, #check, #submit, #back {
+	width: 90px;
+	margin: 10px 0 -10px 0;
 	width: 110px;
 	margin: 10px 0 -5px 0;
 	font-weight: bold;
 	border-radius: 30px;
 }
 #reset, #back {
+	margin-left: 15px;
 	margin-left: 24px;
+}
+#new_regist, #new_pw {
+	width: 200px;
+	margin-left: -80px;
 }
 #question_back {
 	position: fixed;
@@ -143,12 +180,18 @@ label {
 	top: 340px;
 	left: 655px;
 }
+#go_login {
+	margin: 100px 0 0 40px;
+}
 input[type="text"], input[type="password"], #q {
 	padding: 5px;
 	border-top: none;
 	border-left: none;
 	border-right: none;
 }
+/*
+input[type="text"] {
+	width: 5px;
 input[type="text"]:focus, input[type="password"]:focus {
 	outline: none;
 	border: none;
@@ -159,6 +202,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 	background-color: #F5F5F5;
 	outline-style: inset;
 }
+*/
 #newpw_regist, #go_login {
 	margin: 100px 0 0 20px;
 	width: 150px;

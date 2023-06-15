@@ -1,22 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>新規登録</title>
+<title></title>
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 </head>
 <body>
-<!-- <h2>ログイン</h2> -->
-   <form method="POST" action="/f2project/confirmServlet">
+   <form id="regist_form" method="POST" action="/f2project/confirmServlet">
     <table>
       <tr>
         <td>
-          <div class="regist_text">
-          IDは8～20文字<br>
-          PWは8～20文字の英数字<br>
-		  秘密の質問はパスワード<br>
-		  お忘れの際にご利用になります。
+          <div id="regist_text" style="border: solid">
+            &nbsp;&nbsp;IDは8～20文字<br>
+          	&nbsp;&nbsp;PWは8～20文字の英数字<br>
+			&nbsp;&nbsp;秘密の質問はパスワードお忘れの際に<br>
+			&nbsp;&nbsp;ご利用になります。
           </div>
         </td>
       </tr>
@@ -62,13 +61,6 @@
         <td colspan="2">
           <input id="check" type="submit" name="check" value="確認画面へ">
           <input id="reset" type="reset" name="reset" value="リセット">
-        <td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <a href="/f2project/LoginServlet">
-          <input id="back" type="button" name="back" value="戻る" style="text-align:0%">
-          </a>
         <td>
       </tr>
     </table>
