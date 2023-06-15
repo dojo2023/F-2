@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!DOCTYPE html>
 <html class="reset_back-color">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>新しいPWを入力してください</title>
+<link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 </head>
 <body>
 <!-- <h2>新しいパスワードを入力してください</h2> -->
@@ -13,7 +13,9 @@
   <table>
       <tr>
         <td>
-          <input id="reset_text" type="text" value="新しいパスワードを入力してください。" readonly>
+          <div class="newpw_text">
+          新しいパスワードを入力してください。
+          </div>
         </td>
       </tr>
 

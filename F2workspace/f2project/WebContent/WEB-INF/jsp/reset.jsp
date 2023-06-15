@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 <!doctype html>
 <html class="reset_back-color">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>PWリセット</title>
+<link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 </head>
 <body>
 <!-- <h2>PWリセット</h2> -->
@@ -13,7 +13,9 @@
   <table>
       <tr>
         <td>
-          <input id="reset_text" type="text" value="パスワードをリセットするアカウントのIDを入力してください。" readonly>
+          <div class="reset_text">
+          パスワードをリセットするアカウントのIDを入力してください。
+          </div>
         </td>
       </tr>
 

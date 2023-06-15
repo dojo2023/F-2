@@ -5,7 +5,7 @@
 </div>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>ログイン</title>
 <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
 </head>
 <body>
