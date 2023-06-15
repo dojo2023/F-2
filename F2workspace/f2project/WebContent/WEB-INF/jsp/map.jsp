@@ -17,25 +17,20 @@
 		</div>
 			<nav id="g-nav1">
 				<div id="g-nav-list1">
-					<p>スポット名</p>
-					<input type="text" name="Spot_name">
-					<p>ジャンル</p>
-					<input type="radio" name="genre" value="1"><img src="img/memoryicon.png" alt="メモリーアイコン" width="24px" height="24px">
-					<input type="radio" name="genre" value="2"><img src="img/foodicon.png" alt="フードアイコン" width="24px" height="24px">
-					<input type="radio" name="genre" value="3"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="24px" height="24px">
-					<input type="radio" name="genre" value="4"><img src="img/othericon.png" alt="その他アイコン" width="24px" height="24px">
-				<p>画像</p>
-				<div>
-    				<div>
-      					<input type="file" name="test">
-    				</div>
-    				<div>
-      					<input type="submit" value="送信する">
-    				</div>
-				<p>備考</p>
-				<textarea name="Spot_remarks"></textarea >
-				</div>
-				<p><input type="button" value="登録" ></p>
+				<ul>
+					<li class="left">スポット名</li>
+					<li id="spotname"><input type="text" name="spotname"></li>
+					<li class="left">ジャンル</li>
+					<li class="center"><input type="radio" name="genre" value="1"><img src="img/memoryicon.png" alt="メモリーアイコン" width="30px" height="30px">
+					<input type="radio" name="genre" value="2"><img src="img/foodicon.png" alt="フードアイコン" width="30px" height="30px">
+					<input type="radio" name="genre" value="3"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="30px" height="30px">
+					<input type="radio" name="genre" value="4"><img src="img/othericon.png" alt="その他アイコン" width="30px" height="30px"></li>
+					<li class="left">画像</li>
+      				<li class="center"><input type="file" name="test"><input type="submit" value="送信する"></li>
+					<li class="left">備考</li>
+					<li id="spotremarks"><textarea name="spotremarks"></textarea></li>
+					<li class="right"><input type="button" value="登録" ></li>
+				</ul>
 				</div>
 			</nav>
 		<div class="openbtn2">
@@ -59,6 +54,12 @@
 			-when-downgrade"></iframe>
 			</div>
 			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
+			<div id="characterbtn">
+			<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
+			</div>
+			<div class="balloon">
+  				<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
+			</div>
 
 
 			<div class = "search_container">
@@ -87,5 +88,13 @@
   $(".openbtn2").removeClass('active');//ボタンの activeクラスを除去し
   $("#g-nav2").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
+
+  $("#characterbtn").click(function () {//ボタンがクリックされたら
+	  $(".balloon").toggleClass('active');//balloonに activeクラスを付与し
+	});
+
+  $(".balloon").click(function () {//ボタンがクリックされたら
+	  $(this).removeClass('active');//balloonの activeクラスを除去し
+	});
 </script>
 </html>

@@ -171,7 +171,7 @@ p{
 /*========= ナビゲーションのためのCSS ===============*/
 #g-nav1{
   position:fixed;
-  z-index: 1000;
+  z-index: 9996;
   bottom:-100%;
   left:0;
   width:100%;
@@ -181,7 +181,7 @@ p{
 }
 #g-nav2{
   position:fixed;
-  z-index: 999;
+  z-index: 9996;
   left:-100%;
   width:40%;
   height: 100%;
@@ -291,9 +291,35 @@ p{
 h1{
   font-size:1.2rem;
 }
+#g-nav-list1 {
+  padding-top: 30px;
+}
+#g-nav-list1 ul{
+	padding-left: 60px;
+	padding-right: 60px;
+}
+#g-nav-list1 li.center{
+	list-style: none;
+	text-align: center;
+}
+#g-nav-list1 li.left{
+	list-style: none;
+	text-align: left;
+}
+#g-nav-list1 li.right{
+	list-style: none;
+	text-align: right;
+}
+#spotname{
+	list-style: none;
+}
+
+#spotremarks{
+	list-style: none;
+}
 #g-nav2 ul {
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
   top:10%;
   left:5%;
 }
@@ -322,11 +348,76 @@ h1{
     right: 10px;
     cursor: pointer;
 }
+
+/* キャラクター */
+#characterbtn{
+  position: fixed;
+  z-index: 9980;
+  bottom:10px;
+  right: 10px;
+  cursor: pointer;
+  width: 120px;
+  height:120px;
+}
+.character {
+	position: fixed;
+	z-index: 9979;
+    bottom:10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.balloon{
+	display: none;
+}
+
+.balloon.active {
+  position: fixed;
+  z-index: 9999;
+  bottom:10px;
+  right: 140px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  text-align: center;
+  color: #FFF;
+  font-size: 10px;
+  font-weight: bold;
+  background: #ff8e9d;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.balloon.active:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #ff8e9d;
+  z-index: 9999;
+}
+.message{
+	background-color: #ff8e9d;
+	color: #FFF;
+	resize: none;
+	width: 220px;
+	height: 50px;
+	border: none;
+	outline: none;
+	font-size: 12px;
+	font-weight: bold;
+	vertical-align: center;
+}
 /* 検索バー */
 .search_container{
   box-sizing: border-box;
   position: fixed;
-  z-index: 9999;
+  z-index: 9995;
   top:18px;
   right: 80px;
   border: 1px solid #999;
