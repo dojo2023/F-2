@@ -3,7 +3,7 @@
 <html class="regist_back-color">
   <head>
     <meta charset="UTF-8">
-    <title>memoly</title>
+    <title>登録内容確認画面</title>
     <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
     <meta name="viewport" content="width=device-width">
   </head>

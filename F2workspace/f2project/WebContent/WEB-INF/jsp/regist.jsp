@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>memoly</title>
+    <title>新規登録画面</title>
     <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
     <meta name="viewport" content="width=device-width">
   </head>
@@ -64,6 +64,13 @@
               <td colspan="2">
                 <input id="check" type="submit" name="check" value="確認画面へ">
                 <input id="reset" type="reset" name="reset" value="リセット">
+              <td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="/f2project/LoginServlet">
+                  <input id="backa" type="button" name="back" value="戻る" style="text-align: center;">
+                </a>
               <td>
             </tr>
           </table>

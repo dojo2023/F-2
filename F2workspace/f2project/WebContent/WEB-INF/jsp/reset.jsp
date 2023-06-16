@@ -3,7 +3,7 @@
 <html class="reset_back-color">
   <head>
     <meta charset="UTF-8">
-    <title>PWリセット</title>
+    <title>パスワードリセット画面</title>
     <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
     <meta name="viewport" content="width=device-width">
   </head>

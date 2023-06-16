@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.IdpwDAO;
+import dao.PWresetDAO;
 import model.Idpw;
 import model.Result;
 
@@ -25,21 +26,34 @@ public class completionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
-		String pw = request.getParameter("PW");
-		String answer = request.getParameter("ANSWER");
 
-		IdpwDAO idao = new IdpwDAO();
-		if (idao.insert(new Idpw(id,pw,answer))) {
-			request.setAttribute("result",
-			new Result("登録が成功しました", "登録しました。", "/f2project/LoginServlet"));
+		if (request.getParameter("pw_regist") != null) {
+			PWresetDAO pdao = new PWresetDAO();
+			String pw = request.getParameter("PW");
+			if (pdao.PWupdate(pw)) {
+				request.setAttribute("result",
+				new Result("パスワード再登録成功画面", "パスワードを再登録しました。", "/f2project/LoginServlet", "ログイン"));
+			}
+			else {
+				request.setAttribute("result",
+				new Result("パスワード再登録失敗画面", "パスワードを再登録できませんでした。", "/f2project/resetServlet", "パスワードリセット"));
+			}
 		}
-		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録に失敗しました", "登録できませんでした。", "/f2project/registServlet"));
+		else if (request.getParameter("regist") != null) {
+			IdpwDAO idao = new IdpwDAO();
+			String id = request.getParameter("ID");
+			String pw = request.getParameter("PW");
+			String answer = request.getParameter("ANSWER");
+			if (idao.insert(new Idpw(id,pw,answer))) {
+				request.setAttribute("result",
+				new Result("新規登録完了画面", "登録しました。", "/f2project/LoginServlet", "ログイン"));
+			}
+			else {												// 登録失敗
+				request.setAttribute("result",
+				new Result("新規登録失敗画面", "登録できませんでした。", "/f2project/registServlet", "新規登録"));
+			}
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/completion.jsp");
 		dispatcher.forward(request, response);
 	}
-
 }

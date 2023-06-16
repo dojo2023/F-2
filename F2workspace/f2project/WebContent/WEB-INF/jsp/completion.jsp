@@ -3,7 +3,7 @@
 <html class="completion_back-color">
   <head>
     <meta charset="UTF-8">
-    <title>登録完了</title>
+    <title>${result.title}</title>
     <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
     <meta name="viewport" content="width=device-width">
   </head>
@@ -16,7 +16,7 @@
             <tr>
               <td>
 	            <div class="completion_text">
-                  &nbsp;&nbsp;登録が完了いたしました
+                  &nbsp;&nbsp;${result.message}
                 </div>
 	          </td>
             </tr>
@@ -24,7 +24,7 @@
             <tr>
               <td>
                 <a href="${result.backTo}">
-		          <input id="go_login" type="button" value="ログイン画面へ">
+		          <input id="go_login" type="button" value="${result.backTo_name}画面へ">
 	            </a>
 	          </td>
             </tr>

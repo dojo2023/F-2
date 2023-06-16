@@ -3,7 +3,7 @@
 <html class="reset_back-color">
   <head>
     <meta charset="UTF-8">
-    <title>質問を入力してください</title>
+    <title>秘密の質問回答画面</title>
     <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
     <meta name="viewport" content="width=device-width">
   </head>

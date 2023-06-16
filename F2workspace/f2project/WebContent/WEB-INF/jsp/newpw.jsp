@@ -3,7 +3,7 @@
 <html class="reset_back-color">
   <head>
     <meta charset="UTF-8">
-    <title>新しいPWを入力してください</title>
+    <title>新規パスワード入力画面</title>
     <link rel="stylesheet" type="text/css" href="/f2project/css/user.css">
     <meta name="viewport" content="width=device-width">
   </head>
@@ -39,7 +39,7 @@
 
             <tr>
               <td>
-                <input id="submit" type="submit" name="regist" value="登録" formaction="/f2project/newpwServlet">
+                <input id="submit" type="submit" name="pw_regist" value="登録" formaction="/f2project/completionServlet">
                 <input id="back" type="submit" name="back" value="戻る" formaction="/f2project/questionServlet">
               </td>
             </tr>
@@ -53,13 +53,14 @@
   document.getElementById('reset_form').onsubmit = function(event) {
 	  const PW = document.getElementById('reset_form').PW.value;
 	  const PW2 = document.getElementById('reset_form').PW2.value;
-	  if(PW != PW2) {
-	      alert('パスワードが一致しません。');
-  	      event.preventDefault();
-	  } else if ((PW == null) && (PW2 == null)) {
+
+/*	  if (((PW.equals(null)) && (PW2.equalsa(null))) {
 		  alert('パスワードが入力されていません。');
 		  event.preventDefault();
-	  }
+	  } else */if (PW != PW2) {
+		  alert('パスワードが一致しません。');
+  	      event.preventDefault();
+  	  }
   }
   </script>
   </body>
