@@ -49,17 +49,14 @@
             </tr>
           </table>
         </form>
-<!--
-        <form method="POST" action="/f2project/resetServlet">
-          <table>
-            <tr>
-              <td>
-                <input id="reset_back" type="button" name="back" value="戻る">
-              </td>
-            </tr>
-          </table>
-        </form>
- -->      </div>
+      </div>
     </div>
+  <script>
+  'use strict';
+
+  if (<%= request.getAttribute("answer") != null %>) {
+	  alert('秘密の質問の回答が違います。');
+  }
+  </script>
   </body>
 </html>

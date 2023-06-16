@@ -6,7 +6,7 @@
 	top: 0%;
 	left:0%;
 	z-index: 998;
-	background-color: #2222ff;
+	background-color: rgb(255, 189, 234);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -14,13 +14,14 @@
 
 body{
 	margin: 0px;
+	background-image: url(/f2project/img/kumo2.png);
+	background-attachment: scroll;
 }
 
 .main{
 	position: absolute;
 	width: 390px;
 	height: 844px;
-	background-color: #f0fff0;
 }
 
 .centertable{
@@ -171,29 +172,32 @@ p{
 /*========= ナビゲーションのためのCSS ===============*/
 #g-nav1{
   position:fixed;
-  z-index: 9996;
+  z-index: 9997;
   bottom:-100%;
   left:0;
   width:100%;
   height: 100vh;
-  background:#999;
+  background:#fff9ff;
   transition: all 0.5s;
 }
 #g-nav2{
   position:fixed;
-  z-index: 9996;
+  z-index: 9998;
   left:-100%;
   width:40%;
   height: 100%;
-  background:#999;
+  background: #acacff;
   transition: all 0.5s;
+  opacity: 0.9;
 }
 /*アクティブクラスがついたら位置を0に*/
 #g-nav1.panelactive{
     bottom: -70px;
+    z-index: 9997;
 }
 #g-nav2.panelactive{
     left: 0;
+    z-index: 9998;
 }
 
 
@@ -305,10 +309,16 @@ h1{
 #g-nav-list1 li.left{
 	list-style: none;
 	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 10px;
 }
 #g-nav-list1 li.right{
 	list-style: none;
 	text-align: right;
+}
+#g-nav-list1 li.null{
+	list-style: none;
 }
 #spotname{
 	list-style: none;
@@ -316,6 +326,10 @@ h1{
 
 #spotremarks{
 	list-style: none;
+}
+
+#area{
+	resize: none;
 }
 #g-nav2 ul {
   position: absolute;
@@ -329,7 +343,7 @@ h1{
 }
 
 #g-nav2 li a{
-  color: #333;
+  color: #fff;
   text-decoration: none;
   padding:10px;
   display: block;
@@ -352,7 +366,7 @@ h1{
 /* キャラクター */
 #characterbtn{
   position: fixed;
-  z-index: 9980;
+  z-index: 9996;
   bottom:10px;
   right: 10px;
   cursor: pointer;
@@ -361,7 +375,7 @@ h1{
 }
 .character {
 	position: fixed;
-	z-index: 9979;
+	z-index: 9996;
     bottom:10px;
     right: 10px;
     cursor: pointer;
@@ -373,7 +387,7 @@ h1{
 
 .balloon.active {
   position: fixed;
-  z-index: 9999;
+  z-index: 9996;
   bottom:10px;
   right: 140px;
   cursor: pointer;
@@ -399,7 +413,7 @@ h1{
   margin-top: -15px;
   border: 15px solid transparent;
   border-left: 15px solid #ff8e9d;
-  z-index: 9999;
+  z-index: 9996;
 }
 .message{
 	background-color: #ff8e9d;
@@ -417,7 +431,7 @@ h1{
 .search_container{
   box-sizing: border-box;
   position: fixed;
-  z-index: 9995;
+  z-index: 9997;
   top:18px;
   right: 80px;
   border: 1px solid #999;

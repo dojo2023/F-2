@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PWresetDAO;
+import model.Idpw;
 
 /**
  * Servlet implementation class questionServlet
@@ -27,21 +28,24 @@ public class questionServlet extends HttpServlet {
 		String answer = request.getParameter("ANSWER");
 
 		PWresetDAO pdao = new PWresetDAO();
-		if (pdao.AnsExist(answer)) {
+		if (pdao.AnsExist(new Idpw("", "", answer))) {
 			if(question.equals("1")) {
-				question="飼っていたペットの名前は？";
+				question="しつもん1";
 			}
 			if(question.equals("2")) {
-				question="通っていた小学校の名前は？";
+				question="しつもん2";
 			}
 			if(question.equals("3")) {
-				question="母親の旧姓は？";
+					question="しつもん3";
 			}
 
 			request.setAttribute("check_question", question);
 			request.setAttribute("check_answer", answer);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newpw.jsp");
 			dispatcher.forward(request, response);
+		}
+		else if (!pdao.AnsExist(new Idpw("", "", answer))) {
+			request.setAttribute("answer", answer);
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/question.jsp");
 		dispatcher.forward(request, response);

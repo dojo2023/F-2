@@ -19,16 +19,30 @@
 				<div id="g-nav-list1">
 				<ul>
 					<li class="left">スポット名</li>
-					<li id="spotname"><input type="text" name="spotname"></li>
+					<li id="spotname"><input type="text" size= "36" name="spotname"></li>
+				</ul>
+				<br>
+				<ul>
 					<li class="left">ジャンル</li>
-					<li class="center"><input type="radio" name="genre" value="1"><img src="img/memoryicon.png" alt="メモリーアイコン" width="30px" height="30px">
-					<input type="radio" name="genre" value="2"><img src="img/foodicon.png" alt="フードアイコン" width="30px" height="30px">
-					<input type="radio" name="genre" value="3"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="30px" height="30px">
-					<input type="radio" name="genre" value="4"><img src="img/othericon.png" alt="その他アイコン" width="30px" height="30px"></li>
+					<li class="center">
+						<input type="radio" name="genre" value="img/memoryicon"><img src="img/memoryicon.png" alt="メモリーアイコン" width="100px" height="100px">
+						<input type="radio" name="genre" value="img/foodicon"><img src="img/foodicon.png" alt="フードアイコン" width="100px" height="100px">
+						<input type="radio" name="genre" value="img/shoppingicon"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="100px" height="100px">
+						<input type="radio" name="genre" value="img/othericon"><img src="img/othericon.png" alt="その他アイコン" width="100px" height="100px">
+					</li>
+				</ul>
+				<br>
+				<ul>
 					<li class="left">画像</li>
       				<li class="center"><input type="file" name="test"><input type="submit" value="送信する"></li>
+				</ul>
+				<br>
+				<ul>
 					<li class="left">備考</li>
-					<li id="spotremarks"><textarea name="spotremarks"></textarea></li>
+					<li id="spotremarks"><textarea id="area" cols="37" rows="5" maxlength="100" name="spotremarks"></textarea></li>
+				</ul>
+				<br>
+				<ul>
 					<li class="right"><input type="button" value="登録" ></li>
 				</ul>
 				</div>

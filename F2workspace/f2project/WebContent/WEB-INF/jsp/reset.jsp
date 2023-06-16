@@ -41,5 +41,21 @@
         </form>
       </div>
     </div>
+  <script>
+  'use strict';
+
+  document.getElementById('reset_form').onsubmit = function(event) {
+	  var id = document.getElementById('reset_form').ID.value;
+
+	  if ((id.length < 8) || (id.length > 20)) {
+		  alert('IDは8字以上20字以内で入力してください。');
+		  event.preventDefault();
+	  }
+  }
+
+  if (<%= request.getAttribute("id") != null %>) {
+	  alert('入力されたIDは存在しません。');
+  }
+  </script>
   </body>
 </html>

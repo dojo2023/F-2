@@ -37,6 +37,7 @@
 <c:forEach var="e" items="${cardList}" >
 	<tr>
 		<td><img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"></td>
+		<!-- //${genre}.png -->
 		<th><span>${e.name}</span></th>
 		<td><img src="img/destinationicon.png" alt="アイコン" width="18px" height="24px"></td>
 	</tr>

@@ -11,7 +11,7 @@
   <body>
     <div id="main" class="reset_main">
       <div id="all_form">
-        <form id="reset_form" method="POST">
+        <form id="reset_form" name="reset_form" method="POST">
           <table>
             <tr>
               <td>
@@ -24,7 +24,7 @@
             <tr>
               <td>
                 <label>&nbsp;&nbsp;新しいパスワードを入力<br>
-                  <input id="pw" class="reset_label" type="password" value="${check_pw}" name="PW" placeholder="例）f2password" maxlength="20">
+                  <input id="pw" class="reset_label" type="password" name="PW" placeholder="例）f2password" maxlength="20">
                 </label>
               </td>
             </tr>
@@ -32,7 +32,7 @@
             <tr>
               <td>
                 <label>&nbsp;&nbsp;パスワードの確認入力<br>
-                  <input id="pw" class="reset_label" type="password" name="PW2" maxlength="20">
+                  <input id="pw2" class="reset_label" type="password" name="PW2" maxlength="20">
                 </label>
               </td>
             </tr>
@@ -51,15 +51,20 @@
   'use strict';
 
   document.getElementById('reset_form').onsubmit = function(event) {
-	  const PW = document.getElementById('reset_form').PW.value;
-	  const PW2 = document.getElementById('reset_form').PW2.value;
+	  const PW = document.forms['reset_form'].elements['PW'].value;
+	  const PW2 = document.forms['reset_form'].elements['PW2'].value;
 
-/*	  if (((PW.equals(null)) && (PW2.equalsa(null))) {
-		  alert('パスワードが入力されていません。');
+	  if ((pw.length < 8) || (pw.length > 20)) {
+		  alert('ID,PWは8字以上20字以内で入力してください。');
 		  event.preventDefault();
-	  } else */if (PW != PW2) {
+	  }
+
+	  if (PW !== PW2) {
 		  alert('パスワードが一致しません。');
   	      event.preventDefault();
+  	  } else if (!PW || !PW2) {
+  		alert('パスワードが入力されていません。');
+  		event.preventDefault();
   	  }
   }
   </script>

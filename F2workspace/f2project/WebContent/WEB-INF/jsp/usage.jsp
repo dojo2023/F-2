@@ -68,6 +68,12 @@
                         </div>
                     </div>
                 </div>
+<div id="characterbtn">
+	<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
+</div>
+<div class="balloon">
+	<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
+</div>
 </body>
 <script>
   $(".openbtn1").click(function () {//ボタンがクリックされたら
@@ -89,5 +95,13 @@
   $(".openbtn2").removeClass('active');//ボタンの activeクラスを除去し
   $("#g-nav2").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
+
+  $("#characterbtn").click(function () {//ボタンがクリックされたら
+	  $(".balloon").toggleClass('active');//balloonに activeクラスを付与し
+	});
+
+  $(".balloon").click(function () {//ボタンがクリックされたら
+	  $(this).removeClass('active');//balloonの activeクラスを除去し
+	});
 </script>
 </html>

@@ -21,14 +21,16 @@ html, body {
 .login_main {
 	background-image: url(/f2project/img/back-img4.png);
 }
-/*
 .regist_main {
 	background-image: url(/f2project/img/back-img3.png);
 }
 .reset_main {
 	background-image: url(/f2project/img/back-img2.png);
 }
-*/
+.completion_main {
+	background-image: url(/f2project/img/back-img5.png);
+}
+
 
 /* ロゴのデザイン */
 h1 {

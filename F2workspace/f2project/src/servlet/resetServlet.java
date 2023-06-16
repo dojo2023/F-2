@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PWresetDAO;
+import model.Idpw;
 
 /**
  * Servlet implementation class resetServlet
@@ -27,10 +28,13 @@ public class resetServlet extends HttpServlet {
 			String id = request.getParameter("ID");
 
 			PWresetDAO pdao = new PWresetDAO();
-			if (pdao.IdExist(id)) {
-				request.setAttribute("check_id", id);
+			if(pdao.IdExist(new Idpw(id, "", ""))) {
+//				request.setAttribute("check_id", id);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/question.jsp");
 				dispatcher.forward(request, response);
+			}
+			else if(!pdao.IdExist(new Idpw(id, "", ""))) {
+				request.setAttribute("id", id);
 			}
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reset.jsp");

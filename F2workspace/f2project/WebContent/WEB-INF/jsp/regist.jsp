@@ -69,7 +69,7 @@
             <tr>
               <td colspan="2">
                 <a href="/f2project/LoginServlet">
-                  <input id="backa" type="button" name="back" value="戻る" style="text-align: center;">
+                  <input id="backa" type="button" name="back" value="戻る">
                 </a>
               <td>
             </tr>
@@ -77,5 +77,23 @@
        </form>
       </div>
     </div>
+  <script>
+  'use strict';
+
+  document.getElementById('regist_form').onsubmit = function(event) {
+	  var id = document.getElementById('regist_form').ID.value;
+	  var pw = document.getElementById('regist_form').PW.value;
+
+	  if (((id.length < 8) || (id.length > 20)) || ((pw.length < 8) || (pw.length > 20))) {
+		  alert('ID,PWは8字以上20字以内で入力してください。');
+		  event.preventDefault();
+	  }
+  }
+
+  if (<%= request.getAttribute("check_id") != null %>) {
+	  alert('入力されたIDが他に存在しています。');
+	  event.preventDefault();
+  }
+  </script>
   </body>
 </html>

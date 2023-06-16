@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PWresetDAO;
-import model.Idpw;
 import model.Result;
 
 /**
@@ -34,10 +33,11 @@ public class newpwServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String pw = request.getParameter("PW");
 
-		PWresetDAO idao = new PWresetDAO();
-		if (idao.PWupdate(new Idpw("",pw,""))) {
+		PWresetDAO pdao = new PWresetDAO();
+		if (pdao.PWupdate(pw)) {
 			request.setAttribute("result",
-			new Result("", "", "/f2project/LoginServlet"));
+			new Result("パスワード再登録完了画面", "パスワードのリセットに失敗しました。", "/f2project/resetServlet", "新規パスワード入力"));
+			response.sendRedirect("/f2project/completionServlet");
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/completion.jsp");
 		dispatcher.forward(request, response);
