@@ -26,24 +26,19 @@ public class completionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("ID");
+		String pw = request.getParameter("PW");
+		String answer = request.getParameter("ANSWER");
 
 		if (request.getParameter("pw_regist") != null) {
 			PWresetDAO pdao = new PWresetDAO();
-			String pw = request.getParameter("PW");
-			if (pdao.PWupdate(new Idpw("", pw, ""))) {
-				request.setAttribute("result",
-				new Result("パスワード再登録失敗", "パスワードを再登録できませんでした。", "/f2project/resetServlet", "パスワードリセット"));
-			}
-			else {
+			if (pdao.PWupdate(pw, id)) {
 				request.setAttribute("result",
 				new Result("パスワード再登録成功", "パスワードを再登録しました。", "/f2project/LoginServlet", "ログイン"));
 			}
 		}
 		else if (request.getParameter("regist") != null) {
 			IdpwDAO idao = new IdpwDAO();
-			String id = request.getParameter("ID");
-			String pw = request.getParameter("PW");
-			String answer = request.getParameter("ANSWER");
 			if (idao.insert(new Idpw(id,pw,answer))) {
 				request.setAttribute("result",
 				new Result("新規登録完了", "登録しました。", "/f2project/LoginServlet", "ログイン"));

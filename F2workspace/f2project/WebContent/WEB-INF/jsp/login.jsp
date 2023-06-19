@@ -66,5 +66,18 @@
         </div>
       </div>
     </div>
+  <script>
+  'use strict'
+
+  document.getElementById('login_form').onsubmit = function(event) {
+	  const ID = document.forms['login_form'].elements['ID'].value;
+	  const PW = document.forms['login_form'].elements['PW'].value;
+
+	  if (((ID.length < 8) || (ID.length > 20)) && ((ID.length < 8) || (ID.length > 20))) {
+		  alert('ID,PWは8字以上20字以内で入力してください。');
+		  event.preventDefault();
+	  }
+  }
+  </script>
   </body>
 </html>

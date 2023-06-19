@@ -11,7 +11,7 @@
   <body>
     <div id="main" class="reset_main">
       <div id="all_form">
-        <form id="reset_form" name="reset_form" method="POST">
+        <form id="reset_form" name="reset_form">
           <table>
             <tr>
               <td>
@@ -36,36 +36,45 @@
                 </label>
               </td>
             </tr>
-
-            <tr>
-              <td>
-                <input id="submit" type="submit" name="pw_regist" value="登録" formaction="/f2project/completionServlet">
-                <input id="back" type="submit" name="back" value="戻る" formaction="/f2project/questionServlet">
-              </td>
-            </tr>
+            <input type="hidden" name="ID" value="${check_id}">
+            <input type="hidden" name="ANSWER" value="${check_answer}">
           </table>
         </form>
+
+        <table>
+          <tr>
+            <td>
+              <form id="submit_form" name="submit_form" method="POST" action="/f2project/completionServlet">
+                <input id="submit" type="submit" name="pw_regist" value="登録">
+              </form>
+
+              <form id="back_form" name="back_form" method="POST" action="/f2project/questionServlet">
+                <input id="back" type="submit" name="back" value="戻る">
+              </form>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   <script>
   'use strict';
 
-  document.getElementById('reset_form').onsubmit = function(event) {
-	  const PW = document.forms['reset_form'].elements['PW'].value;
-	  const PW2 = document.forms['reset_form'].elements['PW2'].value;
+  document.getElementById('submit_form').onsubmit = function(event) {
+		  const PW = document.forms['reset_form'].elements['PW'].value;
+		  const PW2 = document.forms['reset_form'].elements['PW2'].value;
 
-	  if ((pw.length < 8) || (pw.length > 20)) {
-		  alert('ID,PWは8字以上20字以内で入力してください。');
-		  event.preventDefault();
-	  }
+		  if ((PW.length < 8) || (PW2.length > 20)) {
+			  alert('ID,PWは8字以上20字以内で入力してください。');
+			  event.preventDefault();
+		  }
 
-	  if (PW !== PW2) {
-		  alert('パスワードが一致しません。');
-  	      event.preventDefault();
-  	  } else if (!PW || !PW2) {
-  		alert('パスワードが入力されていません。');
-  		event.preventDefault();
-  	  }
+		  if (PW !== PW2) {
+			  alert('パスワードが一致しません。');
+	  	      event.preventDefault();
+	  	  } else if (!PW || !PW2) {
+	  		alert('パスワードが入力されていません。');
+	  		event.preventDefault();
+	  	  }
   }
   </script>
   </body>

@@ -29,7 +29,7 @@ public class resetServlet extends HttpServlet {
 
 			PWresetDAO pdao = new PWresetDAO();
 			if(pdao.IdExist(new Idpw(id, "", ""))) {
-//				request.setAttribute("check_id", id);
+				request.setAttribute("check_id", id);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/question.jsp");
 				dispatcher.forward(request, response);
 			}

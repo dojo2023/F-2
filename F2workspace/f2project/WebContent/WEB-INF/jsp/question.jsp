@@ -41,22 +41,17 @@
               </td>
             </tr>
 
+            <input type="hidden" name="ID" value="${check_id}">
+
             <tr>
               <td>
                 <input id="submit" type="submit" name="next" value="次へ" formaction="/f2project/questionServlet">
                 <input id="back" type="submit" name="back" value="戻る" formaction="/f2project/resetServlet">
-             <td>
+              <td>
             </tr>
           </table>
         </form>
       </div>
     </div>
-  <script>
-  'use strict';
-
-  if (<%= request.getAttribute("answer") != null %>) {
-	  alert('秘密の質問の回答が違います。');
-  }
-  </script>
   </body>
 </html>

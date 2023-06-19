@@ -92,7 +92,7 @@
 
   if (<%= request.getAttribute("check_id") != null %>) {
 	  alert('入力されたIDが他に存在しています。');
-	  event.preventDefault();
+//	  event.preventDefault();
   }
   </script>
   </body>

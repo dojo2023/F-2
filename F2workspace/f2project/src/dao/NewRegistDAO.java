@@ -6,37 +6,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Idpw;
-
 public class NewRegistDAO {
-	public boolean AllExist(Idpw all) {
+	public boolean IdExist(String id) {
 		//処理を書く
 		Connection conn = null;
-		boolean all_check = false;
+		boolean id_check = false;
 		try {
 			Class.forName("org.h2.Driver");
-			conn = DriverManager.getConnection("jdbc:h2:C:/dojo6/F2workspace/data/F2Database", "f2", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
-			String sql = "select count(*) from USER where ID = ? AND PW = ? AND ANSWER = ?";
+			String sql = "select count(*) from USER where ID = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, all.getId());
-			pStmt.setString(2, all.getPw());
-			pStmt.setString(3, all.getAnswer());
+			pStmt.setString(1, id);
 
 			ResultSet rs = pStmt.executeQuery();
 
 			rs.next();
 			if (rs.getInt("count(*)") == 1) {
-				all_check = true;
+				id_check = true;
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			all_check = false;
+			id_check = false;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			all_check = false;
+			id_check = false;
 		}
 		finally {
 			// データベースを切断
@@ -46,10 +42,10 @@ public class NewRegistDAO {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					all_check = false;
+					id_check = false;
 				}
 			}
 		}
-		return all_check;
+		return id_check;
 	}
 }

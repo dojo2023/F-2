@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.NewRegistDAO;
-import model.Idpw;
 
 /**
  * Servlet implementation class confirmServlet
@@ -39,16 +38,16 @@ public class confirmServlet extends HttpServlet {
 			question="母親の旧姓は？";
 		}
 
+		NewRegistDAO ndao = new NewRegistDAO();
+		if (ndao.IdExist(id)) {
+			request.setAttribute("check_id", id);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist.jsp");
+			dispatcher.forward(request, response);
+		}
 		request.setAttribute("check_id", id);
 		request.setAttribute("check_pw", pw);
 		request.setAttribute("check_question", question);
 		request.setAttribute("check_answer", answer);
-
-		NewRegistDAO ndao = new NewRegistDAO();
-		if (!ndao.AllExist(new Idpw(id,pw,answer))) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist.jsp");
-			dispatcher.forward(request, response);
-		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/confirm.jsp");
 		dispatcher.forward(request, response);
 	}
