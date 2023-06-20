@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* ページの配置 */
 html, body {
 	margin: 0;
 	padding: 0;
@@ -13,24 +14,22 @@ html, body {
     height: 844px;
     width: 390px;
 }
-.login_main, .regist_main, .reset_main {
+.login_main, .regist_main, .reset_main, .completion_main {
     background-repeat: no-repeat;
     background-position: center;
 }
-
 .login_main {
-	background-image: url(/f2project/img/back-img4.png);
+	background-image: url(/f2project/img/login-back-img.png);
 }
 .regist_main {
-	background-image: url(/f2project/img/back-img3.png);
+	background-image: url(/f2project/img/regist-back-img.png);
 }
 .reset_main {
-	background-image: url(/f2project/img/back-img2.png);
+	background-image: url(/f2project/img/reset-back-img.png);
 }
 .completion_main {
-	background-image: url(/f2project/img/back-img5.png);
+	background-image: url(/f2project/img/completion-back-img.png);
 }
-
 
 /* ロゴのデザイン */
 h1 {
@@ -41,7 +40,6 @@ h1 {
 
 /* form全体のデザイン */
 #all_form {
-/*	border: solid;  後で外す */
 	width: 390px;
 	margin: 0 auto;
 }
@@ -54,7 +52,7 @@ h1 {
 	margin: 0 auto;
 }
 
-/* 全ページの[label]デザイン */
+/* 全ページのlabelのデザイン */
 label {
     display: block;
     background: skyblue;
@@ -67,6 +65,7 @@ label {
     width: 250px;
 }
 
+/* inputタグ(フォーム入力)のデザイン */
 input[type="text"], input[type="password"], #q, #read_q {
 	width: 240px;
 	padding: 5px;
@@ -78,7 +77,6 @@ input[type="text"], input[type="password"], #q, #read_q {
 	width: 250px;
 	border-bottom: solid 1.5px;
 }
-
 input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 	outline: none;
 	border: none;
@@ -86,6 +84,14 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 	border-bottom: solid 2px;
 }
 
+/* 各ボタンのデザイン */
+#login, #reset, #check, #submit, #back, #login_back, #q_back {
+	width: 110px;
+	margin: 10px 0 -5px 10px;
+	font-weight: bold;
+	border-radius: 30px;
+	border-width: 1px;
+}
 /* 「ログイン」ボタンのデザイン */
 #login {
 	background: lightgreen;
@@ -94,7 +100,6 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 #reset {
 	background: orange;
 }
-
 /* 「新規登録」「パスワードリセット」ボタンのデザイン */
 #new_regist, #new_pw {
 	width: 250px;
@@ -107,40 +112,21 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 #new_regist {
 	margin-top: -10px;
 }
-
-/* 各ボタンのデザイン */
-#login, #reset, #check, #submit, #back {
-	width: 110px;
-	margin: 10px 0 -5px 10px;
-	font-weight: bold;
-	border-radius: 30px;
-	border-width: 1px;
-}
-#backa {
-	width: 110px;
-	margin: 10px 0 -5px 80px;
-	font-weight: bold;
-	border-radius: 30px;
-	border-width: 1px;
+#login_back, #q_back {
+	position: relative;
+	top: -27px;
+	left: 207.5px;
+	margin: 0;
 }
 #reset, #back {
 	margin-left: 24px;
 }
-
+/* inputタグ(ボタン)のデザイン */
 #input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus {
 	background-color: #F5F5F5;
 	outline-style: inset;
 }
-
-/* 各ページ上部のテキストエリアのデザイン */
-.regist_text, .reset_text, .completion_text {
-	width: 300px;
-	height: 100px;
-	border: solid;
-	margin: 30px -22.5px 30px -15px;
-	background: white;
-}
-
+/* 完了画面のボタンデザイン */
 #go_login {
 	margin: 50px 0 0 60px;
 	width: 150px;
@@ -149,32 +135,12 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 	border-radius: 30px;
 }
 
-/* ロゴの背景デザイン */
-/*
-#circle {
-	position: fixed;
-	z-index: 50;
-	top: 10px;
-	background: XXX;
-	opacity: 0.3;
-    border-radius: 50%;
-    width: 220px;
-    height: 220px;
-    color: #fff;
-    font-size: 52px;
-    margin-left: -15px;
+/* 各ページ上部のテキストエリアのデザイン */
+#regist_text, #reset_text, #completion_text {
+	width: 300px;
+	height: 100px;
+	border: solid;
+	margin: 30px -22.5px 30px -15px;
+	background: white;
 }
-*/
 
-/* [h2]デザイン */
-/*
-h2 {
-	position: absolute;
-	color: gray;
-	background: #EAF3FF;
-	border-bottom: solid 3px #516AB6;
-	width: 270px;
-	top: 270px;
-	left: 57.5px;
-}
-*/

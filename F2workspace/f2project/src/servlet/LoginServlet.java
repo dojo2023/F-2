@@ -24,7 +24,6 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ログインページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -33,25 +32,19 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("ID");
 		String pw = request.getParameter("PW");
 
-		// ログイン処理を行う
 		IdpwDAO iDao = new IdpwDAO();
-		if (iDao.isLoginOK(id, pw)) {	// ログイン成功
-			// セッションスコープにIDを格納する
+		if (iDao.isLoginOK(id, pw)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
 			response.sendRedirect("/f2project/MapServlet");
 		}
-		else {									// ログイン失敗
-			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
+		else {
 			request.setAttribute("result",
 			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/f2project/LoginServlet", "ログイン"));
-
-			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/completion.jsp");
 			dispatcher.forward(request, response);
 		}

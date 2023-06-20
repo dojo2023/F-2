@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 public class NewRegistDAO {
 	public boolean IdExist(String id) {
-		//処理を書く
 		Connection conn = null;
 		boolean id_check = false;
 		try {
@@ -35,7 +34,6 @@ public class NewRegistDAO {
 			id_check = false;
 		}
 		finally {
-			// データベースを切断
 			if (conn != null) {
 				try {
 					conn.close();

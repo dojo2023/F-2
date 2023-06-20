@@ -10,7 +10,6 @@ import model.Idpw;
 
 public class PWresetDAO {
 	public boolean IdExist(Idpw id) {
-		//処理を書く
 		Connection conn = null;
 		boolean id_check = false;
 		try {
@@ -37,7 +36,6 @@ public class PWresetDAO {
 			id_check = false;
 		}
 		finally {
-			// データベースを切断
 			if (conn != null) {
 				try {
 					conn.close();
@@ -52,7 +50,6 @@ public class PWresetDAO {
 	}
 
 	public boolean AnsExist(String id, String answer) {
-		//処理を書く
 		Connection conn = null;
 		boolean ans_check = false;
 		try {
@@ -63,6 +60,7 @@ public class PWresetDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, id);
 			pStmt.setString(2, answer);
+
 			ResultSet rs = pStmt.executeQuery();
 
 			rs.next();
@@ -79,7 +77,6 @@ public class PWresetDAO {
 			ans_check = false;
 		}
 		finally {
-			// データベースを切断
 			if (conn != null) {
 				try {
 					conn.close();
@@ -94,7 +91,6 @@ public class PWresetDAO {
 	}
 
 	public boolean PWupdate(String pw, String id) {
-		//処理を書く
 		Connection conn = null;
 		boolean pwup = false;
 		try {
@@ -126,7 +122,6 @@ public class PWresetDAO {
 			pwup = false;
 		}
 		finally {
-			// データベースを切断
 			if (conn != null) {
 				try {
 					conn.close();

@@ -34,7 +34,7 @@ public class completionServlet extends HttpServlet {
 			PWresetDAO pdao = new PWresetDAO();
 			if (pdao.PWupdate(pw, id)) {
 				request.setAttribute("result",
-				new Result("パスワード再登録成功", "パスワードを再登録しました。", "/f2project/LoginServlet", "ログイン"));
+				new Result("パスワード再登録完了", "パスワードを再登録しました。", "/f2project/LoginServlet", "ログイン"));
 			}
 		}
 		else if (request.getParameter("regist") != null) {
