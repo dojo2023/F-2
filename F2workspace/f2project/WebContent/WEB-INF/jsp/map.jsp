@@ -30,10 +30,10 @@
 				<ul>
 					<li class="left">ジャンル</li>
 					<li class="center">
-						<input type="radio" name="genre" value="img/memoryicon" checked><img src="img/memoryicon.png" alt="メモリーアイコン" width="40px" height="40px">
-						<input type="radio" name="genre" value="img/foodicon"><img src="img/foodicon.png" alt="フードアイコン" width="40px" height="40px">
-						<input type="radio" name="genre" value="img/shoppingicon"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="40px" height="40px">
-						<input type="radio" name="genre" value="img/othericon"><img src="img/othericon.png" alt="その他アイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/memoryicon.png" checked><img src="img/memoryicon.png" alt="メモリーアイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/foodicon.png"><img src="img/foodicon.png" alt="フードアイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/shoppingicon.png"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/othericon.png"><img src="img/othericon.png" alt="その他アイコン" width="40px" height="40px">
 					</li>
 				</ul>
 				<ul>
