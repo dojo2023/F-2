@@ -163,8 +163,9 @@ public class SpotDAO {
 		}
 	}
 
-	/*public String selectid() {
+	public Integer selectid() {
 		Connection conn = null;
+		Integer max = 0;
 		try {
 			// JDSpotドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -181,6 +182,10 @@ public class SpotDAO {
 
 			// 結果表をコレクションにコピーする
 			rs.next();
+			max = rs.getInt("max");
+			if(max == null) {
+				max = 1;
+			}
 
 		}
 		catch (SQLException e) {
@@ -200,10 +205,9 @@ public class SpotDAO {
 				}
 			}
 		}
-
 		// 結果を返す
 		return max;
-	}*/
+	}
 
 
 	public void insertimg(String max, String image) {
