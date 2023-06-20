@@ -91,7 +91,7 @@ table{
 	text-align: center;
 	margin-top: 20px;
 }
-.story_photo img{
+.story_photo input{
 	margin: 10px;
 }
 /* list.jsp */

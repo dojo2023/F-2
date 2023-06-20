@@ -248,5 +248,136 @@ public class SpotDAO {
 		}
 	}
 
+// 引数cardで指定されたレコードを更新し、成功したらtrueを返す(スポット情報更新)
+	public boolean update(Spot card) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
+
+			// SQL文を準備する
+			String sql = "update SPOT set date=?, genre=?, name=?, address=?, remarks=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (card.getDate() != null && !card.getDate().equals("")) {
+				pStmt.setString(1, card.getDate());
+			}
+			else {
+				pStmt.setString(1, null);
+			}
+
+			if (card.getGenre() != null && !card.getGenre().equals("")) {
+				pStmt.setString(2, card.getGenre());
+			}
+			else {
+				pStmt.setString(2, null);
+			}
+
+			if (card.getName() != null && !card.getName().equals("")) {
+				pStmt.setString(3, card.getName());
+			}
+			else {
+				pStmt.setString(3, null);
+			}
+
+			if (card.getAddress() != null && !card.getAddress().equals("")) {
+				pStmt.setString(4, card.getAddress());
+			}
+			else {
+				pStmt.setString(4, null);
+			}
+
+			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
+				pStmt.setString(5, card.getRemarks());
+			}
+			else {
+				pStmt.setString(5, null);
+			}
+
+
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+	public boolean delete(String remove) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
+
+			// SQL文を準備する
+			String sql = "delete from SPOT where id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, remove);
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
 
 }
+
+
+
+
+
