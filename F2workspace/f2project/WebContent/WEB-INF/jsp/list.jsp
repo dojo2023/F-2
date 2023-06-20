@@ -5,11 +5,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="css/style.css">
 <meta name="viewport" content="width=device-width">
 <title>memoly</title>
 
+<style>
+.pest-01 { display: none; }
+.detail{
+	display: none;
+}
+</style>
 
 </head>
 <body>
@@ -33,25 +42,42 @@
 
 <div class = "main">
 <div class="tabletitle">
+
+
 <table id="titlelist2">
 <c:forEach var="e" items="${cardList}" >
-	<tr>
-		<td><img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"></td>
+
+	<tr class="nav-open">
+		<td ><img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"></td>
 		<!-- //${genre}.png -->
 		<th><span>${e.name}</span></th>
 		<td><img src="img/destinationicon.png" alt="アイコン" width="18px" height="24px"></td>
 	</tr>
-	<!-- <div class="pest-${count}">
+
+		<tr class="detail">
+		<td colspan="3">
+
+
+		<span class="date1">${e.date}</span><br>
 	    <span class="genre1">${e.genre}</span>
 	    <span class="name1">${e.name}</span>
-	    <span class="date1">${e.date}</span>
-	    <span class="address1">${e.address}</span>
-	    <span class="remarks1">${e.remarks}</span>
-	</div>  -->
+	    <img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"><br>
+	    <span class="address1">${e.address}</span><br>
+	    <img src="img/character.png" alt="アイコン" width="100px" height="150px"><br>
+	    <textarea class="tarea" placeholder="備考">${e.remarks}</textarea><br>
+
+		<input id="update" type="submit" name="update" value="更新">
+        <input id="delete" type="reset" name="delete" value="削除">
+
+		</td>
+		</tr>
+
 </c:forEach>
 </table>
+
 </div>
 </div>
+
 
 <section class="accordion">
 <input id="block-01" type="checkbox" class="toggle">
@@ -61,7 +87,7 @@
 「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは思いました。</p>
 </section>
 
-
+<!--
 <script>
 
 var tbl=document.getElementById("click01");
@@ -79,6 +105,18 @@ tbl.addEventListener('click',function(){
 
 });
 </script>
+-->
+
+  <script>
+
+	$(function(){
+		//クリックで動く
+		$('tr.nav-open').click(function(){
+			$(this).toggleClass('active');
+			$(this).next('tr.detail').slideToggle();
+		});
+	});
+  </script>
 
 
 </body>
