@@ -63,7 +63,7 @@ public class SpotDAO {
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Spot cardlist = new Spot(rs.getString("Date"),rs.getString("Genre"),rs.getString("Name"),
+				Spot cardlist = new Spot(rs.getString("Id"),rs.getString("Date"),rs.getString("Genre"),rs.getString("Name"),
 				rs.getString("Address"),
 				rs.getString("Remarks")
 				);
@@ -261,7 +261,7 @@ public class SpotDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			// SQL文を準備する
-			String sql = "update SPOT set date=?, genre=?, name=?, address=?, remarks=?";
+			String sql = "update SPOT set DATE=?, GENRE=?, NAME=?, ADDRESS=?, REMARKS=? where ID=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -300,7 +300,12 @@ public class SpotDAO {
 				pStmt.setString(5, null);
 			}
 
-
+			if (card.getId() != null && !card.getId().equals("")) {
+				pStmt.setString(6, card.getId());
+			}
+			else {
+				pStmt.setString(6, null);
+			}
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -330,7 +335,7 @@ public class SpotDAO {
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-	public boolean delete(String remove) {
+	public boolean delete(String id) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -342,11 +347,11 @@ public class SpotDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			// SQL文を準備する
-			String sql = "delete from SPOT where id=?";
+			String sql = "delete from SPOT where ID=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setString(1, remove);
+			pStmt.setString(1, id);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {

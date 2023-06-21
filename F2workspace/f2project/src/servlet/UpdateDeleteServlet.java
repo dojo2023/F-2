@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,24 +26,26 @@ public class UpdateDeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
-		String date = request.getParameter("date");
-		String name = request.getParameter("spotname");
-		String address = request.getParameter("spotaddress");
-		String genre = request.getParameter("genre");
-		String remarks = request.getParameter("spotremarks");
+		String id = request.getParameter("ID");
+		String date = request.getParameter("DATE");
+		String name = request.getParameter("NAME");
+		String address = request.getParameter("ADDRESS");
+		String genre = request.getParameter("GENRE");
+		String remarks = request.getParameter("REMARKS");
 
 		// 更新または削除を行う
 		SpotDAO sDao = new SpotDAO();
-		if (request.getParameter("update").equals("更新")) {
-			sDao.update(new Spot(date,  genre, name, address, remarks));// 更新成功
+		if (request.getParameter("SUBMIT").equals("更新")) {
+			sDao.update(new Spot(id, date, genre, name, address, remarks));// 更新成功
 		}
-		else if(request.getParameter("delete").equals("削除")){
+		else if(request.getParameter("SUBMIT").equals("削除")) {
 			sDao.delete(id);	// 削除成功
 		}
+		SpotDAO s2Dao = new SpotDAO();
+		List<Spot> cardList = s2Dao.select(new Spot("","","","","",""));
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("cardList", cardList);
 
-
-	// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
 		dispatcher.forward(request, response);
 	}

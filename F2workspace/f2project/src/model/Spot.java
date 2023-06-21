@@ -2,13 +2,15 @@ package model;
 import java.io.Serializable;
 
 public class Spot implements Serializable {
+	private String id;
 	private String date;
 	private String genre;
 	private String name;
 	private String address;
 	private String remarks;
 
-	public Spot(String date, String genre, String name, String address, String remarks) {
+	public Spot(String id, String date, String genre, String name, String address, String remarks) {
+		this.id = id;
 		this.date = date;
 		this.genre = genre;
 		this.name = name;
@@ -18,11 +20,19 @@ public class Spot implements Serializable {
 
 	public Spot() {
 		super();
+		this.id = "";
 		this.date = "";
 		this.genre = "";
 		this.name = "";
 		this.address = "";
 		this.remarks = "";
+	}
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getDate() {

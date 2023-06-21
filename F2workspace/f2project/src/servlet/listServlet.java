@@ -26,20 +26,19 @@ public class listServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		SpotDAO sDao = new SpotDAO();
-		List<Spot> cardList = sDao.select(new Spot("","","","",""));
+		List<Spot> cardList = sDao.select(new Spot("","","","","",""));
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 
 // メニューページにフォワードする
-RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
-dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

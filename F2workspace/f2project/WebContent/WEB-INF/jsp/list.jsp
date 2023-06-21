@@ -56,17 +56,18 @@
 		<tr class="detail">
 		<td colspan="3">
 
-		<form method="POST" action="/f2project/listServlet">
+		<form method="POST" action="/f2project/UpdateDeleteServlet">
+		<input type="hidden" name="ID" value="${e.id}">
 		<input class="date1" type="text" name="DATE" size= "6" value="${e.date}">
-	    <img src="${e.genre} + '.png'" alt="アイコン" width="24px" height="24px"><br>
+	    <input type="hidden" name="GENRE" value="${e.genre}"><img src="${e.genre} + '.png'" alt="アイコン" width="24px" height="24px"><br>
 	    <input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
 	    <input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
 	    <img src="img/character.png" alt="アイコン" width="100px" height="150px">
 	    <img src="img/character.png" alt="アイコン" width="100px" height="150px">
 	    <img src="img/character.png" alt="アイコン" width="100px" height="150px"><br>
-	    <textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">${e.remarks}</textarea><br>
-		<input id="update" type="submit" name="update" value="更新">
-        <input id="delete" type="submit" name="delete" value="削除">
+	    <textarea class="tarea" name="REMARKS" cols="37" rows="6" maxlength="100" placeholder="備考">${e.remarks}</textarea><br>
+		<input id="update" type="submit" name="SUBMIT" value="更新">
+        <input id="delete" type="submit" name="SUBMIT" value="削除">
 		</form>
 		</td>
 		</tr>
@@ -76,15 +77,6 @@
 
 </div>
 </div>
-
-
-<section class="accordion">
-<input id="block-01" type="checkbox" class="toggle">
-<p id="pest-01"><br>
-アリスは川辺でおねえさんのよこにすわって、なんにもすることがないのでとても退屈（たいくつ）しはじめていました。
-一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。
-「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは思いました。</p>
-</section>
 
 <!--
 <script>
