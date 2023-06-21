@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -26,17 +27,23 @@ public class SlideshowServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String Story = request.getParameter("story");
+		List<String> imgList = new ArrayList<String>();
 
 		if(Story.equals("1")) {
-			Story = "img/memoryicon.png";
-			ImgDAO iDao = new ImgDAO();
-			List<String> cardList = iDao.select(new Story("",Story));
-			Integer end = cardList.size();
-			request.setAttribute("cardList", cardList);
-			request.setAttribute("end", end);
+			Story = "img/memoryicon";
+		}
+			ImgDAO idDao = new ImgDAO();
+			List<String> idList = idDao.select(new Story("",Story));
+			for(String eachimg : idList) {
+				ImgDAO imgDao = new ImgDAO();
+				List<String> data = imgDao.selectimg(eachimg);
+				for(String eachimg2 : data) {
+				   imgList.add(eachimg2);
+				}
+			}
+			request.setAttribute("imgList", imgList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Slideshow.jsp");
 			dispatcher.forward(request, response);
 		}
-	}
 
 }

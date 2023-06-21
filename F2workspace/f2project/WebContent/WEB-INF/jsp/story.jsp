@@ -36,7 +36,7 @@
 	<div class="story_photo">
 		<input type="image" src="img/storyplusimg.png" alt="ストーリー画像" width="150px" height="150px">
 		<a href="/f2project/SlideshowServlet?story=1"><img src="img/memorystory.png" name="story" alt="思い出ストーリー" width="150px" height="150px"></a>
-		<input type="image" src="img/storyimg.png" name="story" value="2" alt="一年前ストーリー" width="150px" height="150px">
+		<a href="/f2project/SlideshowServlet?story=2"><img src="img/storyimg.png" name="story" alt="思い出ストーリー" width="150px" height="150px"></a>
 		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">
 		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">
 		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">

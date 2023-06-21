@@ -11,9 +11,11 @@
 <title>memoly</title>
 </head>
 <body>
-<c:forEach begin="1" end="$[end]" step="1" var="i">
-       CardList.get(${i})
- </c:forEach>
+<strong>test variable</strong>
+<c:forEach var="e" items="${imgList}">
+<c:out value="${e}" />
+</c:forEach>
+
 
 </body>
 
