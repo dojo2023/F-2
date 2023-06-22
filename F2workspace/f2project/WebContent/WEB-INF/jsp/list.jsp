@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -39,6 +38,49 @@
 <div class = "header">
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
+<div id="openbtn1">
+		<img src="img/虫眼鏡.png" alt="虫眼鏡" width="60px" height="60px">
+</div>
+<nav id="g-nav3">
+			<div id="g-nav-list3">
+			<form action="/f2project/listServlet" method="post">
+				<ul>
+					<li class="left">日付</li>
+					<li id="date">
+						<input type="text" size= "7" name="date">
+					</li>
+				</ul>
+
+				<ul>
+					<li class="left">ジャンル</li>
+					<li class="center">
+						<input type="radio" name="genre" value="img/memoryicon" checked><img src="img/memoryicon.png" alt="メモリーアイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/foodicon"><img src="img/foodicon.png" alt="フードアイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/shoppingicon"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="40px" height="40px">
+						<input type="radio" name="genre" value="img/othericon"><img src="img/othericon.png" alt="その他アイコン" width="40px" height="40px">
+					</li>
+				</ul>
+
+				<ul>
+					<li class="left">スポット名</li>
+					<li id="spotname2">
+						<input type="text" size= "36" name="spotname">
+					</li>
+				</ul>
+
+				<ul>
+					<li class="left">スポット住所</li>
+					<li id="spotarea">
+						<textarea class="area" cols="37" rows="2" maxlength="40" name="spotaddress"></textarea>
+					</li>
+				</ul>
+
+				<ul>
+					<li class="right"><input type="submit" value="検索" ></li>
+				</ul>
+			</form>
+		</div>
+	</nav>
 
 <div class = "main">
 <div class="tabletitle">
@@ -48,7 +90,7 @@
 <c:forEach var="e" items="${cardList}" >
 
 	<tr class="nav-open">
-		<td ><img src="${e.genre}" alt="アイコン" width="24px" height="24px"></td>
+		<td ><img src="${e.genre}.png" alt="アイコン" width="24px" height="24px"></td>
 		<th><span>${e.name}</span></th>
 		<td><img src="img/destinationicon.png" alt="アイコン" width="18px" height="24px"></td>
 	</tr>
@@ -59,7 +101,7 @@
 		<form method="POST" action="/f2project/UpdateDeleteServlet">
 		<input type="hidden" name="ID" value="${e.id}">
 		<input class="date1" type="text" name="DATE" size= "6" value="${e.date}">
-	    <input type="hidden" name="GENRE" value="${e.genre}"><img src="${e.genre} + '.png'" alt="アイコン" width="24px" height="24px"><br>
+	    <input type="hidden" name="GENRE" value="${e.genre}"><img src="${e.genre}.png" alt="アイコン" width="24px" height="24px"><br>
 	    <input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
 	    <input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
 	    <img src="img/character.png" alt="アイコン" width="100px" height="150px">
@@ -112,9 +154,9 @@ tbl.addEventListener('click',function(){
 
 </body>
 <script>
-  $(".openbtn1").click(function () {//ボタンがクリックされたら
+  $("#openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-  $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  $("#g-nav3").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
 
 //$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら

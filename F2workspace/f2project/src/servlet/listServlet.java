@@ -39,7 +39,18 @@ public class listServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String date = request.getParameter("date");
+		String genre = request.getParameter("genre");
+		String spotname = request.getParameter("spotname");
+		String spotaddress = request.getParameter("spotaddress");
+
+		SpotDAO sDao = new SpotDAO();
+		List<Spot> cardList = sDao.select(new Spot("",date,genre,spotname,spotaddress,""));
+		request.setAttribute("cardList", cardList);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
