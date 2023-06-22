@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ImgDAO;
-import model.Story;
+import model.Spot;
 
 /**
  * Servlet implementation class SlideshowServlet
@@ -31,9 +32,8 @@ public class SlideshowServlet extends HttpServlet {
 
 		if(Story.equals("1")) {
 			Story = "img/memoryicon";
-		}
 			ImgDAO idDao = new ImgDAO();
-			List<String> idList = idDao.select(new Story("",Story));
+			List<String> idList = idDao.selectmemory(new Spot("","",Story,"","",""));
 			for(String eachimg : idList) {
 				ImgDAO imgDao = new ImgDAO();
 				List<String> data = imgDao.selectimg(eachimg);
@@ -41,9 +41,37 @@ public class SlideshowServlet extends HttpServlet {
 				   imgList.add(eachimg2);
 				}
 			}
+		}
+		else if(Story.equals("2")) {
+			LocalDate nowdate = LocalDate.now();
+			nowdate = nowdate.minusYears(1);
+			String strnowdate = nowdate.toString();
+			String date = strnowdate.substring(0,4);
+			ImgDAO idDao = new ImgDAO();
+			List<String> idList = idDao.select1yearago(new Spot("",date,"","","",""));
+			for(String eachimg : idList) {
+				ImgDAO imgDao = new ImgDAO();
+				List<String> data = imgDao.selectimg(eachimg);
+				for(String eachimg2 : data) {
+				   imgList.add(eachimg2);
+				}
+			}
+		}
+		else if(Story.equals("3")) {
+			Story = "img/foodicon";
+			ImgDAO idDao = new ImgDAO();
+			List<String> idList = idDao.selectmemory(new Spot("","",Story,"","",""));
+			for(String eachimg : idList) {
+				ImgDAO imgDao = new ImgDAO();
+				List<String> data = imgDao.selectimg(eachimg);
+				for(String eachimg2 : data) {
+				   imgList.add(eachimg2);
+				}
+			}
+		}
 			request.setAttribute("imgList", imgList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Slideshow.jsp");
 			dispatcher.forward(request, response);
-		}
+	}
 
 }

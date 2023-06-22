@@ -251,6 +251,16 @@ p{
   background:#fff9ff;
   transition: all 0.5s;
 }
+#g-nav4{
+  position:fixed;
+  z-index: 9998;
+  left:-100%;
+  width:40%;
+  height: 100vh;
+  background: #acacff;
+  transition: all 0.5s;
+  opacity: 0.9;
+}
 /*アクティブクラスがついたら位置を0に*/
 #g-nav1.panelactive{
     bottom: -70px;

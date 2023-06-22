@@ -165,7 +165,7 @@ public class SpotDAO {
 
 	public Integer selectid() {
 		Connection conn = null;
-		Integer max = 0;
+		Integer max = 1;
 		try {
 			// JDSpotドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -183,10 +183,6 @@ public class SpotDAO {
 			// 結果表をコレクションにコピーする
 			rs.next();
 			max = rs.getInt("max");
-			if(max == null) {
-				max = 1;
-			}
-
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
