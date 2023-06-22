@@ -31,44 +31,40 @@
 <div class="tabletitle">
 <table id="titlelist">
 	<tr>
-		<th>1000歩達成！！</th>
+		<th>1000歩達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>2000歩達成！！</th>
+		<th>5000歩達成！</th>
 		<td><img src="img/silverstar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>3000歩達成！！</th>
+		<th>10000歩達成！</th>
 		<td><img src="img/goldstar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>4000歩達成！！</th>
+		<th>スポット登録３０件達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>5000歩達成！！</th>
+		<th>スポット登録１００件達成！</th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>スポット登録５００件達成！</th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>通算ログイン日数１００日達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>6000歩達成！！</th>
-		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
+		<th>通算ログイン日数３６５日達成！</th>
+		<td><img src="img/silverstar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>7000歩達成！！</th>
-		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
-	</tr>
-	<tr>
-		<th>8000歩達成！！</th>
-		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
-	</tr>
-	<tr>
-		<th>9000歩達成！！</th>
-		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
-	</tr>
-	<tr>
-		<th>10000歩達成！！</th>
-		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
+		<th>通算ログイン日数１０００日達成！</th>
+		<td></td>
 	</tr>
 </table>
 </div>
