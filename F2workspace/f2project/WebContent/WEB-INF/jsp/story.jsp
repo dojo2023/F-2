@@ -26,6 +26,7 @@
 				<li><a href="titleServlet">称号</a></li>
 				<li><a href="storyServlet">ストーリー</a></li>
 				<li><a href="usageServlet">使い方</a></li>
+				<li><a href="LoginServlet">ログアウト</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -35,13 +36,15 @@
 <div class = "main">
 	<div class="story_photo">
 		<input type="image" src="img/storyplusimg.png" alt="ストーリー画像" width="150px" height="150px">
-		<a href="/f2project/SlideshowServlet?story=1"><img src="img/memorystory.png" name="story" alt="思い出ストーリー" width="150px" height="150px"></a>
-		<a href="/f2project/SlideshowServlet?story=2"><img src="img/storyimg.png" name="story" alt="1年前" width="150px" height="150px"></a>
-		<a href="/f2project/SlideshowServlet?story=3"><img src="img/foodicon.png" name="story" alt="フードストーリー" width="150px" height="150px"></a>
-		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">
-		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">
-		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">
-		<input type="image" src="img/storyimg.png" value="story" alt="ストーリー画像" width="150px" height="150px">
+		<a href="/f2project/SlideshowServlet?story=1"><img src="img/storyvmemory.png" name="story" alt="思い出ストーリー" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=2"><img src="img/storyrandom.png" name="story" alt="おすすめ" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=3"><img src="img/storypast.png" name="story" alt="1年前" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=4"><img src="img/storyfood.png" name="story" alt="食べ物" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=5"><img src="img/storyAkiba.png" name="story" alt="秋葉原" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=6"><img src="img/storyAsakusa.png" name="story" alt="浅草" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=7"><img src="img/storyOdaiba.png" name="story" alt="お台場" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=8"><img src="img/storyShinjuku.png" name="story" alt="新宿" width="150px" height="150px"></a>
+		<a href="/f2project/SlideshowServlet?story=9"><img src="img/storyUeno.png" name="story" alt="上野" width="150px" height="150px"></a>
 	</div>
 </div>
 </body>

@@ -1,4 +1,6 @@
-#out_map.active_map, #maps.active_map {
+ @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Hachi+Maru+Pop&display=swap');
+
+ #out_map.active_map, #maps.active_map {
 	opacity: 0;
 	border: solid;
 	position: relative;
@@ -8,6 +10,7 @@
 	height: 844px;
 	z-index: 9991;
 }
+
 #maps {
 	position: fixed;
 	top: 0;
@@ -15,6 +18,7 @@
 	z-index: 9990;
 	background-color: white;
 }
+
 #pin {
 	position: fixed;
 	top: 100px;
@@ -22,6 +26,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #img_data {
 	position: fixed;
 	top: 200px;
@@ -29,6 +34,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #img_data_x {
 	border: solid;
 	position: fixed;
@@ -37,6 +43,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #img_data_y {
 	border: solid;
 	position: fixed;
@@ -45,6 +52,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #img_data_x2 {
 	border: solid;
 	position: fixed;
@@ -53,6 +61,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #img_data_y2 {
 	border: solid;
 	position: fixed;
@@ -61,6 +70,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #getimg_data_x {
 	border: solid;
 	position: fixed;
@@ -69,6 +79,7 @@
 	width: 100px;
 	height: 50px;
 }
+
 #getimg_data_y {
 	border: solid;
 	position: fixed;
@@ -93,8 +104,9 @@
 
 body{
 	margin: 0px;
-	background-image: url(/f2project/img/kumo2.png);
-	background-attachment: scroll;
+	/*background-image: url(/f2project/img/kumo2.png);
+	background-attachment: scroll;*/
+	font-family: 'Hachi Maru Pop', cursive;
 }
 
 .main{
@@ -102,6 +114,7 @@ body{
 	width: 390px;
 	height: 844px;
 }
+
 .header2 {
 	position: relative;
 	width: auto;
@@ -114,10 +127,12 @@ body{
 .main2{
 	position: absolute;
 }
+
 body.body2{
 	margin: 0px;
 	background-attachment: scroll;
 }
+
 .centertable{
 	display: flex;
 	justify-content: center;
@@ -139,17 +154,18 @@ table{
 	border: 0;
 }
 
-
 /*ベース*/
 .toggle {
 	display: none;
 }
+
 .Label {		/*タイトル*/
 	padding: 1em;
 	display: block;
 	color: #fff;
 	background:#019ac6;
 }
+
 .Label::before{		/*タイトル横の矢印*/
 	content:"";
 	width: 6px;
@@ -162,6 +178,7 @@ table{
 	right: 20px;
 	transform: rotate(135deg);
 }
+
 .Label,
 .content {
 	-webkit-backface-visibility: hidden;
@@ -169,20 +186,24 @@ table{
 	transform: translateZ(0);
 	transition: all 0.3s;
 }
+
 .content {		/*本文*/
 	height: 0;
 	margin-bottom:10px;
 	padding:0 20px;
 	overflow: hidden;
 }
+
 .toggle:checked + .Label + .content {	/*開閉時*/
 	height: auto;
 	padding:20px ;
 	transition: all .3s;
 }
+
 .toggle:checked + .Label::before {
 	transform: rotate(-45deg) !important;
 }
+
 /* story.jsp */
 .story_photo{
 	display: inline-block;
@@ -199,11 +220,13 @@ table{
 	padding-left:10px;
 	border-collapse: separate;
 	border-spacing:0px 10px;
+	border-radius: 10px;
 }
 
 #titlelist2 th{
 	background-color: white;
-	border: 1px solid #000000;
+	/*border: 1px solid #000000;*/
+	border:none;
 	text-align: left;
 	padding: 0px 0px 0px 5px;
 	font-weight: normal;
@@ -211,12 +234,29 @@ table{
 
 #titlelist2 td{
 	background-color: white;
-	border: 1px solid #000000;
+	/*border: 1px solid #000000;*/
+	border: none;
 	width: 25px;
 	height: 25px;
 	padding: 0px;
 	text-align: center;
 	padding-top: 5px;
+}
+
+#titlelist2 tr:first-child td:first-child{ /* 最初のtr(行) かつ、最初の td(列) */
+  border-radius: 20px 0 0 20px; /* 左上から指定してゆく */
+}
+
+#titlelist2 tr:first-child td:last-child{ /* 最初のtr(行) かつ、最後の td(列) */
+  border-radius: 0 10px 10px 0;
+}
+
+#titlelist2 tr:last-child td:first-child{ /* 最後のtr(行) かつ、最初の td(列) */
+  border-radius: 10px 0 0 10px;
+}
+
+#titlelist2 tr:last-child td:last-child{ /* 最後のtr(行) かつ、最後の td(列) */
+  border-radius: 0 10px 10px 0;
 }
 
 /* title.jsp */
@@ -225,6 +265,7 @@ table{
 	align-items: center;
 	justify-content: center;
 }
+
 #titlelist {
 	list-style:none;
 	width: 85%;
@@ -250,18 +291,59 @@ table{
 	padding-top: 5px;
 }
 
+#update{
+display       : inline-block;
+  border-radius : 25px;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 10px;   /* 余白       */
+  background    : #ff99cc;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #ff99cc;    /* 枠の指定 */
+}
+
+#update:hover {
+  color         : #ff99cc;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+#delete{
+display       : inline-block;
+  border-radius : 25px;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 10px;   /* 余白       */
+  background    : #ff99cc;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #ff99cc;    /* 枠の指定 */
+}
+
+#delete:hover {
+  color         : #ff99cc;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
 /* usage.jsp */
 .usage-item {
     display: flex;
     padding: 20px 8px;
 }
+
 .usage-photo {
     margin-right: 15px;
     flex: 1 1 auto;
 }
+
 .usage-text {
     flex: 0 0 180px;
 }
+
 p{
 	margin-right: 5px;
 }
@@ -274,57 +356,69 @@ p{
   bottom:-100%;
   left:0;
   width:100%;
-  height: 100vh;
+  height: 95vh;
   background:#fff9ff;
   transition: all 0.5s;
+  border-radius: 25px 25px 0px 0px;
 }
+
 #g-nav2{
   position:fixed;
   z-index: 9998;
   left:-100%;
   width:40%;
   height: 100%;
-  background: #acacff;
+  background: #ff99cc;
   transition: all 0.5s;
   opacity: 0.9;
+  border-radius: 0px 25px 25px 0px;
 }
+
 #g-nav3{
   position:fixed;
   z-index: 9997;
   bottom:-100%;
   left:0;
   width:100%;
-  height: 100vh;
+  height: 95vh;
   background:#fff9ff;
   transition: all 0.5s;
+  border-radius: 25px 25px 0px 0px;
 }
+
 #g-nav4{
   position:fixed;
   z-index: 9998;
   left:-100%;
   width:40%;
   height: 100vh;
-  background: #acacff;
+  background: #ff99cc;
   transition: all 0.5s;
   opacity: 0.9;
+  border-radius: 0px 25px 25px 0px;
 }
+
 /*アクティブクラスがついたら位置を0に*/
 #g-nav1.panelactive{
     bottom: -70px;
     z-index: 9997;
 }
+
 #g-nav2.panelactive{
     left: 0;
     z-index: 9998;
 }
+
 #g-nav3.panelactive{
     bottom: -230px;
     z-index: 9997;
 }
+
 #g-nav4.panelactive{
     left: 0;
     z-index: 9998;
 }
+
 /*========= ボタンのためのCSS ===============*/
 .openbtn1{
   position:fixed;
@@ -335,6 +429,7 @@ p{
   width: 50px;
   height:50px;
 }
+
 .openbtn2{
   position:fixed;
   z-index: 9999;
@@ -343,6 +438,7 @@ p{
   width: 50px;
   height:50px;
 }
+
 .openbtn4{
   position:fixed;
   z-index: 9999;
@@ -351,6 +447,7 @@ p{
   width: 50px;
   height:50px;
 }
+
 #openbtn1{
   position:fixed;
   z-index: 9999;
@@ -372,6 +469,7 @@ p{
   background-color: #666;
   width: 45%;
 }
+
 .openbtn2 span{
   display: inline-block;
   transition: all .4s;
@@ -381,6 +479,7 @@ p{
   background-color: #666;
   width: 45%;
 }
+
 .openbtn4 span{
   display: inline-block;
   transition: all .4s;
@@ -395,9 +494,11 @@ p{
   top:15px;
   transform: rotate(90deg);
 }
+
 .openbtn1 span:nth-of-type(2) {
   display: none;
 }
+
 .openbtn1 span:nth-of-type(3) {
   top:15px;
 }
@@ -405,31 +506,40 @@ p{
 .openbtn2 span {
   margin-left: 18px;
 }
+
 .openbtn2 span:nth-of-type(1) {
   top:15px;
 }
+
 .openbtn2 span:nth-of-type(2) {
   top:23px;
 }
+
 .openbtn2 span:nth-of-type(3) {
   top:31px;
 }
+
 .openbtn4 span {
   margin-left: 18px;
 }
+
 .openbtn4 span:nth-of-type(1) {
   top:15px;
 }
+
 .openbtn4 span:nth-of-type(2) {
   top:23px;
 }
+
 .openbtn4 span:nth-of-type(3) {
   top:31px;
 }
+
 .openbtn1.active span:nth-of-type(1) {
   transform: translateY(6px) rotate(-45deg);
   width: 45%;
 }
+
 .openbtn1.active span:nth-of-type(2) {
   opacity: 0;
 }
@@ -444,42 +554,52 @@ p{
   transform: translateY(-6px) rotate(-45deg);
   width: 45%;
 }
+
 .openbtn2.active span:nth-of-type(2) {
   opacity: 0;
 }
+
 .openbtn2.active span:nth-of-type(3) {
   top: 30px;
   transform: translateY(-6px) rotate(45deg);
   width: 45%;
 }
+
 .openbtn4.active span:nth-of-type(1) {
   top: 30px;
   transform: translateY(-6px) rotate(-45deg);
   width: 45%;
 }
+
 .openbtn4.active span:nth-of-type(2) {
   opacity: 0;
 }
+
 .openbtn4.active span:nth-of-type(3) {
   top: 30px;
   transform: translateY(-6px) rotate(45deg);
   width: 45%;
 }
+
 /*========= レイアウトのためのCSS ===============*/
 h1{
   font-size:1.2rem;
 }
+
 #g-nav-list1 {
   padding-top: 30px;
 }
+
 #g-nav-list1 ul{
 	padding-left: 60px;
 	padding-right: 60px;
 }
+
 #g-nav-list1 li.center{
 	list-style: none;
 	text-align: center;
 }
+
 #g-nav-list1 li.left{
 	list-style: none;
 	text-align: left;
@@ -487,22 +607,28 @@ h1{
 	font-weight: bold;
 	padding-bottom: 10px;
 }
+
 #g-nav-list1 li.right{
 	list-style: none;
 	text-align: right;
 }
+
 #g-nav-list1 li.null{
 	list-style: none;
 }
+
 #spotname{
 	list-style: none;
 }
+
 #spotarea{
 	list-style: none;
 }
+
 #spotname2{
 	list-style: none;
 }
+
 #date{
 	list-style: none;
 }
@@ -514,12 +640,14 @@ h1{
 #g-nav-list1 li.area{
 	resize: none;
 }
+
 #g-nav2 ul {
   position: absolute;
   z-index: 9999;
   top:10%;
   left:5%;
 }
+
 #g-nav2 li{
   list-style: none;
   text-align: center;
@@ -534,17 +662,21 @@ h1{
   letter-spacing: 0.1em;
   font-weight: bold;
 }
+
 #g-nav-list3 {
   padding-top: 30px;
 }
+
 #g-nav-list3 ul{
 	padding-left: 60px;
 	padding-right: 60px;
 }
+
 #g-nav-list3 li.center{
 	list-style: none;
 	text-align: center;
 }
+
 #g-nav-list3 li.left{
 	list-style: none;
 	text-align: left;
@@ -552,19 +684,99 @@ h1{
 	font-weight: bold;
 	padding-bottom: 10px;
 }
+
 #g-nav-list3 li.right{
 	list-style: none;
 	text-align: right;
 }
+
 #g-nav-list3 li.null{
 	list-style: none;
 }
+
+input[type="text"]{
+	border: none;
+    outline: none;
+}
+
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+
+/* 画像の周りに隙間をあける */
+label img {
+    margin: 3px;
+    padding: 5px;
+}
+
+/* 未選択の場合、色を薄くする */
+input[type="radio"] + label img {
+    opacity:0.5;
+  }
+
+/* 選択済みの場合、色を濃くする */
+input[type="radio"]:checked + label img {
+    opacity:1;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file {
+  padding: 6px 40px;
+  border-radius : 20px 20px 20px 20px;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  background    : #ff99cc;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #ff99cc;    /* 枠の指定 */
+}
+
+.file:hover {
+  color         : #ff99cc;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+textarea {
+	border: none;
+    outline: none;
+}
+
+.text_underline{
+    position: relative; /*.text_underline::beforeの親要素*/
+    border-top: 1px solid #eb6ea0; /*下線*/
+}
+
+.submit{
+display       : inline-block;
+  border-radius : 50%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 15px 13px;   /* 余白       */
+  background    : #ff99cc;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #ff99cc;    /* 枠の指定 */
+}
+
+.submit:hover {
+  color         : #ff99cc;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
 #g-nav4 ul {
   position: absolute;
   z-index: 9999;
   top:10%;
   left:5%;
 }
+
 #g-nav4 li{
   list-style: none;
   text-align: center;
@@ -590,6 +802,7 @@ h1{
     right: 10px;
     cursor: pointer;
 }
+
 .spot_pin {
 	position: fixed;
 	z-index: 9999;
@@ -599,6 +812,7 @@ h1{
     height: 50px;
     cursor: pointer;
 }
+
 /* キャラクター */
 #characterbtn{
   position: fixed;
@@ -609,6 +823,7 @@ h1{
   width: 120px;
   height:120px;
 }
+
 .character {
 	position: fixed;
 	z-index: 9996;
@@ -651,6 +866,7 @@ h1{
   border-left: 15px solid #ff8e9d;
   z-index: 9996;
 }
+
 .message{
 	background-color: #ff8e9d;
 	color: #FFF;
@@ -663,6 +879,7 @@ h1{
 	font-weight: bold;
 	vertical-align: center;
 }
+
 /* 検索バー */
 .search_container{
   box-sizing: border-box;
@@ -683,9 +900,11 @@ h1{
   border: none;
   height: 2.0em;
 }
+
 .search_container input[type="text"]:focus {
   outline: 0;
 }
+
 .search_container input[type="submit"]{
   cursor: pointer;
   font-family: FontAwesome;
