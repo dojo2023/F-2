@@ -7,14 +7,10 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <link rel="stylesheet" href="css/style.css">
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
 <meta name="viewport" content="width=device-width">
 <title>memoly</title>
-
-
 <script type="text/javascript">
         $(document).ready(function(){
             $('.slider').bxSlider({
@@ -23,18 +19,17 @@
             });
         });
 </script>
-
 </head>
-<body>
-
-<div class="slider">
-<c:forEach var="e" items="${imgList}">
-
-<img src="<c:out value="spot_img/${e}" />" >
-
-</c:forEach>
+<body class="body2">
+<div class = "header2">
+	<br><br><br><br><br>
 </div>
-
+<div class = "main2">
+	<div class="slider">
+		<c:forEach var="e" items="${imgList}">
+			<img src="<c:out value="spot_img/${e}" />" >
+		</c:forEach>
+	</div>
+</div>
 </body>
-
 </html>
