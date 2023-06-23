@@ -136,7 +136,7 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 }
 
 /* 各ページ上部のテキストエリアのデザイン */
-#regist_text, #reset_text, #completion_text {
+#regist_text, .reset_text, #completion_text {
 	width: 300px;
 	height: 100px;
 	border: solid;
