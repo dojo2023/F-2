@@ -15,7 +15,7 @@
         <table>
           <tr>
             <td>
-              <div id="reset_text">
+              <div class="reset_text">
                 &nbsp;&nbsp;新しいパスワードを入力してください。
               </div>
             </td>

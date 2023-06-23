@@ -29,6 +29,38 @@
 	width: 100px;
 	height: 50px;
 }
+#img_data_x {
+	border: solid;
+	position: fixed;
+	top: 300px;
+	left: 400px;
+	width: 100px;
+	height: 50px;
+}
+#img_data_y {
+	border: solid;
+	position: fixed;
+	top: 300px;
+	left: 550px;
+	width: 100px;
+	height: 50px;
+}
+#img_data_x2 {
+	border: solid;
+	position: fixed;
+	top: 400px;
+	left: 400px;
+	width: 100px;
+	height: 50px;
+}
+#img_data_y2 {
+	border: solid;
+	position: fixed;
+	top: 400px;
+	left: 550px;
+	width: 100px;
+	height: 50px;
+}
 #getimg_data_x {
 	border: solid;
 	position: fixed;
@@ -70,7 +102,22 @@ body{
 	width: 390px;
 	height: 844px;
 }
+.header2 {
+	position: relative;
+	width: auto;
+	height: 110px;
+	top: 0%;
+	left:0%;
+	display: flex;
+}
 
+.main2{
+	position: absolute;
+}
+body.body2{
+	margin: 0px;
+	background-attachment: scroll;
+}
 .centertable{
 	display: flex;
 	justify-content: center;
@@ -274,8 +321,10 @@ p{
     bottom: -230px;
     z-index: 9997;
 }
-
-
+#g-nav4.panelactive{
+    left: 0;
+    z-index: 9998;
+}
 /*========= ボタンのためのCSS ===============*/
 .openbtn1{
   position:fixed;
@@ -290,6 +339,14 @@ p{
   position:fixed;
   z-index: 9999;
   top:10px;
+  cursor: pointer;
+  width: 50px;
+  height:50px;
+}
+.openbtn4{
+  position:fixed;
+  z-index: 9999;
+  top:70px;
   cursor: pointer;
   width: 50px;
   height:50px;
@@ -324,6 +381,15 @@ p{
   background-color: #666;
   width: 45%;
 }
+.openbtn4 span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 45%;
+}
 
 .openbtn1 span:nth-of-type(1) {
   top:15px;
@@ -346,6 +412,18 @@ p{
   top:23px;
 }
 .openbtn2 span:nth-of-type(3) {
+  top:31px;
+}
+.openbtn4 span {
+  margin-left: 18px;
+}
+.openbtn4 span:nth-of-type(1) {
+  top:15px;
+}
+.openbtn4 span:nth-of-type(2) {
+  top:23px;
+}
+.openbtn4 span:nth-of-type(3) {
   top:31px;
 }
 .openbtn1.active span:nth-of-type(1) {
@@ -374,7 +452,19 @@ p{
   transform: translateY(-6px) rotate(45deg);
   width: 45%;
 }
-
+.openbtn4.active span:nth-of-type(1) {
+  top: 30px;
+  transform: translateY(-6px) rotate(-45deg);
+  width: 45%;
+}
+.openbtn4.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn4.active span:nth-of-type(3) {
+  top: 30px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 45%;
+}
 /*========= レイアウトのためのCSS ===============*/
 h1{
   font-size:1.2rem;
@@ -469,6 +559,26 @@ h1{
 #g-nav-list3 li.null{
 	list-style: none;
 }
+#g-nav4 ul {
+  position: absolute;
+  z-index: 9999;
+  top:10%;
+  left:5%;
+}
+#g-nav4 li{
+  list-style: none;
+  text-align: center;
+}
+
+#g-nav4 li a{
+  color: #fff;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
 
 /* ========map.jsp========= */
 
@@ -480,7 +590,15 @@ h1{
     right: 10px;
     cursor: pointer;
 }
-
+.spot_pin {
+	position: fixed;
+	z-index: 9999;
+    top:70px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
 /* キャラクター */
 #characterbtn{
   position: fixed;
@@ -550,13 +668,13 @@ h1{
   box-sizing: border-box;
   position: fixed;
   z-index: 9997;
-  top:18px;
+  top:50px;
   right: 80px;
   border: 1px solid #999;
   padding: 3px 10px;
   border-radius: 20px;
   height: 2.3em;
-  width: 240px;
+  width: 250px;
   overflow: hidden;
   background-color:#ffffff;
 }

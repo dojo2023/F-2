@@ -30,16 +30,9 @@ public class MapServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (request.getParameter("img_data") != null) {
-			String img_data_x = request.getParameter("img_data_x");
-			String img_data_y = request.getParameter("img_data_y");
-
-			request.setAttribute("img_data_x", img_data_x);
-			request.setAttribute("img_data_y", img_data_y);
-		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/map.jsp");
 		dispatcher.forward(request, response);
-	}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -57,7 +50,7 @@ public class MapServlet extends HttpServlet {
 
 
 		SpotDAO sDao = new SpotDAO();
-		sDao.insert(new Spot(nowdate,genre,name,address,remarks));
+		sDao.insert(new Spot("",nowdate,genre,name,address,remarks));
 
 		for (Part part : parts) {
 		    if (part.getName().equals("image")) {
