@@ -33,6 +33,7 @@
 				<li><a href="titleServlet">称号</a></li>
 				<li><a href="storyServlet">ストーリー</a></li>
 				<li><a href="usageServlet">使い方</a></li>
+				<li><a href="LoginServlet">ログアウト</a></li>
 			</ul>
 		</div>
 	</nav>
