@@ -50,7 +50,7 @@ public class MapServlet extends HttpServlet {
 
 
 		SpotDAO sDao = new SpotDAO();
-		sDao.insert(new Spot(nowdate,genre,name,address,remarks));
+		sDao.insert(new Spot("",nowdate,genre,name,address,remarks));
 
 		for (Part part : parts) {
 		    if (part.getName().equals("image")) {

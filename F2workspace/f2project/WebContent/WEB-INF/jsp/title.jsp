@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="css/style.css">
 <meta name="viewport" content="width=device-width">
 <title>memoly</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="openbtn2">
@@ -31,19 +34,19 @@
 <div class="tabletitle">
 <table id="titlelist">
 	<tr>
-		<th>1000歩達成！</th>
+		<th class="text01" name="audio/target08.wav">1000歩達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>5000歩達成！</th>
+		<th class="text01" name="audio/target02.wav">5000歩達成！</th>
 		<td><img src="img/silverstar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>10000歩達成！</th>
+		<th class="text01" name="audio/target03.wav">10000歩達成！</th>
 		<td><img src="img/goldstar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>スポット登録３０件達成！</th>
+		<th class="text01" name="audio/target04.wav">スポット登録３０件達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
@@ -55,11 +58,11 @@
 		<td></td>
 	</tr>
 	<tr>
-		<th>通算ログイン日数１００日達成！</th>
+		<th class="text01" name="audio/target06.wav">通算ログイン日数１００日達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
-		<th>通算ログイン日数３６５日達成！</th>
+		<th class="text01" name="audio/target07.wav">通算ログイン日数３６５日達成！</th>
 		<td><img src="img/silverstar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
@@ -106,4 +109,17 @@
 	  $(this).removeClass('active');//balloonの activeクラスを除去し
 	});
 </script>
+
+<script>
+
+$('.text01').click(function(){
+
+	const music = new Audio($(this).attr('name'));
+	music.play();
+
+});
+
+</script>
+
+
 </html>

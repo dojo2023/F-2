@@ -16,7 +16,7 @@
 	</div>
 	<nav id="g-nav1">
 		<form action="/f2project/MapServlet" method="post" enctype="multipart/form-data">
-			<div id="g-nav-list1"><br>
+			<div id="g-nav-list1">
 				<ul>
 					<li class="left">スポット名</li>
 					<li id="spotname">
@@ -59,15 +59,21 @@
 					<li class="right"><input type="submit" value="登録" ></li>
 				</ul>
 			</div>
+
+			<input id="img_data_x" type="hidden" name="img_data_x" value="x">
+			<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+
+			<input id="img_data_x2" type="hidden" name="img_data_x2" value="x2">
+			<input id="img_data_y2" type="hidden" name="img_data_y2" value="y2">
 		</form>
 	</nav>
 
-	<div class="openbtn2">
+	<div class="openbtn4">
 		<span></span><span></span><span></span>
 	</div>
 
-	<nav id="g-nav2">
-		<div id="g-nav-list2">
+	<nav id="g-nav4">
+		<div id="g-nav-list4">
 			<ul>
 				<li><a href="MapServlet">マップ</a></li>
 				<li><a href="listServlet">リスト</a></li>
@@ -87,31 +93,17 @@
 		</iframe>
 	</div>
 
-	<form method="GET" action="/f2project/listServlet">
-		<input id="pin" type="button" name="img" value="ピン">
-		<input id="img_data" type="submit" value="画像データ">
-		<div id="getimg_data_x">
-			<input type="text" name="setimg_data_x" readonly>
-		</div>
-		<div id="getimg_data_y">
-			<input type="text" name="setimg_data_y" readonly>
-		</div>
-	</form>
-
 	<div id="img"></div>
 
 	<div id="currentlocationbtn">
-<!-- 例) 青森 --><a href="">
+		<a href="https://www.google.com/maps/@35.697666,139.776229,16z?hl=ja&entry=ttu">
 			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
 		</a>
 	</div>
-	<script type="text/javascript">
-		document.getElementById("currentlocationbtn").onclick = function( event ) {
-//			alert('現在地');
-			const url = 'https://www.google.com/maps/place/%E3%80%92039-1103+%E9%9D%92%E6%A3%AE%E7%9C%8C%E5%85%AB%E6%88%B8%E5%B8%82%E9%95%B7%E8%8B%97%E4%BB%A3/@40.5176807,141.4312381,14z/data=!3m1!4b1!4m6!3m5!1s0x5f9b4e1ab44e05f7:0xd93131cd4c327d19!8m2!3d40.5167742!4d141.4557844!16s%2Fg%2F1pxxsg7wh?entry=ttu'
-			window.open(url, '_blank');
-		}
-	</script>
+
+	<div id="spot_pinbtn">
+		<img id="pin" class="spot_pin" name="img" src="img/destinationicon2.png">
+	</div>
 
 	<div id="characterbtn">
 		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
@@ -138,6 +130,35 @@
 </body>
 <script>
 
+var x = parseFloat(<%= request.getParameter("img_data_x") %>);
+var y = parseFloat(<%= request.getParameter("img_data_y") %>);
+console.log(x + y);
+if(x != null) {
+	$('#img_data_x2').val(x);
+	$('#img_data_y2').val(y);
+
+	console.log(x);
+	console.log(y);
+
+	$("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
+	var img = document.getElementById("img");
+	var url = "img/destinationicon.png";
+
+	dispic(img, url, x, y);
+	function dispic(img, url, x, y){
+		var image = new Image();
+		image.src = url;
+		image.width = 29;
+		image.height = 44;
+		image.style.position = "fixed";
+		image.style.zIndex = 9992;
+		image.style.left = x + "px";
+		image.style.top = y + "px";
+		image.setAttribute("src", url);
+		img.appendChild(image);
+	}
+}
+
 $("#pin").click(function () {//ボタンがクリックされたら
 	$("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
 	$(this).toggleClass('setimg');
@@ -163,8 +184,8 @@ $("#pin").click(function () {//ボタンがクリックされたら
 			image.setAttribute("src", url);
 			img.appendChild(image);
 
-			var img_data_x = document.getElementById("getimg_data_x").textContent = x;
-			var img_data_y = document.getElementById("getimg_data_y").textContent = y;
+			$('#img_data_x').val(x);
+			$('#img_data_y').val(y);
 
 			console.log("x = " + x);
 			console.log("y = " + y);
@@ -182,14 +203,14 @@ $(".openbtn1").click(function () {//ボタンがクリックされたら
 //    $("#g-nav1").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 //});
 
-$(".openbtn2").click(function () {//ボタンがクリックされたら
+$(".openbtn4").click(function () {//ボタンがクリックされたら
 	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-	$("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+	$("#g-nav4").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
 
-$("#g-nav2 a").click(function () {//ナビゲーションのリンクがクリックされたら
-	$(".openbtn2").removeClass('active');//ボタンの activeクラスを除去し
-	$("#g-nav2").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+$("#g-nav4 a").click(function () {//ナビゲーションのリンクがクリックされたら
+	$(".openbtn4").removeClass('active');//ボタンの activeクラスを除去し
+	$("#g-nav4").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
 
 $("#characterbtn").click(function () {//ボタンがクリックされたら
