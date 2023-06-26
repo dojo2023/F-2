@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -69,9 +70,15 @@ public class SlideshowServlet extends HttpServlet {
 				}
 			}
 		}
+
+	    	Random rand = new Random();
+	    	int num = rand.nextInt(9);
+	    	request.setAttribute("random", num);
+
 			request.setAttribute("imgList", imgList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Slideshow.jsp");
 			dispatcher.forward(request, response);
 	}
+
 
 }

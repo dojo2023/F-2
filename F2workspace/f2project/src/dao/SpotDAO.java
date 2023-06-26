@@ -40,13 +40,13 @@ public class SpotDAO {
 				pStmt.setString(2, "%");
 			}
 			if (card.getName() != null && !card.getName().equals("")) {
-				pStmt.setString(3, card.getName());
+				pStmt.setString(3, "%" + card.getName() + "%");
 			}
 			else {
 				pStmt.setString(3, "%");
 			}
 			if (card.getAddress() != null && !card.getAddress().equals("")) {
-				pStmt.setString(4, card.getAddress());
+				pStmt.setString(4, "%" + card.getAddress() + "%");
 			}
 			else {
 				pStmt.setString(4, "%");

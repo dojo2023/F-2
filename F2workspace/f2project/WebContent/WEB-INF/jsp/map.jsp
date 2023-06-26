@@ -20,49 +20,51 @@
 				<ul>
 					<li class="left">スポット名</li>
 					<li id="spotname">
-						<input type="text" size= "36" name="spotname" required>
+						<input type="text" size= "36" name="spotname" placeholder="スポット名を入力してください" required>
+						<div class="text_underline"></div>
 					</li>
 				</ul>
-
 				<ul>
 					<li class="left">スポット住所</li>
 					<li class="spotarea">
-						<textarea class="area" cols="37" rows="2" maxlength="40" name="spotaddress" required></textarea>
+						<textarea class="area" cols="37" rows="2" maxlength="40" name="spotaddress" placeholder="住所を入力してください" required></textarea>
+												<div class="text_underline"></div>
 					</li>
 				</ul>
-
 				<ul>
 					<li class="left">ジャンル</li>
 					<li class="center">
-						<input type="radio" name="genre" value="img/memoryicon" checked><img src="img/memoryicon.png" alt="メモリーアイコン" width="40px" height="40px">
-						<input type="radio" name="genre" value="img/foodicon"><img src="img/foodicon.png" alt="フードアイコン" width="40px" height="40px">
-						<input type="radio" name="genre" value="img/shoppingicon"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="40px" height="40px">
-						<input type="radio" name="genre" value="img/othericon"><img src="img/othericon.png" alt="その他アイコン" width="40px" height="40px">
+						<input id="memory" type="radio" name="genre" value="img/memoryicon" checked>
+						<label for="memory"><img src="img/memoryicon.png" alt="メモリーアイコン" width="40px" height="40px"></label>
+						<input id="food" type="radio" name="genre" value="img/foodicon">
+						<label for="food"><img src="img/foodicon.png" alt="フードアイコン" width="40px" height="40px"></label>
+						<input id="shopping" type="radio" name="genre" value="img/shoppingicon">
+						<label for="shopping"><img src="img/shoppingicon.png" alt="ショッピングアイコン" width="40px" height="40px"></label>
+						<input id="other" type="radio" name="genre" value="img/othericon">
+						<label for="other"><img src="img/othericon.png" alt="その他アイコン" width="40px" height="40px"></label>
 					</li>
 				</ul>
-
 				<ul>
 					<li class="left">画像</li>
 					<li class="center">
-  						<input type="file" name="image" multiple>
+					<label class="file">
+  						<input type="file" name="image" multiple class="submit">選択してください
+  					</label>
    					</li>
 				</ul>
-
 				<ul>
 					<li class="left">備考</li>
 					<li class="spotarea">
 						<textarea class="area" cols="37" rows="5" maxlength="100" name="spotremarks" required></textarea>
+						<div class="text_underline"></div>
 					</li>
 				</ul>
-
 				<ul>
-					<li class="right"><input type="submit" value="登録" ></li>
+					<li class="right"><input type="submit" value="登録" class="submit" ></li>
 				</ul>
 			</div>
-
 			<input id="img_data_x" type="hidden" name="img_data_x" value="x">
 			<input id="img_data_y" type="hidden" name="img_data_y" value="y">
-
 			<input id="img_data_x2" type="hidden" name="img_data_x2" value="x2">
 			<input id="img_data_y2" type="hidden" name="img_data_y2" value="y2">
 		</form>
@@ -110,13 +112,13 @@
 	</div>
 
 	<audio id="charavoice" preload="none">
-  		<source src="voice/charavoice1.wav" type="audio/wav">
-	</audio>
-	<script type="text/javascript">
-		document.getElementById("characterbtn").onclick = function( event ) {
-			document.getElementById("charavoice").play();
-		}
-	</script>
+        <source src="voice/charavoice1.wav" type="audio/wav">
+    </audio>
+    <script type="text/javascript">
+            document.getElementById("charavoice").play();
+            let bubble = document.querySelector("#baloon");
+            console.log(bubble);
+    </script>
 
 	<div class="balloon">
 		<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
@@ -160,65 +162,45 @@ if(x != null) {
 }
 
 $("#pin").click(function () {//ボタンがクリックされたら
-	$("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
-	$(this).toggleClass('setimg');
-	document.getElementById( "out_map" ).onclick = function( event ) {
-		var ximg = event.pageX ;	// 水平の位置座標
-		var yimg = event.pageY ;	// 垂直の位置座標
-
-		var img = document.getElementById("img");
-		var url = "img/destinationicon.png";
-
-		dispic(img, url, ximg, yimg);
-		function dispic(img, url, x, y){
-			x -= 13.5;
-			y -= 42.5;
-			var image = new Image();
-			image.src = url;
-			image.width = 29;
-			image.height = 44;
-			image.style.position = "fixed";
-			image.style.zIndex = 9992;
-			image.style.left = x + "px";
-			image.style.top = y + "px";
-			image.setAttribute("src", url);
-			img.appendChild(image);
-
-			$('#img_data_x').val(x);
-			$('#img_data_y').val(y);
-
-			console.log("x = " + x);
-			console.log("y = " + y);
-		}
-	}
+    $("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
+    $(this).toggleClass('setimg');
+    document.getElementById( "out_map" ).onclick = function( event ) {
+        var ximg = event.pageX ;    // 水平の位置座標
+        var yimg = event.pageY ;    // 垂直の位置座標
+        var img = document.getElementById("img");
+        var url = "img/destinationicon.png";
+        dispic(img, url, ximg, yimg);
+        function dispic(img, url, x, y){
+            x -= 13.5;
+            y -= 42.5;
+            var image = new Image();
+            image.src = url;
+            image.width = 29;
+            image.height = 44;
+            image.style.position = "fixed";
+            image.style.zIndex = 9992;
+            image.style.left = x + "px";
+            image.style.top = y + "px";
+            image.setAttribute("src", url);
+            img.appendChild(image);
+            $('#img_data_x').val(x);
+            $('#img_data_y').val(y);
+            console.log("x = " + x);
+            console.log("y = " + y);
+        }
+    }
 });
-
 $(".openbtn1").click(function () {//ボタンがクリックされたら
-	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-	$("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+    $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
-
-//$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-//    $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
-//    $("#g-nav1").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
-//});
-
 $(".openbtn4").click(function () {//ボタンがクリックされたら
-	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-	$("#g-nav4").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+    $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#g-nav4").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
-
 $("#g-nav4 a").click(function () {//ナビゲーションのリンクがクリックされたら
-	$(".openbtn4").removeClass('active');//ボタンの activeクラスを除去し
-	$("#g-nav4").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
-});
-
-$("#characterbtn").click(function () {//ボタンがクリックされたら
-	$(".balloon").toggleClass('active');//balloonに activeクラスを付与し
-});
-
-$(".balloon").click(function () {//ボタンがクリックされたら
-	$(this).removeClass('active');//balloonの activeクラスを除去し
+    $(".openbtn4").removeClass('active');//ボタンの activeクラスを除去し
+    $("#g-nav4").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
 </script>
 </html>

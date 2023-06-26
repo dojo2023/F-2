@@ -15,7 +15,7 @@
         $(document).ready(function(){
             $('.slider').bxSlider({
                 auto: true,
-                pause: 1000,
+                pause: 4000,
             });
         });
 </script>
@@ -25,11 +25,18 @@
 	<br><br><br><br><br>
 </div>
 <div class = "main2">
-	<div class="slider">
+	<div class="slider" >
 		<c:forEach var="e" items="${imgList}">
-			<img src="<c:out value="spot_img/${e}" />" >
+			<img  src="<c:out value="spot_img/${e}" />" >
 		</c:forEach>
 	</div>
 </div>
+
+<script>
+	const music = new Audio("voice/${random}.mp3");
+	music.play();
+</script>
+
+
 </body>
 </html>

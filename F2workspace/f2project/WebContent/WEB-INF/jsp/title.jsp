@@ -34,7 +34,7 @@
 <div class="tabletitle">
 <table id="titlelist">
 	<tr>
-		<th class="text01" name="audio/target01.wav">1000歩達成！</th>
+		<th class="text01" name="audio/target08.wav">1000歩達成！</th>
 		<td><img src="img/bronzestar.png" alt="星" width="24" height="24"></td>
 	</tr>
 	<tr>
