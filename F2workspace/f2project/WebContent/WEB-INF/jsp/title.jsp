@@ -70,14 +70,15 @@
 		<td></td>
 	</tr>
 </table>
-</div>
+</div></div>
 <div id="characterbtn">
 	<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
 </div>
 <div class="balloon">
-	<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
-</div>
-</div>
+		<textarea class="message" readonly>こんにちは
+</textarea>
+	</div>
+
 
 </body>
 <script>
