@@ -14,6 +14,7 @@
 	<div class="openbtn1">
 		<span></span><span></span><span></span>
 	</div>
+
 	<nav id="g-nav1">
 		<form action="/f2project/MapServlet" method="post" enctype="multipart/form-data">
 			<div id="g-nav-list1">
@@ -86,7 +87,7 @@
 		</div>
 	</nav>
 
-	<div id="map">
+	<div id="ddd"><div id="map">
 		<div id="out_map"></div>
 		<iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7932.259494018684!2d139.776229
 			038981!3d35.69766620469117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1686291565507!5m2!1sja!
@@ -109,7 +110,7 @@
 
 	<div id="characterbtn">
 		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
-	</div>
+	</div></div>
 
 	<audio id="charavoice" preload="none">
         <source src="voice/charavoice1.wav" type="audio/wav">
@@ -131,21 +132,17 @@
 	</div>
 </body>
 <script>
-
 var x = parseFloat(<%= request.getParameter("img_data_x") %>);
 var y = parseFloat(<%= request.getParameter("img_data_y") %>);
 console.log(x + y);
 if(x != null) {
 	$('#img_data_x2').val(x);
 	$('#img_data_y2').val(y);
-
 	console.log(x);
 	console.log(y);
-
 	$("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
 	var img = document.getElementById("img");
 	var url = "img/destinationicon.png";
-
 	dispic(img, url, x, y);
 	function dispic(img, url, x, y){
 		var image = new Image();
@@ -160,7 +157,6 @@ if(x != null) {
 		img.appendChild(image);
 	}
 }
-
 $("#pin").click(function () {//ボタンがクリックされたら
     $("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
     $(this).toggleClass('setimg');
@@ -193,10 +189,26 @@ $("#pin").click(function () {//ボタンがクリックされたら
 $(".openbtn1").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+    let obj = document.getElementById("map");
+    if( $(this).hasClass('active') ){
+        obj.style.opacity = 0.2;
+        //obj.style.background-color="#999";
+    }else if( !$(this).hasClass('active') ){
+    	obj.style.opacity = 1;
+    	//obj.style.background-color="#fff";
+    }
 });
 $(".openbtn4").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav4").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+    let obj = document.getElementById("map");
+    if( $(this).hasClass('active') ){
+        obj.style.opacity = 0.5;
+        //obj.style.background-color="#999";
+    }else if( !$(this).hasClass('active') ){
+    	obj.style.opacity = 1;
+    	//obj.style.background-color="#fff";
+    }
 });
 $("#g-nav4 a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".openbtn4").removeClass('active');//ボタンの activeクラスを除去し

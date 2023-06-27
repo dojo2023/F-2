@@ -60,8 +60,7 @@ public class SpotDAO {
 			while (rs.next()) {
 				Spot cardlist = new Spot(rs.getString("Id"),rs.getString("Date"),rs.getString("Genre"),rs.getString("Name"),
 				rs.getString("Address"),
-				rs.getString("Remarks"),
-				rs.getString("Image"));
+				rs.getString("Remarks"));
 				cardList.add(cardlist);
 			}
 		}

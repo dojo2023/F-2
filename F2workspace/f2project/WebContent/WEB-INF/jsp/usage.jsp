@@ -80,6 +80,14 @@
   $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  let obj = document.getElementById("map");
+  if( $(this).hasClass('active') ){
+      obj.style.opacity = 0.5;
+      //obj.style.background-color="#999";
+  }else if( !$(this).hasClass('active') ){
+  	obj.style.opacity = 1;
+  	//obj.style.background-color="#fff";
+  }
 });
 
 //$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
@@ -90,6 +98,14 @@
   $(".openbtn2").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  let obj = document.getElementById("map");
+  if( $(this).hasClass('active') ){
+      obj.style.opacity = 0.5;
+      //obj.style.background-color="#999";
+  }else if( !$(this).hasClass('active') ){
+  	obj.style.opacity = 1;
+  	//obj.style.background-color="#fff";
+  }
 });
 
   $("#g-nav2 a").click(function () {//ナビゲーションのリンクがクリックされたら

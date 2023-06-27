@@ -89,7 +89,7 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 }
 
 /* 各ボタンのデザイン */
-#login, #reset, #check, #submit, #back, #login_back, #q_back {
+#login, #reset, #check, #submit, #back, #login_back, #q_back, #go_login{
 	width: 110px;
 	margin: 10px 0 -5px 10px;
 	font-weight: bold;
@@ -138,7 +138,18 @@ input[type="text"]:focus, input[type="password"]:focus, #q:focus {
 	height: 50px;
 	font-weight: bold;
 	border-radius: 30px;
+	border: 2px solid #ff99cc;    /* 枠の指定 */
+	background:#ff99cc;
+	color         : #ffffff;     /* 文字色     */
+	transition    : .3s;         /* なめらか変化 */
+
 }
+
+#go_login:hover {
+	color         : #ff99cc;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
 
 /* 各ページ上部のテキストエリアのデザイン */
 #regist_text, .reset_text, #completion_text {

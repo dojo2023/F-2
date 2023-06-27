@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ImgDAO;
 import dao.SpotDAO;
 import model.Spot;
 
@@ -26,9 +27,16 @@ public class listServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		SpotDAO sDao = new SpotDAO();
-		List<Spot> cardList = sDao.select(new Spot("","","","","","",""));
+		List<Spot> cardList = sDao.select(new Spot("","","","","",""));
+		ImgDAO iDao = new ImgDAO();
+		List<String> idList = iDao.select(new Spot("","","","","",""));
+		String id = idList.toString();
+		//int data = Integer.parseInt(id);
+		//System.out.println("data" + data);
+		List<String> imgList = iDao.selectimg(id);
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
+		request.setAttribute("imgList", imgList);
 
 // メニューページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
@@ -46,7 +54,7 @@ public class listServlet extends HttpServlet {
 		String spotaddress = request.getParameter("spotaddress");
 
 		SpotDAO sDao = new SpotDAO();
-		List<Spot> cardList = sDao.select(new Spot("",date,genre,spotname,spotaddress,"",""));
+		List<Spot> cardList = sDao.select(new Spot("",date,genre,spotname,spotaddress,""));
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 

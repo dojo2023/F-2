@@ -91,20 +91,20 @@
 
 .header {
 	position: relative;
-	width: 385px;
-	height: 50px;
-	top: 0.4%;
-	left:0.6%;
+	width: 390px;
+	height: 55px;
 	z-index: 998;
-	background-color: rgb(255, 189, 234);
+	background-color: #ffffff;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	border-radius:10px 10px 10px 10px;
+	justify-content: right;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+	opacity: 0.9;
+
 }
 
 .header img{
-	width: 190px;
+	width: 160px;
 	height: aute;
 }
 
@@ -249,8 +249,13 @@ table{
 	padding: 0px;
 	text-align: center;
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
+
+.name1{
+	text-align: center;
+}
 
 
 #update{
@@ -291,6 +296,27 @@ display       : inline-block;
   background    : #ffffff;     /* 文字色     */
 }
 
+/*
+.titlelist2 tr:first-child td:first-child{
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.titlelist2 tr:first-child td:last-child{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.titlelist2 tr:last-child td:first-child{
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.titlelist2 tr:last-child td:last-child{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+*/
 
 /* title.jsp */
 .tabletitle{
@@ -310,7 +336,7 @@ display       : inline-block;
 
 #titlelist th{
 	background-color: white;
-	border: 1px solid #0000004d;
+	border: 1px solid #ff99cc;
 	text-align: left;
 	padding: 8px;
 	border-top-left-radius: 10px;
@@ -319,7 +345,7 @@ display       : inline-block;
 
 #titlelist td{
 	background-color: white;
-	border: 1px solid #0000004d;
+	border: 1px solid #ff99cc;
 	width: 25px;
 	height: 25px;
 	padding: 0px;
@@ -467,6 +493,12 @@ p{
 }
 
 /*========= ボタンのためのCSS ===============*/
+
+#ddd{
+	opacity: 1;
+	z-index: 9998;
+}
+
 .openbtn1{
   position:fixed;
   z-index: 9999;

@@ -72,19 +72,29 @@
 </table>
 </div></div>
 <div id="characterbtn">
-	<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
+	<img class = "character" src="img/character.png" alt="キャラクター" name="audio/${random}.wav" width="120" height="120">
 </div>
 <div class="balloon">
-		<textarea class="message" readonly>こんにちは
-</textarea>
+		<textarea class="message" ></textarea>
 	</div>
 
 
 </body>
 <script>
+
+var flag = 0;
+
   $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  let obj = document.getElementById("map");
+  if( $(this).hasClass('active') ){
+      obj.style.opacity = 0.5;
+      //obj.style.background-color="#999";
+  }else if( !$(this).hasClass('active') ){
+  	obj.style.opacity = 1;
+  	//obj.style.background-color="#fff";
+  }
 });
 
 //$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
@@ -95,6 +105,14 @@
   $(".openbtn2").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  let obj = document.getElementById("map");
+  if( $(this).hasClass('active') ){
+      obj.style.opacity = 0.5;
+      //obj.style.background-color="#999";
+  }else if( !$(this).hasClass('active') ){
+  	obj.style.opacity = 1;
+  	//obj.style.background-color="#fff";
+  }
 });
 
   $("#g-nav2 a").click(function () {//ナビゲーションのリンクがクリックされたら
@@ -103,7 +121,25 @@
 });
 
   $("#characterbtn").click(function () {//ボタンがクリックされたら
+
 	  $(".balloon").toggleClass('active');//balloonに activeクラスを付与し
+	  let mes = document.querySelector(".message");
+
+	  var audioData = new Audio();
+	  //audioData.muted=true;
+	  var a=["頑張りましたね","もっとお出かけしましょうね","お疲れ様、頑張ってますね","おつかれさまでした、この調子でいきましょう","がんばっているあなたがすてき！"];
+	  var voice =["audio/1.wav","audio/2.wav","audio/3.wav","audio/4.wav","audio/5.wav"];
+	  //var a=Math.floor(Math.random()*5);
+      if( flag == 0){
+	     var x=Math.floor(Math.random()*5);
+	     mes.innerHTML = a[x];
+	     audioData.src = voice[x];
+	     audioData.play();
+	     flag=1;
+      }else{
+	     flag=0;
+	  }
+
 	});
 
   $(".balloon").click(function () {//ボタンがクリックされたら
@@ -122,5 +158,19 @@ $('.text01').click(function(){
 
 </script>
 
+<script>
+//let mes = document.querySelector(".message");
+//var audioData = new Audio();
+//audioData.muted=true;
+//var a=["頑張りましたね","もっとお出かけしましょうね","お疲れ様、頑張ってますね","おつかれさまでした、この調子でいきましょう","がんばっているあなたがすてき！"];
+//var voice =["audio/1.wav","audio/2.wav","audio/3.wav","audio/4.wav","audio/5.wav"];
+//var x;
+//x=Math.floor(Math.random()*5);
+//mes.innerHTML = a[x];
+//audioData.src = voice[x];
+//audioData.play();
+
+//document.write(a[x]);
+</script>
 
 </html>

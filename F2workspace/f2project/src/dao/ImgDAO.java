@@ -198,6 +198,8 @@ public class ImgDAO {
 	public List<String> selectimg(String id) {
 		Connection conn = null;
 		List<String> imglist = new ArrayList<String>();
+		//id.replace("[", "").replace("]","");
+		int ids = Integer.parseInt(id.replace("[", "").replace("]",""));
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -210,8 +212,8 @@ public class ImgDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setString(1, id);
-
+			pStmt.setInt(1, ids);
+			//System.out.println("id" + id);
 
 
 			// SQL文を実行し、結果表を取得する
@@ -219,7 +221,7 @@ public class ImgDAO {
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				String img = rs.getString("IMAGE");
+				String img = rs.getString("Image");
 				imglist.add(img);
 			}
 		}

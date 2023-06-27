@@ -26,9 +26,9 @@
 </div>
 <div class = "main2">
 	<div class="slider" >
-		<img src="" alt="スライドショー画像">
-		<img src="" alt="スライドショー画像">
-		<img src="" alt="スライドショー画像">
+		<img src="spot_img/すしざんまい.png" alt="スライドショー画像">
+		<img src="spot_img/叙々苑2.png" alt="スライドショー画像">
+		<img src="spot_img/ヒグマドーナツ.png" alt="スライドショー画像">
 	</div>
 </div>
 
