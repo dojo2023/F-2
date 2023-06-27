@@ -37,6 +37,40 @@
 			</ul>
 		</div>
 	</nav>
+	<div class="openbtn8">
+		<img src="img/虫眼鏡.png" alt="検索ボタン" width="50px" height="50px">
+	</div>
+	<nav id="g-nav8">
+		<form action="/f2project/listServlet" method="post">
+			<div id="g-nav-list8">
+				<ul>
+					<li class="left">日付</li>
+					<li id="spotname">
+						<input type="text" size= "7" name="date">
+						<div class="text_underline"></div>
+					</li>
+				</ul>
+				<ul>
+					<li class="left">スポット名</li>
+					<li id="spotname">
+						<input type="text" size= "36" name="spotname">
+						<div class="text_underline"></div>
+					</li>
+				</ul>
+				<ul>
+					<li class="left">スポット住所</li>
+					<li class="spotarea">
+						<textarea class="area" cols="37" rows="2" maxlength="40" name="spotaddress"></textarea>
+						<div class="text_underline"></div>
+					</li>
+				</ul>
+				<ul>
+					<li class="right"><input type="submit" value="検索" class="submit" ></li>
+				</ul>
+			</div>
+		</form>
+	</nav>
+
 <div class = "header">
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
@@ -45,7 +79,7 @@
 <div class="tabletitle">
 
 
-<table class="titlelist2">
+<table id="titlelist2">
 <c:forEach var="e" items="${cardList}" >
 
 	<tr class="nav-open">
@@ -74,55 +108,21 @@
 
 		<form method="POST" action="/f2project/listServlet">
 		<input class="date1" type="text" name="DATE" size= "6" value="${e.date}">
-	    <img src="${e.genre}.png " alt="アイコン" width="24px" height="24px"><br>
+	    <img src="${e.genre}.png" alt="アイコン" width="24px" height="24px"><br>
 	    <input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
 	    <input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
-	    <img src="img/character.png" alt="アイコン" width="100px" height="150px">
-	    <img src="img/character.png" alt="アイコン" width="100px" height="150px">
-	    <img src="img/character.png" alt="アイコン" width="100px" height="150px"><br>
+		<img src="spot_img/${e.image}" alt="スポット画像">
 	    <textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">${e.remarks}</textarea><br>
 		<input id="update" type="submit" name="update" value="更新">
         <input id="delete" type="submit" name="delete" value="削除">
 		</form>
 		</td>
 		</tr>
-
-
-
 </c:forEach>
 </table>
 
 </div>
 </div>
-
-<section class="accordion">
-<input id="block-01" type="checkbox" class="toggle">
-<p id="pest-01"><br>
-アリスは川辺でおねえさんのよこにすわって、なんにもすることがないのでとても退屈（たいくつ）しはじめていました。
-一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。
-「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは思いました。</p>
-</section>
-
-<!--
-<script>
-
-var tbl=document.getElementById("click01");
-var menu=document.getElementById("pest-01");
-var flag = 0;
-tbl.addEventListener('click',function(){
-	if( flag == 0 )	{
-		menu.style.display="block";
-		flag = 1;
-	}
-	else if (flag == 1){
-		menu.style.display="none";
-		flag = 0;
-	}
-
-});
-</script>
--->
-
   <script>
 
 	$(function(){
@@ -137,9 +137,9 @@ tbl.addEventListener('click',function(){
 
 </body>
 <script>
-  $(".openbtn1").click(function () {//ボタンがクリックされたら
+  $(".openbtn8").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-  $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  $("#g-nav8").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
 
 //$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
