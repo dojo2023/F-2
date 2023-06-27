@@ -91,21 +91,30 @@
 
 .header {
 	position: relative;
-	width: 390px;
+	width: 385px;
 	height: 50px;
-	top: 0%;
-	left:0%;
+	top: 0.4%;
+	left:0.6%;
 	z-index: 998;
 	background-color: rgb(255, 189, 234);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius:10px 10px 10px 10px;
+}
+
+.header img{
+	width: 190px;
+	height: aute;
 }
 
 body{
 	margin: 0px;
-	/*background-image: url(/f2project/img/kumo2.png);
-	background-attachment: scroll;*/
+	width: 390px;
+	height: 844px;
+	background-color:#fff0f5!important;
+	/*background-image: url(/f2project/img/kumo2.png);*/
+	/*background-attachment: scroll;*/
 	font-family: 'Hachi Maru Pop', cursive;
 }
 
@@ -131,6 +140,7 @@ body{
 body.body2{
 	margin: 0px;
 	background-attachment: scroll;
+
 }
 
 .centertable{
@@ -214,28 +224,26 @@ table{
 	margin: 10px;
 }
 /* list.jsp */
-#titlelist2 {
+.titlelist2 {
 	list-style:none;
 	width: 85%;
 	padding-left:10px;
+	padding-top:10px;
 	border-collapse: separate;
 	border-spacing:0px 10px;
-	border-radius: 10px;
 }
 
-#titlelist2 th{
+.titlelist2 th{
 	background-color: white;
-	/*border: 1px solid #000000;*/
-	border:none;
+	border: 1px solid #ff99cc;
 	text-align: left;
 	padding: 0px 0px 0px 5px;
 	font-weight: normal;
 }
 
-#titlelist2 td{
+.titlelist2 td{
 	background-color: white;
-	/*border: 1px solid #000000;*/
-	border: none;
+	border: 1px solid #ff99cc;
 	width: 25px;
 	height: 25px;
 	padding: 0px;
@@ -243,53 +251,7 @@ table{
 	padding-top: 5px;
 }
 
-#titlelist2 tr:first-child td:first-child{ /* 最初のtr(行) かつ、最初の td(列) */
-  border-radius: 20px 0 0 20px; /* 左上から指定してゆく */
-}
 
-#titlelist2 tr:first-child td:last-child{ /* 最初のtr(行) かつ、最後の td(列) */
-  border-radius: 0 10px 10px 0;
-}
-
-#titlelist2 tr:last-child td:first-child{ /* 最後のtr(行) かつ、最初の td(列) */
-  border-radius: 10px 0 0 10px;
-}
-
-#titlelist2 tr:last-child td:last-child{ /* 最後のtr(行) かつ、最後の td(列) */
-  border-radius: 0 10px 10px 0;
-}
-
-/* title.jsp */
-.tabletitle{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#titlelist {
-	list-style:none;
-	width: 85%;
-	padding-left:10px;
-	border-collapse: separate;
-	border-spacing:0px 10px;
-}
-
-#titlelist th{
-	background-color: white;
-	border: 1px solid #000000;
-	text-align: left;
-	padding: 0px;
-}
-
-#titlelist td{
-	background-color: white;
-	border: 1px solid #000000;
-	width: 25px;
-	height: 25px;
-	padding: 0px;
-	text-align: center;
-	padding-top: 5px;
-}
 
 #update{
 display       : inline-block;
@@ -297,7 +259,7 @@ display       : inline-block;
   font-size     : 13pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  padding       : 6px 10px;   /* 余白       */
+  padding       : 4px 10px;   /* 余白       */
   background    : #ff99cc;     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
@@ -316,7 +278,7 @@ display       : inline-block;
   font-size     : 13pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  padding       : 6px 10px;   /* 余白       */
+  padding       : 4px 10px;   /* 余白       */
   background    : #ff99cc;     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
@@ -328,6 +290,45 @@ display       : inline-block;
   color         : #ff99cc;     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
 }
+
+
+/* title.jsp */
+.tabletitle{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#titlelist {
+	list-style:none;
+	width: 85%;
+	padding-left:10px;
+	padding-top:10px;
+	border-collapse: separate;
+	border-spacing:0px 10px;
+}
+
+#titlelist th{
+	background-color: white;
+	border: 1px solid #0000004d;
+	text-align: left;
+	padding: 8px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#titlelist td{
+	background-color: white;
+	border: 1px solid #0000004d;
+	width: 25px;
+	height: 25px;
+	padding: 0px;
+	text-align: center;
+	padding-top: 5px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
 
 /* usage.jsp */
 .usage-item {
@@ -389,13 +390,59 @@ p{
 #g-nav4{
   position:fixed;
   z-index: 9998;
-  left:-100%;
+  left: -100%;
+  top: 0;
   width:40%;
   height: 100vh;
   background: #ff99cc;
   transition: all 0.5s;
   opacity: 0.9;
   border-radius: 0px 25px 25px 0px;
+}
+
+#g-nav8{
+  position:fixed;
+  z-index: 9997;
+  bottom:-100%;
+  left:0;
+  width:100%;
+  height: 95vh;
+  background:#fff9ff;
+  transition: all 0.5s;
+  border-radius: 25px 25px 0px 0px;
+}
+
+#g-nav8.panelactive{
+    bottom: -270px;
+    z-index: 9997;
+}
+
+.openbtn8{
+  position:fixed;
+  z-index: 9999;
+  top: 320px;
+  right: 10px;
+  cursor: pointer;
+  width: 50px;
+  height:50px;
+}
+
+#g-nav-list8 li.left{
+	list-style: none;
+	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+#g-nav-list8 li.right{
+	list-style: none;
+	text-align: right;
+}
+
+#g-nav-list8 li.spotarea{
+	list-style: none;
+	resize: none;
 }
 
 /*アクティブクラスがついたら位置を0に*/

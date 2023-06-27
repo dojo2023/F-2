@@ -11,7 +11,7 @@
 <body>
   <div id="main" class="login_main">
     <h1>
-      <img src="/f2project/img/back-img.png">
+      <img src="/f2project/img/memolylogo.png" width="350px" height="120px">
     </h1>
 
     <div id="all_form">

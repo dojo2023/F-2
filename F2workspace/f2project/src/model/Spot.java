@@ -8,14 +8,16 @@ public class Spot implements Serializable {
 	private String name;
 	private String address;
 	private String remarks;
+	private String image;
 
-	public Spot(String id, String date, String genre, String name, String address, String remarks) {
+	public Spot(String id, String date, String genre, String name, String address, String remarks, String image) {
 		this.id = id;
 		this.date = date;
 		this.genre = genre;
 		this.name = name;
 		this.address = address;
 		this.remarks = remarks;
+		this.image = image;
 	}
 
 	public Spot() {
@@ -26,6 +28,7 @@ public class Spot implements Serializable {
 		this.name = "";
 		this.address = "";
 		this.remarks = "";
+		this.image = "";
 	}
 	public String getId() {
 		return id;
@@ -73,6 +76,14 @@ public class Spot implements Serializable {
 
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

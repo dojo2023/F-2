@@ -16,7 +16,7 @@
             <tr>
               <td>
                 <div class="reset_text">
-                  &nbsp;&nbsp;パスワードをリセットするアカウントのIDを入力してください。
+                  &nbsp;&nbsp;パスワードをリセットします。<br>アカウントのIDを入力してください。
                 </div>
               </td>
             </tr>

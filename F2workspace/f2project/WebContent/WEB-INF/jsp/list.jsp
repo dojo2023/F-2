@@ -45,12 +45,12 @@
 <div class="tabletitle">
 
 
-<table id="titlelist2">
+<table class="titlelist2">
 <c:forEach var="e" items="${cardList}" >
 
 	<tr class="nav-open">
 		<td >
-			<img src="${e.genre}" alt="アイコン" width="24px" height="24px">
+			<img src="${e.genre}.png" alt="アイコン" width="24px" height="24px">
 		</td>
 		<th><span>${e.name}</span></th>
 		<td>
@@ -74,7 +74,7 @@
 
 		<form method="POST" action="/f2project/listServlet">
 		<input class="date1" type="text" name="DATE" size= "6" value="${e.date}">
-	    <img src="${e.genre} + '.png'" alt="アイコン" width="24px" height="24px"><br>
+	    <img src="${e.genre}.png " alt="アイコン" width="24px" height="24px"><br>
 	    <input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
 	    <input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
 	    <img src="img/character.png" alt="アイコン" width="100px" height="150px">

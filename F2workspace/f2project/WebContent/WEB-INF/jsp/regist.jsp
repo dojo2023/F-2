@@ -16,10 +16,10 @@
           <tr>
             <td>
               <div id="regist_text">
-                &nbsp;&nbsp;IDは8～20文字<br>
-                &nbsp;&nbsp;PWは8～20文字の英数字<br>
-                &nbsp;&nbsp;秘密の質問はパスワードお忘れの際に<br>
-                &nbsp;&nbsp;ご利用になります。
+                &nbsp;&nbsp;ID：8～20文字<br>
+                &nbsp;&nbsp;PW：8～20文字の英数字<br>
+                &nbsp;&nbsp;パスワードをお忘れの際に、<br>
+                &nbsp;&nbsp;秘密の質問を使用します。
               </div>
             </td>
           </tr>

@@ -23,7 +23,7 @@ public class SpotDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			// SQL文を準備する
-			String sql = "select * from SPOT WHERE DATE LIKE ? AND GENRE LIKE ? AND NAME LIKE ? AND ADDRESS LIKE ? AND REMARKS LIKE ?";
+			String sql = "select SPOT.ID, SPOT.DATE, SPOT.GENRE, SPOT.NAME, SPOT.ADDRESS, SPOT.REMARKS, IMAGE from SPOT inner join IMG on IMG.id = SPOT.id WHERE DATE LIKE ? AND GENRE LIKE ? AND NAME LIKE ? AND ADDRESS LIKE ? AND REMARKS LIKE ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -51,12 +51,7 @@ public class SpotDAO {
 			else {
 				pStmt.setString(4, "%");
 			}
-			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
-				pStmt.setString(5, card.getRemarks());
-			}
-			else {
 				pStmt.setString(5, "%");
-			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -65,8 +60,8 @@ public class SpotDAO {
 			while (rs.next()) {
 				Spot cardlist = new Spot(rs.getString("Id"),rs.getString("Date"),rs.getString("Genre"),rs.getString("Name"),
 				rs.getString("Address"),
-				rs.getString("Remarks")
-				);
+				rs.getString("Remarks"),
+				rs.getString("Image"));
 				cardList.add(cardlist);
 			}
 		}

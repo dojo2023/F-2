@@ -22,7 +22,7 @@ public class ImgDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/F2workspace/data/F2Database", "f2", "");
 
 			// SQL文を準備する
-			String sql = "select * from SPOT WHERE DATE LIKE ? AND GENRE LIKE ? AND NAME LIKE ? AND ADDRESS LIKE ? AND REMARKS LIKE ?";
+			String sql = "select * from SPOT inner join img on IMG.id = SPOT.id WHERE DATE LIKE ? AND GENRE LIKE ? AND NAME LIKE ? AND ADDRESS LIKE ? AND REMARKS LIKE ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (img.getDate() != null && !img.getDate().equals("")) {
