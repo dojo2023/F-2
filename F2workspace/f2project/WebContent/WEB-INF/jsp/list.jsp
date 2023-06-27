@@ -79,7 +79,7 @@
 <div class="tabletitle">
 
 
-<table id="titlelist2">
+<table class="titlelist2">
 <c:forEach var="e" items="${cardList}" >
 
 	<tr class="nav-open">
