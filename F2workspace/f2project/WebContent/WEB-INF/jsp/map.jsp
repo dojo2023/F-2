@@ -263,7 +263,7 @@ function getClickLatLng(lat_lng, map) {
 $(".openbtn1").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-    let obj = document.getElementById("map");
+    let obj = document.getElementById("ddd");
     if( $(this).hasClass('active') ){
         obj.style.opacity = 0.5;
         //obj.style.background-color="#999";
@@ -275,7 +275,7 @@ $(".openbtn1").click(function () {//ボタンがクリックされたら
 $(".openbtn4").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav4").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-    let obj = document.getElementById("map");
+    let obj = document.getElementById("ddd");
     if( $(this).hasClass('active') ){
         obj.style.opacity = 0.5;
         //obj.style.background-color="#999";
