@@ -80,7 +80,7 @@
 <div class="tabletitle">
 
 
-<table id="titlelist2">
+<table class="titlelist2">
 	<tr class="nav-open">
 		<td>
 			<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px">
@@ -285,7 +285,7 @@
 <c:forEach var="e" items="${cardList}" >
 	<tr class="nav-open">
 		<td >
-			<img src="${e.genre}" alt="アイコン" width="24px" height="24px">
+			<img src="${e.genre}.png" alt="アイコン" width="24px" height="24px">
 		</td>
 		<th><span>${e.name}</span></th>
 		<td>
