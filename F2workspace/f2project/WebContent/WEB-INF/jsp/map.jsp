@@ -11,12 +11,24 @@
 </head>
 
 <body>
+	<div id="ddd">
 	<div id="map">
 	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS9xq4Zz-x0CKigvuH2E4DuGld06H8YKE&callback=initMap"></script>
+	</div>
+	<div id="currentlocationbtn">
+		<a href="MapServlet">
+			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
+		</a>
+	</div>
+	<div class = "search_container">
+		<input name="keyword" id="keyword" type="text" value="" size="25" placeholder="キーワード検索">
+		<input id="search" type="submit" value="&#xf002">
+	</div>
 	<div id="characterbtn">
 		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
 	</div>
 	</div>
+
 	<div class="openbtn1">
 		<span></span><span></span><span></span>
 	</div>
@@ -97,12 +109,6 @@
 		</div>
 	</nav>
 
-	<div id="currentlocationbtn">
-		<a href="MapServlet">
-			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
-		</a>
-	</div>
-
 	<audio id="charavoice" preload="none">
         <source src="voice/charavoice1.wav" type="audio/wav">
     </audio>
@@ -116,11 +122,6 @@
 		<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
 	</div>
 
-
-	<div class = "search_container">
-		<input name="keyword" id="keyword" type="text" value="" size="25" placeholder="キーワード検索">
-		<input id="search" type="submit" value="&#xf002">
-	</div>
 </body>
 <script>
 function initMap() {

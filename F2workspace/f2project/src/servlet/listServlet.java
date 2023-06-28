@@ -47,7 +47,7 @@ public class listServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		/*request.setCharacterEncoding("UTF-8");
 		String date = request.getParameter("date");
 		String genre = request.getParameter("genre");
 		String spotname = request.getParameter("spotname");
@@ -61,9 +61,9 @@ public class listServlet extends HttpServlet {
 		request.setAttribute("cardList", cardList);
 
 		request.setAttribute("latitude", latitude);
-		request.setAttribute("longitude", longitude);
+		request.setAttribute("longitude", longitude);*/
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list_search.jsp");
 		dispatcher.forward(request, response);
 	}
 }

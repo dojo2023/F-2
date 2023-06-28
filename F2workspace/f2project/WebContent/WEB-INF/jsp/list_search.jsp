@@ -10,6 +10,7 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="css/style.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width">
 <title>memoly</title>
 
@@ -80,43 +81,61 @@
 
 
 <table class="titlelist2">
-<c:forEach var="e" items="${cardList}" >
-	<tr class="nav-open">
-		<td >
-			<img src="${e.genre}" alt="アイコン" width="24px" height="24px">
-		</td>
-		<th><span>${e.name}</span></th>
+<tr class="nav-open">
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px">
+		</td>
+		<th><span>東京タワー</span></th>
+		<td>
+			<form method="POST" action="/f2project/MapServlet">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input type="submit" name="tokyo_tower"></div>
+				<input type="hidden" name="pin_data" value="tokyo_tower">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
 		<td colspan="3">
 			<form method="POST" action="/f2project/UpdateDeleteServlet">
-				<input class="date1" type="text" name="DATE" size= "6" value="${e.date}">
-	    		<img src="${e.genre}" alt="アイコン" width="24px" height="24px"><br>
-	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
-	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
-	    		<c:forEach items="${imgList}" var="m">
-					<img src="spot_img/${m}" alt="スポット画像" width="330px">
-				</c:forEach>
-	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">${e.remarks}</textarea><br>
+				<input class="date1" type="text" name="DATE" size= "6" value="2023-06-23">
+	    		<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"><br>
+	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="東京タワー"><br>
+	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都港区芝公園４丁目２−８"><br>
+				<img src="spot_img/東京タワー.png" alt="スポット画像" width="300px">
+	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">東京タワーは、東京都港区芝公園にある総合電波塔である。日本電波塔とも呼ばれる。 1958年12月23日竣工。東京のシンボル、観光名所である。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
 			</form>
 		</td>
 	</tr>
-</c:forEach>
+
+	<tr class="nav-open">
+		<td >
+			<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px">
+		</td>
+		<th><span>東京スカイツリー</span></th>
+		<td>
+			<form method="POST" action="/f2project/MapServlet">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name=""></div>
+			</form>
+		</td>
+	</tr>
+	<tr class="detail">
+		<td colspan="3">
+			<form method="POST" action="/f2project/UpdateDeleteServlet">
+				<input class="date1" type="text" name="DATE" size= "6" value="2023-06-27">
+	    		<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"><br>
+	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="東京スカイツリー"><br>
+	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都墨田区押上一丁目1番1号"><br>
+				<img src="spot_img/東京スカイツリー.png" alt="スポット画像" width="300px">
+				<img src="spot_img/東京スカイツリー2.png" alt="スポット画像" width="300px">
+	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">東京のランドマークの一つ。高さは634 mで、タワーとしては世界第1位[注釈 1]。建築物としてはブルジュ・ハリファ、PNB118（ムルデカ118）に次ぐ世界第3位となる。</textarea><br>
+				<input id="update" type="submit" name="update" value="更新">
+        		<input id="delete" type="submit" name="delete" value="削除">
+			</form>
+		</td>
+	</tr>
 
 </table>
 

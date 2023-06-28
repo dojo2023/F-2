@@ -35,15 +35,14 @@ public class UpdateDeleteServlet extends HttpServlet {
 
 		// 更新または削除を行う
 		SpotDAO sDao = new SpotDAO();
-		if (request.getParameter("SUBMIT").equals("更新")) {
-			sDao.update(new Spot(id, date, genre, name, address, remarks));// 更新成功
+		if (request.getParameter("update").equals("更新")) {
+			sDao.update(new Spot(id, date, genre, name, address, remarks));
 		}
-		else if(request.getParameter("SUBMIT").equals("削除")) {
-			sDao.delete(id);	// 削除成功
+		if(request.getParameter("delete").equals("削除")) {
+			sDao.delete(id);
 		}
 		SpotDAO s2Dao = new SpotDAO();
 		List<Spot> cardList = s2Dao.select(new Spot("","","","","",""));
-		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
