@@ -11,9 +11,12 @@
 </head>
 
 <body>
-	<div id="map"></div>
+	<div id="map">
 	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS9xq4Zz-x0CKigvuH2E4DuGld06H8YKE&callback=initMap"></script>
-
+	<div id="characterbtn">
+		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
+	</div>
+	</div>
 	<div class="openbtn1">
 		<span></span><span></span><span></span>
 	</div>
@@ -98,10 +101,6 @@
 		<a href="MapServlet">
 			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
 		</a>
-	</div>
-
-	<div id="characterbtn">
-		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
 	</div>
 
 	<audio id="charavoice" preload="none">

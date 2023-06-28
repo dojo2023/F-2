@@ -297,7 +297,7 @@
 		<td colspan="3">
 			<form method="POST" action="/f2project/UpdateDeleteServlet">
 				<input class="date1" type="text" name="DATE" size= "6" value="${e.date}">
-	    		<img src="${e.genre}" alt="アイコン" width="24px" height="24px"><br>
+	    		<img src="${e.genre}.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
 	    		<c:forEach items="${imgList}" var="m">
