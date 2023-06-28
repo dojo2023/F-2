@@ -24,13 +24,14 @@
 				<li><a href="titleServlet">称号</a></li>
 				<li><a href="storyServlet">ストーリー</a></li>
 				<li><a href="usageServlet">使い方</a></li>
+				<li><a href="LoginServlet">ログアウト</a></li>
 			</ul>
 		</div>
 	</nav>
 <div class = "header">
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
-<div class = "main">
+<div class = "main" id="main">
 <div class="tabletitle">
 <table id="titlelist">
 	<tr>
@@ -70,15 +71,14 @@
 		<td></td>
 	</tr>
 </table>
-</div></div>
+</div>
 <div id="characterbtn">
 	<img class = "character" src="img/character.png" alt="キャラクター" name="audio/${random}.wav" width="120" height="120">
 </div>
 <div class="balloon">
-		<textarea class="message" ></textarea>
-	</div>
-
-
+	<textarea class="message" ></textarea>
+</div>
+</div>
 </body>
 <script>
 
@@ -87,7 +87,7 @@ var flag = 0;
   $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";
@@ -105,7 +105,7 @@ var flag = 0;
   $(".openbtn2").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";
@@ -121,30 +121,41 @@ var flag = 0;
 });
 
   $("#characterbtn").click(function () {//ボタンがクリックされたら
-
-	  $(".balloon").toggleClass('active');//balloonに activeクラスを付与し
-	  let mes = document.querySelector(".message");
-
-	  var audioData = new Audio();
-	  //audioData.muted=true;
-	  var a=["頑張りましたね","もっとお出かけしましょうね","お疲れ様、頑張ってますね","おつかれさまでした、この調子でいきましょう","がんばっているあなたがすてき！"];
-	  var voice =["audio/1.wav","audio/2.wav","audio/3.wav","audio/4.wav","audio/5.wav"];
-	  //var a=Math.floor(Math.random()*5);
-      if( flag == 0){
-	     var x=Math.floor(Math.random()*5);
-	     mes.innerHTML = a[x];
-	     audioData.src = voice[x];
-	     audioData.play();
-	     flag=1;
+      if( !($('.balloon').hasClass('active'))  ){
+	     $(".balloon").addClass('active');//balloonに activeクラスを付与し
+	     //音声とメッセージ表示
+	     let mes = document.querySelector(".message");
+	     var audioData = new Audio();
+	     //audioData.muted=true;
+	     var a=["頑張りましたね","もっとお出かけしましょうね","お疲れ様、頑張ってますね","おつかれさまでした、この調子でいきましょう","がんばっているあなたがすてき！","6個達成しました"];
+	     var voice =["audio/1.wav","audio/2.wav","audio/3.wav","audio/4.wav","audio/5.wav","audio/6.wav"];
+	     //var a=Math.floor(Math.random()*5);
+         if( flag == 0){
+	       var x=Math.floor(Math.random()*6);
+	       mes.innerHTML = a[x];
+	       audioData.src = voice[x];
+	       audioData.play();
+	       flag=1;
+         }else{
+	       flag=0;
+	     }
       }else{
-	     flag=0;
-	  }
-
-	});
-
+    	  $('.balloon').removeClass('active')
+    	  flag = 0;
+      }
+  });
   $(".balloon").click(function () {//ボタンがクリックされたら
 	  $(this).removeClass('active');//balloonの activeクラスを除去し
 	});
+  window.onload = function(){
+	  let mesbox = document.querySelector(".message");
+	  let balloon = document.querySelector(".balloon");
+	  var mess =["6個達成しました"];
+	  balloon.classList.add('active');
+	  mesbox.innerHTML = mess[0];
+      flag = 1;
+  }
+
 </script>
 
 <script>
