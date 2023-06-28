@@ -101,7 +101,7 @@
 	    		<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="東京タワー"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都港区芝公園４丁目２−８"><br>
-				<img src="spot_img/東京タワー.png" alt="スポット画像" width="330px">
+				<img src="spot_img/東京タワー.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">東京タワーは、東京都港区芝公園にある総合電波塔である。日本電波塔とも呼ばれる。 1958年12月23日竣工。東京のシンボル、観光名所である。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -129,8 +129,8 @@
 	    		<img src="img/foodicon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="すしざんまい 上野店"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都台東区上野２丁目７−１２"><br>
-				<img src="spot_img/すしざんまい.png" alt="スポット画像" width="330px">
-				<img src="spot_img/すしざんまい2.png" alt="スポット画像" width="330px">
+				<img src="spot_img/すしざんまい.png" alt="スポット画像" width="300px">
+				<img src="spot_img/すしざんまい2.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">名物の本まぐろ握りをはじめ、江戸前の握り寿司を一貫またはセットで提供。ランチはちらしや鉄火丼、握りの盛り合わせなどを用意している。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -158,7 +158,7 @@
 	    		<img src="img/shoppingicon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="渋谷 109"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都渋谷区道玄坂二丁目29-1"><br>
-				<img src="spot_img/109.png" alt="スポット画像" width="330px">
+				<img src="spot_img/109.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">109（イチマルキュー）は、東急の完全子会社である株式会社SHIBUYA109エンタテイメントが展開するファッションビルおよびテナント、ブランドの名称。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -186,9 +186,9 @@
 	    		<img src="img/othericon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="上野動物園"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都台東区上野公園９−８３"><br>
-				<img src="spot_img/上野動物園.png" alt="スポット画像" width="330px">
-				<img src="spot_img/上野動物園2.png" alt="スポット画像" width="330px">
-				<img src="spot_img/上野動物園3.png" alt="スポット画像" width="330px">
+				<img src="spot_img/上野動物園.png" alt="スポット画像" width="300px">
+				<img src="spot_img/上野動物園2.png" alt="スポット画像" width="300px">
+				<img src="spot_img/上野動物園3.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">東京都恩賜上野動物園は、東京都台東区上野公園の上野恩賜公園内にある東京都立の動物園。通称「上野動物園」。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -216,8 +216,8 @@
 	    		<img src="img/foodicon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="叙々苑"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都港区赤坂３丁目１１−３"><br>
-				<img src="spot_img/叙々苑.png" alt="スポット画像" width="330px">
-				<img src="spot_img/叙々苑2.png" alt="スポット画像" width="330px">
+				<img src="spot_img/叙々苑.png" alt="スポット画像" width="300px">
+				<img src="spot_img/叙々苑2.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">落ち着きのあるシックな内装の店内には座敷個室も完備。さまざまな部位の焼肉や韓国料理を単品またはコースで提供。弁当も販売している。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -245,8 +245,8 @@
 	    		<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="東京スカイツリー"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都墨田区押上一丁目1番1号"><br>
-				<img src="spot_img/東京スカイツリー.png" alt="スポット画像" width="330px">
-				<img src="spot_img/東京スカイツリー2.png" alt="スポット画像" width="330px">
+				<img src="spot_img/東京スカイツリー.png" alt="スポット画像" width="300px">
+				<img src="spot_img/東京スカイツリー2.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">東京のランドマークの一つ。高さは634 mで、タワーとしては世界第1位[注釈 1]。建築物としてはブルジュ・ハリファ、PNB118（ムルデカ118）に次ぐ世界第3位となる。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -274,7 +274,7 @@
 	    		<img src="img/shoppingicon.png" alt="アイコン" width="24px" height="24px"><br>
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="銀座三越"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="東京都中央区銀座４丁目６−１６"><br>
-				<img src="spot_img/銀座三越.png" alt="スポット画像" width="330px">
+				<img src="spot_img/銀座三越.png" alt="スポット画像" width="300px">
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">デザイナーズ ファッション、家庭用品、化粧品などを扱うデパート。フードコートやレストランもある。</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
         		<input id="delete" type="submit" name="delete" value="削除">
@@ -304,7 +304,7 @@
 	    		<input class="name1" type="text" name="NAME" size= "36" maxlength="20" value="${e.name}"><br>
 	    		<input class="address1" type="text" name="ADDRESS" size= "36" maxlength="40" value="${e.address}"><br>
 	    		<c:forEach items="${imgList}" var="m">
-					<img src="spot_img/${m}" alt="スポット画像" width="330px">
+					<img src="spot_img/${m}" alt="スポット画像" width="300px">
 				</c:forEach>
 	    		<textarea class="tarea" cols="37" rows="6" maxlength="100" placeholder="備考">${e.remarks}</textarea><br>
 				<input id="update" type="submit" name="update" value="更新">
