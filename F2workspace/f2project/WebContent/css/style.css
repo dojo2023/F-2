@@ -999,4 +999,30 @@ display       : inline-block;
   outline : none;
 }
 
+.pin_submit {
+	opacity: 1;
+	position: retative;
+	top: 0;
+	left: -10px;
+}
+
+i {
+	border: solid;
+	position: relative;
+	top: 5px;
+	left: 10px;
+}
+
 /* スポット登録 */
+
+/*スライドショースタイル*/
+.box-top{
+	height: 100px;
+}
+.box-center{
+  	width: 390px;
+}
+.box-under{
+	height: 0px;
+  	width: 390px;
+}

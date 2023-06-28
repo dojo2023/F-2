@@ -52,11 +52,16 @@ public class listServlet extends HttpServlet {
 		String genre = request.getParameter("genre");
 		String spotname = request.getParameter("spotname");
 		String spotaddress = request.getParameter("spotaddress");
+		String latitude = request.getParameter("latitude");
+		String longitude = request.getParameter("longitude");
 
 		SpotDAO sDao = new SpotDAO();
 		List<Spot> cardList = sDao.select(new Spot("",date,genre,spotname,spotaddress,""));
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
+
+		request.setAttribute("latitude", latitude);
+		request.setAttribute("longitude", longitude);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/list.jsp");
 		dispatcher.forward(request, response);

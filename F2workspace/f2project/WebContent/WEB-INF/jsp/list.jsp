@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="css/style.css">
 <meta name="viewport" content="width=device-width">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <title>memoly</title>
 
 <style>
@@ -75,28 +76,22 @@
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
 
-<div class = "main">
+<div class = "main" id="main">
 <div class="tabletitle">
 
 
 <table id="titlelist2">
 	<tr class="nav-open">
-		<td >
+		<td>
 			<img src="img/memoryicon.png" alt="アイコン" width="24px" height="24px">
 		</td>
 		<th><span>東京タワー</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<i class="fa fa-map-marker"></i>
+				<input class="pin_submit" type="submit" name="tokyo_tower">
+				<input type="hidden" name="pin_data" value="tokyo_tower">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -120,17 +115,11 @@
 		</td>
 		<th><span>すしざんまい 上野店</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<i class="fa fa-map-marker "></i>
+				<input class="pin_submit" type="submit" name="susi" alt="アイコン" width="18px" height="24px">
+				<input type="hidden" name="pin_data" value="susi">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -155,17 +144,11 @@
 		</td>
 		<th><span>渋谷 109</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<i class="fa fa-map-marker "></i>
+				<input class="pin_submit" type="submit" name="sibuya" alt="アイコン" width="18px" height="24px">
+				<input type="hidden" name="pin_data" value="sibuya">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -189,17 +172,11 @@
 		</td>
 		<th><span>上野動物園</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<i class="fa fa-map-marker "></i>
+				<input class="pin_submit" type="submit" name="ueno" alt="アイコン" width="18px" height="24px">
+				<input type="hidden" name="pin_data" value="ueno">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -225,17 +202,11 @@
 		</td>
 		<th><span>叙々苑</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<i class="fa fa-map-marker "></i>
+				<input class="pin_submit" type="submit" name="jojo" alt="アイコン" width="18px" height="24px">
+				<input type="hidden" name="pin_data" value="jojo">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -260,17 +231,11 @@
 		</td>
 		<th><span>東京スカイツリー</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<input type="submit" name="pin_data" alt="アイコン" width="18px" height="24px">
+				<input id="pin_lat" type="hidden" name="latitude" value="">
+				<input id="pin_lng" type="hidden" name="longitude" value="">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -295,17 +260,11 @@
 		</td>
 		<th><span>銀座三越</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<input type="submit" name="pin_data" alt="アイコン" width="18px" height="24px">
+				<input id="pin_lat" type="hidden" name="latitude" value="">
+				<input id="pin_lng" type="hidden" name="longitude" value="">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -330,17 +289,11 @@
 		</td>
 		<th><span>${e.name}</span></th>
 		<td>
-			<form method="GET" action="/f2project/MapServlet">
-				<input type="image" name="img_data" src="img/destinationicon.png" alt="アイコン" width="18px" height="24px">
-				<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-				<input id="img_data_y" type="hidden" name="img_data_y" value="y">
+			<form method="POST" action="/f2project/MapServlet">
+				<input type="submit" name="pin_data" alt="アイコン" width="18px" height="24px">
+				<input id="pin_lat" type="hidden" name="latitude" value="">
+				<input id="pin_lng" type="hidden" name="longitude" value="">
 			</form>
-			<script>
-			console.log(<%= request.getParameter("img_data_x") %>);
-			console.log(<%= request.getParameter("img_data_y") %>);
-			$('#img_data_x').val(<%= request.getParameter("img_data_x") %>);
-			$('#img_data_y').val(<%= request.getParameter("img_data_y") %>);
-			</script>
 		</td>
 	</tr>
 	<tr class="detail">
@@ -382,7 +335,7 @@
   $(".openbtn8").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav8").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";
@@ -400,7 +353,7 @@
   $(".openbtn2").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";

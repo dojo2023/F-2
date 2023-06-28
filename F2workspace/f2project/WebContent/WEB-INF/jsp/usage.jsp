@@ -31,40 +31,86 @@
 <div class = "main" id="main">
                     <div class="usage-item">
                         <div class="usage-photo">
-                            <img src="img/memoly.png" alt="画像１" width="185" height="422">
+                            <img src="img/memolymap.png" alt="画像１" width="185" height="422">
                         </div>
                         <div class="usage-text">
                             <h3>
-                                 ログイン方法
+                                 マップの使い方
                             </h3>
                             <p>
-                                 IDとパスワードを入力してログインボタンを押してください
+                                 1検索欄に地名を入力することで事前に入力したスポットを開くことができます。
+                            </p>
+                            <p>
+                                 2現在地に戻ることができます。
+                            </p>
+                            <p>
+                                 3IDとパスワードを入力してログインボタンを押してください
                             </p>
                         </div>
                     </div>
                     <div class="usage-item">
                         <div class="usage-photo">
-                            <img src="img/memoly.png" alt="画像１" width="185" height="422">
+                            <img src="img/memolymapopen.png" alt="画像１" width="185" height="422">
                         </div>
                         <div class="usage-text">
                             <h3>
-                                 あ
+                                 スポット登録の仕方
                             </h3>
                             <p>
-                                 いいい
+                                 4＋ボタンを押すと下からドロワーが出てきます。
+                                  入力欄をすべて埋めることで登録することができます。
                             </p>
                         </div>
                     </div>
                     <div class="usage-item">
                         <div class="usage-photo">
-                            <img src="img/memoly.png" alt="画像１" width="185" height="422">
+                            <img src="img/memolylist.png" alt="画像１" width="185" height="422">
                         </div>
                         <div class="usage-text">
                             <h3>
-                                 あ
+                                 リストの使い方
                             </h3>
                             <p>
-                                 いいい
+                                 1
+                            </p>
+                        </div>
+                    </div>
+                    <div class="usage-item">
+                        <div class="usage-photo">
+                            <img src="img/memolylistopen.png" alt="画像１" width="185" height="422">
+                        </div>
+                        <div class="usage-text">
+                            <h3>
+                                 リストの使い方
+                            </h3>
+                            <p>
+                                 1
+                            </p>
+                        </div>
+                    </div>
+                    <div class="usage-item">
+                        <div class="usage-photo">
+                            <img src="img/memolystory.png" alt="画像１" width="185" height="422">
+                        </div>
+                        <div class="usage-text">
+                            <h3>
+                                 ストーリーの使い方
+                            </h3>
+                            <p>
+                                 1
+                            </p>
+                        </div>
+                    </div>
+                    <div class="usage-item">
+                        <div class="usage-photo">
+                            <img src="img/memolystoryopen.png" alt="画像１" width="185" height="422">
+                        </div>
+                        <div class="usage-text">
+                            <h3>
+                                 ストーリーの使い方
+                            </h3>
+                            <p>
+                                 1
                             </p>
                         </div>
                     </div>

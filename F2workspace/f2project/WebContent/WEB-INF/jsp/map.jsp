@@ -11,12 +11,35 @@
 </head>
 
 <body>
+	<div id="map">
+	<div id="currentlocationbtn">
+		<a href="MapServlet">
+			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
+		</a>
+	</div>
+
+
+
+	<div class = "search_container">
+		<input name="keyword" id="keyword" type="text" value="" size="25" placeholder="キーワード検索">
+		<input id="search" type="submit" value="&#xf002">
+	</div>
+	</div>
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS9xq4Zz-x0CKigvuH2E4DuGld06H8YKE&callback=initMap"></script>
+
 	<div class="openbtn1">
 		<span></span><span></span><span></span>
 	</div>
 
 	<nav id="g-nav1">
 		<form action="/f2project/MapServlet" method="post" enctype="multipart/form-data">
+			<div id="position">
+				<input type="hidden" id="pin_lat" name="latitude" value="" readonly>
+				<input type="hidden" id="pin_lng" name="longitude" value="" readonly>
+				<input type="hidden" id="current_lat" name="current_lat" value="" readonly>
+				<input type="hidden" id="current_lng" name="current_lng" value="" readonly>
+			</div>
+
 			<div id="g-nav-list1">
 				<ul>
 					<li class="left">スポット名</li>
@@ -64,10 +87,6 @@
 					<li class="right"><input type="submit" value="登録" class="submit" ></li>
 				</ul>
 			</div>
-			<input id="img_data_x" type="hidden" name="img_data_x" value="x">
-			<input id="img_data_y" type="hidden" name="img_data_y" value="y">
-			<input id="img_data_x2" type="hidden" name="img_data_x2" value="x2">
-			<input id="img_data_y2" type="hidden" name="img_data_y2" value="y2">
 		</form>
 	</nav>
 
@@ -87,31 +106,6 @@
 		</div>
 	</nav>
 
-	<div id="ddd"><div id="map">
-		<div id="out_map"></div>
-		<iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7932.259494018684!2d139.776229
-			038981!3d35.69766620469117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1686291565507!5m2!1sja!
-			2sjp"
-			width="390" height="844" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-		</iframe>
-	</div>
-
-	<div id="img"></div>
-
-	<div id="currentlocationbtn">
-		<a href="https://www.google.com/maps/@35.697666,139.776229,16z?hl=ja&entry=ttu">
-			<img class = "currentlocation" src="img/currentlocation_icon.png" alt="現在地" width="50" height="50">
-		</a>
-	</div>
-
-	<div id="spot_pinbtn">
-		<img id="pin" class="spot_pin" name="img" src="img/destinationicon2.png">
-	</div>
-
-	<div id="characterbtn">
-		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
-	</div></div>
-
 	<audio id="charavoice" preload="none">
         <source src="voice/charavoice1.wav" type="audio/wav">
     </audio>
@@ -120,78 +114,157 @@
             let bubble = document.querySelector("#baloon");
             console.log(bubble);
     </script>
+	<div id="characterbtn">
+		<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
+	</div>
 
 	<div class="balloon">
 		<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
 	</div>
 
-
-	<div class = "search_container">
-		<input type="text" size="25" placeholder="キーワード検索">
-		<input type="submit" value="&#xf002">
-	</div>
 </body>
 <script>
-var x = parseFloat(<%= request.getParameter("img_data_x") %>);
-var y = parseFloat(<%= request.getParameter("img_data_y") %>);
-console.log(x + y);
-if(x != null) {
-	$('#img_data_x2').val(x);
-	$('#img_data_y2').val(y);
-	console.log(x);
-	console.log(y);
-	$("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
-	var img = document.getElementById("img");
-	var url = "img/destinationicon.png";
-	dispic(img, url, x, y);
-	function dispic(img, url, x, y){
-		var image = new Image();
-		image.src = url;
-		image.width = 29;
-		image.height = 44;
-		image.style.position = "fixed";
-		image.style.zIndex = 9992;
-		image.style.left = x + "px";
-		image.style.top = y + "px";
-		image.setAttribute("src", url);
-		img.appendChild(image);
+function initMap() {
+	navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+//緯度(latitude)、経度(longitude)を取得
+	function successCallback(position){
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+	$('#current_lat').val(latitude);	//後で消す
+	$('#current_lng').val(longitude);	//後で消す
+
+//表示するマップの処理(倍率、中心点)
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 10,
+		center: {lat: latitude, lng: longitude}
+	});
+
+//表示するマーカーの処理(マーカーの位置、表示するマップ)
+	var marker = new google.maps.Marker({
+		position: {lat: latitude, lng: longitude},
+		map: map
+	});
+
+	$("#search").click(function () {
+		const keyword = document.getElementById("keyword");
+		console.log(keyword.value);
+
+		if (keyword.value == '富士山') {
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 10,
+				center: {lat: 35.36174319862397, lng:138.72830726235546}
+			});
+			var marker = new google.maps.Marker({
+				position: {lat: 35.36174319862397, lng:138.72830726235546},
+				map: map
+			});
+		} else if ((keyword.value == 'USJ') || (keyword.value == 'usj')) {
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 10,
+				center: {lat: 34.66545027281, lng:135.43233819979972}
+			});
+			var marker = new google.maps.Marker({
+				position: {lat: 34.66545027281, lng:135.43233819979972},
+				map: map
+			});
+		}
+	});
+
+	var pin_data = ('<%= request.getParameter("pin_data") %>');
+	console.log(pin_data);
+
+	if (pin_data == 'tokyo_tower'){
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: {lat: 35.65860229308327, lng:139.74543517988434}
+		});
+		var marker = new google.maps.Marker({
+			position: {lat: 35.65860229308327, lng:139.74543517988434},
+			map: map
+		})
+	} else if (pin_data == 'susi'){
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: {lat: 35.709245659013334, lng:139.77312682208833}
+		});
+		var marker = new google.maps.Marker({
+			position: {lat: 35.709245659013334, lng:139.77312682208833},
+			map: map
+		})
+	} else if (pin_data == 'sibuya'){
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: {lat: 35.65970785677852, lng:139.69874945736373}
+		});
+		var marker = new google.maps.Marker({
+			position: {lat: 35.65970785677852, lng:139.69874945736373},
+			map: map
+		})
+	} else if (pin_data == 'ueno'){
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: {lat: 35.71685013925624, lng:139.77301035289463}
+		});
+		var marker = new google.maps.Marker({
+			position: {lat: 35.71685013925624, lng:139.77301035289463},
+			map: map
+		})
+	} else if (pin_data == 'jojo'){
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: {lat: 35.73136377288798, lng:139.7135528361795}
+		});
+		var marker = new google.maps.Marker({
+			position: {lat: 35.73136377288798, lng:139.7135528361795},
+			map: map
+		})
 	}
+
+/*
+//ピンを立てたか判定
+	if(pin_lat != null) {
+		$('#pin_lat').val(pin_lat);		//後で消す
+		$('#pin_lng').val(pin_lng);		//後で消す
+		console.log(pin_lat + pin_lng);
+//ピンを立てた場所に再度表示
+		var marker = new google.maps.Marker({
+			position: {lat: pin_lat, lng: pin_lng},
+			map: map
+		});
+	}
+*/
+//マップをクリックした時の処理(イベント追加)
+		map.addListener('click', function(e) {
+			getClickLatLng(e.latLng, map);
+		});
+	};
+
+//位置情報が取得できなかった時のエラー処理　※必ず記述
+	function errorCallback(error){
+	    alert("位置情報が取得できませんでした");
+	};
 }
-$("#pin").click(function () {//ボタンがクリックされたら
-    $("#out_map").toggleClass('active_map');//ナビゲーションにpanelactiveクラスを付与
-    $(this).toggleClass('setimg');
-    document.getElementById( "out_map" ).onclick = function( event ) {
-        var ximg = event.pageX ;    // 水平の位置座標
-        var yimg = event.pageY ;    // 垂直の位置座標
-        var img = document.getElementById("img");
-        var url = "img/destinationicon.png";
-        dispic(img, url, ximg, yimg);
-        function dispic(img, url, x, y){
-            x -= 13.5;
-            y -= 42.5;
-            var image = new Image();
-            image.src = url;
-            image.width = 29;
-            image.height = 44;
-            image.style.position = "fixed";
-            image.style.zIndex = 9992;
-            image.style.left = x + "px";
-            image.style.top = y + "px";
-            image.setAttribute("src", url);
-            img.appendChild(image);
-            $('#img_data_x').val(x);
-            $('#img_data_y').val(y);
-            console.log("x = " + x);
-            console.log("y = " + y);
-        }
-    }
-});
+
+//マップをクリックした時の処理(イベント発生時)
+function getClickLatLng(lat_lng, map) {
+	$('#pin_lat').val(lat_lng.lat);			//後で消す
+	$('#pin_lng').val(lat_lng.lng);			//後で消す
+
+//クリックした場所にピンを立てる
+	var marker = new google.maps.Marker({
+		position: lat_lng,
+		map: map
+	});
+}
+
 $(".openbtn1").click(function () {//ボタンがクリックされたら
     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
     let obj = document.getElementById("map");
     if( $(this).hasClass('active') ){
-        obj.style.opacity = 0.2;
+        obj.style.opacity = 0.5;
         //obj.style.background-color="#999";
     }else if( !$(this).hasClass('active') ){
     	obj.style.opacity = 1;

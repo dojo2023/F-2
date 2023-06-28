@@ -20,16 +20,19 @@
         });
 </script>
 </head>
-<body class="body2">
-<div class = "header2">
-	<br><br><br><br><br>
+<body>
+<div class = "box-top">
 </div>
-<div class = "main2">
-	<div class="slider" >
-		<img src="spot_img/東京タワー.png" alt="スライドショー画像">
-		<img src="spot_img/東京スカイツリー.png" alt="スライドショー画像">
-		<img src="spot_img/東京スカイツリー2.png" alt="スライドショー画像">
+<div class = "box-center">
+	<div class = "main2">
+		<div class="slider" >
+			<img src="spot_img/東京タワー.png" alt="スライドショー画像">
+			<img src="spot_img/東京スカイツリー.png" alt="スライドショー画像">
+			<img src="spot_img/東京スカイツリー2.png" alt="スライドショー画像">
+		</div>
 	</div>
+</div>
+<div class = "box-under">
 </div>
 
 <script>

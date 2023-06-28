@@ -20,16 +20,19 @@
         });
 </script>
 </head>
-<body class="body2">
-<div class = "header2">
-	<br><br><br><br><br>
+<body>
+<div class = "box-top">
 </div>
-<div class = "main2">
-	<div class="slider" >
+<div class = "box-center">
+	<div class = "main2">
+		<div class="slider" >
 		<img src="spot_img/すしざんまい.png" alt="スライドショー画像">
 		<img src="spot_img/叙々苑2.png" alt="スライドショー画像">
 		<img src="spot_img/ヒグマドーナツ.png" alt="スライドショー画像">
 	</div>
+	</div>
+</div>
+<div class = "box-under">
 </div>
 
 <script>
