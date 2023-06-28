@@ -38,7 +38,7 @@
 <div class = "header">
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
-<div class = "main">
+<div class = "main" id="main">
 	<div class="story_photo">
 		<input class="storyplus" type="image" src="img/storyplusimg.png" alt="ストーリー画像" width="150px" height="150px">
 		<a href="/f2project/SlideshowServlet?story=1"><img src="img/storyvmemory.png" name="story" alt="思い出ストーリー" width="150px" height="150px"></a>
@@ -57,7 +57,7 @@
   $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";
@@ -75,7 +75,7 @@
   $(".openbtn2").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";

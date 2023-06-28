@@ -28,7 +28,7 @@
 <div class = "header">
 	<img src="img/memolylogo.png" alt="メモリーロゴ">
 </div>
-<div class = "main">
+<div class = "main" id="main">
                     <div class="usage-item">
                         <div class="usage-photo">
                             <img src="img/memoly.png" alt="画像１" width="185" height="422">
@@ -68,19 +68,19 @@
                             </p>
                         </div>
                     </div>
+                    <div id="characterbtn">
+						<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
+					</div>
+					<div class="balloon">
+						<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
+					</div>
                 </div>
-<div id="characterbtn">
-	<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
-</div>
-<div class="balloon">
-	<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
-</div>
 </body>
 <script>
   $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav1").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";
@@ -98,7 +98,7 @@
   $(".openbtn2").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
   $("#g-nav2").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-  let obj = document.getElementById("map");
+  let obj = document.getElementById("main");
   if( $(this).hasClass('active') ){
       obj.style.opacity = 0.5;
       //obj.style.background-color="#999";
