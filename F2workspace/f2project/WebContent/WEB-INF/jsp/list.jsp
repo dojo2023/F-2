@@ -88,8 +88,8 @@
 		<th><span>東京タワー</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<i class="fa fa-map-marker"></i>
-				<input class="pin_submit" type="submit" name="tokyo_tower">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input type="submit" name="tokyo_tower"></div>
 				<input type="hidden" name="pin_data" value="tokyo_tower">
 			</form>
 		</td>
@@ -116,8 +116,8 @@
 		<th><span>すしざんまい 上野店</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<i class="fa fa-map-marker "></i>
-				<input class="pin_submit" type="submit" name="susi" alt="アイコン" width="18px" height="24px">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name="susi"></div>
 				<input type="hidden" name="pin_data" value="susi">
 			</form>
 		</td>
@@ -145,8 +145,8 @@
 		<th><span>渋谷 109</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<i class="fa fa-map-marker "></i>
-				<input class="pin_submit" type="submit" name="sibuya" alt="アイコン" width="18px" height="24px">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name="sibuya"></div>
 				<input type="hidden" name="pin_data" value="sibuya">
 			</form>
 		</td>
@@ -173,8 +173,8 @@
 		<th><span>上野動物園</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<i class="fa fa-map-marker "></i>
-				<input class="pin_submit" type="submit" name="ueno" alt="アイコン" width="18px" height="24px">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name="ueno"></div>
 				<input type="hidden" name="pin_data" value="ueno">
 			</form>
 		</td>
@@ -203,8 +203,8 @@
 		<th><span>叙々苑</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<i class="fa fa-map-marker "></i>
-				<input class="pin_submit" type="submit" name="jojo" alt="アイコン" width="18px" height="24px">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name="jojo"></div>
 				<input type="hidden" name="pin_data" value="jojo">
 			</form>
 		</td>
@@ -232,9 +232,8 @@
 		<th><span>東京スカイツリー</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<input type="submit" name="pin_data" alt="アイコン" width="18px" height="24px">
-				<input id="pin_lat" type="hidden" name="latitude" value="">
-				<input id="pin_lng" type="hidden" name="longitude" value="">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name=""></div>
 			</form>
 		</td>
 	</tr>
@@ -261,9 +260,8 @@
 		<th><span>銀座三越</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<input type="submit" name="pin_data" alt="アイコン" width="18px" height="24px">
-				<input id="pin_lat" type="hidden" name="latitude" value="">
-				<input id="pin_lng" type="hidden" name="longitude" value="">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name=""></div>
 			</form>
 		</td>
 	</tr>
@@ -290,9 +288,8 @@
 		<th><span>${e.name}</span></th>
 		<td>
 			<form method="POST" action="/f2project/MapServlet">
-				<input type="submit" name="pin_data" alt="アイコン" width="18px" height="24px">
-				<input id="pin_lat" type="hidden" name="latitude" value="">
-				<input id="pin_lng" type="hidden" name="longitude" value="">
+				<div class="pin_marker"><i class="fa fa-map-marker"></i></div>
+				<div class="pin_submit"><input class="pin_submit" type="submit" name=""></div>
 			</form>
 		</td>
 	</tr>

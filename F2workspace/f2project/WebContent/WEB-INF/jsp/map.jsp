@@ -137,7 +137,7 @@ function initMap() {
 
 //表示するマップの処理(倍率、中心点)
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 10,
+		zoom: 15,
 		center: {lat: latitude, lng: longitude}
 	});
 
@@ -153,7 +153,7 @@ function initMap() {
 
 		if (keyword.value == '富士山') {
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 10,
+				zoom: 15,
 				center: {lat: 35.36174319862397, lng:138.72830726235546}
 			});
 			var marker = new google.maps.Marker({
@@ -162,7 +162,7 @@ function initMap() {
 			});
 		} else if ((keyword.value == 'USJ') || (keyword.value == 'usj')) {
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 10,
+				zoom: 15,
 				center: {lat: 34.66545027281, lng:135.43233819979972}
 			});
 			var marker = new google.maps.Marker({
@@ -177,7 +177,7 @@ function initMap() {
 
 	if (pin_data == 'tokyo_tower'){
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: {lat: 35.65860229308327, lng:139.74543517988434}
 		});
 		var marker = new google.maps.Marker({
@@ -186,7 +186,7 @@ function initMap() {
 		})
 	} else if (pin_data == 'susi'){
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: {lat: 35.709245659013334, lng:139.77312682208833}
 		});
 		var marker = new google.maps.Marker({
@@ -195,7 +195,7 @@ function initMap() {
 		})
 	} else if (pin_data == 'sibuya'){
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: {lat: 35.65970785677852, lng:139.69874945736373}
 		});
 		var marker = new google.maps.Marker({
@@ -204,7 +204,7 @@ function initMap() {
 		})
 	} else if (pin_data == 'ueno'){
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: {lat: 35.71685013925624, lng:139.77301035289463}
 		});
 		var marker = new google.maps.Marker({
@@ -213,7 +213,7 @@ function initMap() {
 		})
 	} else if (pin_data == 'jojo'){
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
+			zoom: 15,
 			center: {lat: 35.73136377288798, lng:139.7135528361795}
 		});
 		var marker = new google.maps.Marker({
@@ -235,6 +235,7 @@ function initMap() {
 		});
 	}
 */
+
 //マップをクリックした時の処理(イベント追加)
 		map.addListener('click', function(e) {
 			getClickLatLng(e.latLng, map);

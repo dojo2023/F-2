@@ -999,18 +999,25 @@ display       : inline-block;
   outline : none;
 }
 
-.pin_submit {
-	opacity: 1;
-	position: retative;
+.pin_marker {
+	position: relative;
 	top: 0;
-	left: -10px;
+	left: 0;
+	font-size: 20px;
+}
+
+.pin_submit {
+	opacity: 0;
+	position: retative;
+	top: -10px;
+	left: 0;
+	width: 25px;
+	height: 30px;
+	margin-top: -25px;
 }
 
 i {
-	border: solid;
-	position: relative;
-	top: 5px;
-	left: 10px;
+	color: #ff0000;
 }
 
 /* スポット登録 */
