@@ -23,7 +23,7 @@
 
 </head>
 <body>
-<div class="openbtn2">
+	<div class="openbtn2">
 		<span></span><span></span><span></span>
 	</div>
 	<nav id="g-nav2">
@@ -108,7 +108,6 @@
 			</form>
 		</td>
 	</tr>
-
 	<tr class="nav-open">
 		<td >
 			<img src="img/foodicon.png" alt="アイコン" width="24px" height="24px">
@@ -322,6 +321,11 @@
 		$('tr.nav-open').click(function(){
 			$(this).toggleClass('active');
 			$(this).next('tr.detail').slideToggle();
+			if( $(this).hasClass('active') ){
+			   $(".titlelist2").css("border-spacing","0 10px");
+			}else{
+			   $(".titlelist2").css("border-spacing","0 20px");
+			}
 		});
 	});
   </script>

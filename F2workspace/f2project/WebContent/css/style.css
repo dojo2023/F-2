@@ -154,6 +154,10 @@ table{
 	width: 85%;
 }
 
+tr{
+	margin: 10px 0px;
+}
+
 #pest-01 {
 	display: none;
 }
@@ -228,30 +232,29 @@ table{
 	list-style:none;
 	width: 85%;
 	padding-left:10px;
-	padding-top:10px;
+	padding-top: 10px;
 	border-collapse: separate;
-	border-spacing:0px 10px;
+	border-spacing:0px 20px;
 }
 
 .titlelist2 th{
 	background-color: white;
-	border: 1px solid #ff99cc;
+	border: 1px solid lightgray;
 	text-align: left;
 	padding: 0px 0px 0px 5px;
 	font-weight: normal;
+	text-indent: 10px;
 }
 
 .titlelist2 td{
 	background-color: white;
-	border: 1px solid #ff99cc;
+	border: 1px solid lightgray;
 	width: 25px;
 	height: 25px;
 	padding: 0px;
 	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 5px 4px;
 }
-
 
 .name1{
 	text-align: center;
@@ -303,7 +306,7 @@ display       : inline-block;
 }
 
 .titlelist2 tr:first-child td:last-child{
-	border-top-right-radius: 10px;
+	border-top-right-radius: 10px;7
 	border-bottom-right-radius: 10px;
 }
 
@@ -1033,3 +1036,5 @@ i {
 	height: 0px;
   	width: 390px;
 }
+
+/* 変更点 6/29 */
