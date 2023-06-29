@@ -289,4 +289,41 @@ $("#g-nav4 a").click(function () {//ナビゲーションのリンクがクリ�
     $("#g-nav4").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
 </script>
+<script>
+$("#characterbtn").click(function () {//ボタンがクリックされたら
+    if( !($('.balloon').hasClass('active'))  ){
+	     $(".balloon").addClass('active');//balloonに activeクラスを付与し
+	     //音声とメッセージ表示
+	     let mes = document.querySelector(".message");
+	     var audioData = new Audio();
+	     //audioData.muted=true;
+	     var a=["こんにちは！今日はいい天気ですね！どこにいきましょうか？","次はどこに行きましょうか","忘れ物はないですか？","今日を楽しみましょう","おはようございます","行きたい場所は決まりましたか?"];
+	     var voice =["mess/1.wav","mess/2.wav","mess/3.wav","mess/4.wav","mess/5.wav","mess/6.wav"];
+	     //var a=Math.floor(Math.random()*5);
+       if( flag == 0){
+	       var x=Math.floor(Math.random()*6);
+	       mes.innerHTML = a[x];
+	       audioData.src = voice[x];
+	       audioData.play();
+	       flag=1;
+       }else{
+	       flag=0;
+	     }
+    }else{
+  	  $('.balloon').removeClass('active')
+  	  flag = 0;
+    }
+});
+$(".balloon").click(function () {//ボタンがクリックされたら
+	  $(this).removeClass('active');//balloonの activeクラスを除去し
+	});
+window.onload = function(){
+	  let mesbox = document.querySelector(".message");
+	  let balloon = document.querySelector(".balloon");
+	  var mess =["こんにちは！今日はいい天気ですね！どこにいきましょうか？"];
+	  balloon.classList.add('active');
+	  mesbox.innerHTML = mess[0];
+    flag = 1;
+}
+</script>
 </html>
