@@ -111,12 +111,6 @@
                             </p>
                         </div>
                     </div>
-                    <div id="characterbtn">
-						<img class = "character" src="img/character.png" alt="キャラクター" width="120" height="120">
-					</div>
-					<div class="balloon">
-						<textarea class="message" readonly>こんにちは！今日はいい天気ですね！どこにいきましょうか？</textarea>
-					</div>
                 </div>
 </body>
 <script>
